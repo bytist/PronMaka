@@ -1,0 +1,44 @@
+@import '~@spartacus/styles/scss/functions';
+@import '~@spartacus/styles/scss/mixins';
+//@import '~@spartacus/styles/scss/theme';
+@import '~@ng-select/ng-select/themes/default.theme.css';
+
+//bootstrap enhancements (by Spartacus)
+@import '~@spartacus/styles/scss/cxbase/blocks/forms';
+@import '~@spartacus/styles/scss/cxbase/blocks/tooltip';
+@import '~@spartacus/styles/scss/cxbase/blocks/accordion';
+@import '~@spartacus/styles/scss/cxbase/blocks/tabs';
+@import '~@spartacus/styles/scss/cxbase/blocks/carousel';
+@import '~@spartacus/styles/scss/cxbase/blocks/dropdown';
+
+//layout
+@import '~@spartacus/styles/scss/cxbase/layout/app';
+@import '~@spartacus/styles/scss/cxbase/layout/page';
+@import '~@spartacus/styles/scss/cxbase/layout/section';
+@import '~@spartacus/styles/scss/cxbase/layout/container';
+
+//non-bootstrap blocks and components here below
+@import '~@spartacus/styles/scss/cxbase/blocks/paragraph.scss';
+
+// effects & animations
+@import '~@spartacus/styles/scss/cxbase/animations';
+@import '~@spartacus/styles/scss/misc/hamburger';
+@import '~@spartacus/styles/scss/misc/dialog';
+@import '~@spartacus/styles/scss/root';
+@import '~@spartacus/styles/scss/page-template';
+
+$skipComponentStyles: (
+  cx-searchbox,
+  cx-card,
+  cx-payment-methods,
+  cx-anonymous-consent-management-banner,
+  cx-pagination,
+  cx-product-grid-item,
+  cx-product-summary,
+  cx-product-list,
+  cx-product-list-item,
+  cx-product-view,
+  cx-active-facets
+);
+
+@import '~@spartacus/styles/scss/components';

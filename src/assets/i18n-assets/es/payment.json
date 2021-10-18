@@ -1,0 +1,52 @@
+{
+  "paymentForm": {
+    "payment": "¿Cómo te gustaría pagar?",
+    "choosePaymentMethod": "Elija un método de pago",
+    "paymentType": "Tipo de Pago",
+    "paymentTypePaypal": "Tu pago será procesado en el siguiente paso, desde la pantalla de <strong>Revisión de Orden.</strong>",
+    "genericPaymentError": "Algo anda mal, revisa los datos de la tarjeta e inténtalo de nuevo",
+    "accountHolderName": {
+      "label": "Nombre del Titular",
+      "placeholder": "Nombre del Titular"
+    },
+    "cardNumber": "Número de Tarjeta",
+    "expirationDate": "Fecha de Expiración",
+    "securityCode": "Código de Seguridad",
+    "securityCodeTitle": "valor de verificación de la tarjeta",
+    "saveAsDefault": "Guardar como predeterminado",
+    "setAsDefault": "Establecer como predeterminado",
+    "billingAddress": "Dirección de Envío",
+    "sameAsShippingAddress": "Mi dirección de facturación y envío son las mismas",
+    "invoiceRequired": "Requiero una factura",
+    "paymentAddressData": "Datos de Facturación",
+    "partnersData": "¿Uno de nuestros Socios te recomendó Keff Keff?",
+    "partnersDescription": "Con el código referido obtendrá una comisión por tu compra. Ayúdalo ingresando su código.",
+    "partnerLabel" :"Número de socio Keff Keff asociado",
+    "defaultPartnerSuccess": "Felicidades, ahora tus compras van de la mano de nuestro experto Keff Keff: {{ name }}. Si deseas cambiar de número de Socio, puedes hacerlo en tu perfil",
+    "partnerSuccess": "Felicidades, esta compra va de la mano de nuestro experto Keff Keff: {{ name }}.",
+    "partnerRemovalSuccess": "El socio fue removido con éxito.",
+    "partnerError": "El número de Socio Keff Keff no es válido o no está activo, revisalo e intentalo de nuevo",
+    "partnerEmpty": "¡Woof! Aún no has agregado un número de socio, inténtalo nuevamente.",
+    "newBillingData": "Nueva Dirección de Facturación",
+    "selectOne": "Seleccione uno...",
+    "monthMask": "Mes",
+    "yearMask": "Año",
+    "useThisPayment": "Usar como método de pago",
+    "addNewPayment": "Agregar nuevo pago",
+    "changePayment": "Usar tarjeta guardada",
+    "cardDetails": "Detalles de Tarjeta"
+  },
+  "paymentMethods": {
+    "paymentMethods": "Métodos de pago",
+    "newPaymentMethodsAreAddedDuringCheckout": "Se agregan nuevos métodos de pago durante el pago.",
+    "invalidField": "Campo inválido: {{ field }}",
+    "errorCreditCardInUser": "¡Woof, Alto! no puedes eliminar la tarjeta de crédito seleccionada para tu compra. Sí deseas eliminarla, selecciona otra forma de pago para tu orden actual."
+  },
+  "paymentCard": {
+    "deleteConfirmation": "¿Estás seguro de que deseas eliminar este método de pago?",
+    "setAsDefault": "Establecer como predeterminado",
+    "expires": "Fecha de expiración: {{ month }}/{{ year }}",
+    "defaultPaymentMethod": "Método de Pago Predeterminado",
+    "selected":  "Método de Pago Seleccionado"
+  }
+}

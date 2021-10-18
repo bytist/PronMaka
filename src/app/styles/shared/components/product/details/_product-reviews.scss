@@ -1,0 +1,40 @@
+%cx-product-reviews {
+  div.header {
+    border-bottom: 0;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    cx-star-rating {
+      @include media-breakpoint-up(md) {
+        margin-top: rem(-40);
+      }
+    }
+
+    .btn-primary {
+      @extend %btn-action;
+
+      margin-left: 0;
+      margin-top: $spacer * 2;
+      order: 3;
+      width: rem(250);
+
+      @include media-breakpoint-up(md) {
+        margin-left: auto;
+        margin-top: 0;
+        order: initial;
+      }
+    }
+  }
+
+  .review {
+    border-top: $border-width solid var(--cx-color-light, #{$light});
+  }
+}
+
+app-maka-product-reviews {
+  @extend %cx-product-reviews;
+}

@@ -1,0 +1,17 @@
+<div class="container px-0 maka-plate d-flex align-items-center">
+  <div class="mx-auto">
+    <h1 class="text-dark text-uppercase text-center text-md-big">
+      {{ 'common.homeAnimations.makaPlateTitle' | cxTranslate }} <br>
+      <span class="stroked-dark">
+        {{ 'common.homeAnimations.weAreNot' | cxTranslate }}
+        <br class="d-block d-md-none">
+        {{ 'common.homeAnimations.croquettes' | cxTranslate }}
+      </span>
+    </h1>
+
+    <img class="flying" src="/assets/images/flying-3.png" alt="" />
+    <img class="plate mt-4" src="/assets/images/plate.png" alt="" (load)="loadImage()" />
+    <img class="floating dizzy" src="/assets/images/floating-1.png" alt="" />
+    <img class="floating closer dizzy inverse" src="/assets/images/floating-2.png" (load)="loadImage()" alt="" />
+  </div>
+</div>

@@ -1,0 +1,107 @@
+@keyframes dizzyshortinverse {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes dizzylong {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+%app-maka-plate {
+  height: 100vh;
+  position: relative;
+
+  .plate {
+    display: block;
+    height: auto;
+    margin: ($spacer * 2) auto;
+    position: relative;
+    width: 70%;
+
+    @include media-breakpoint-only(sm) {
+      width: 45%;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 50%;
+    }
+
+    @media (max-height: $mobile-landscape-height) {
+      width: 40% !important;
+    }
+  }
+
+  .flying {
+    left: 5%;
+    position: absolute;
+    top: rem(-1200);
+    width: 90%;
+    z-index: -1;
+
+    @include media-breakpoint-up(md) {
+      left: 15%;
+      width: 70%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      top: rem(-2000);
+    }
+  }
+
+  .floating {
+    left: 10%;
+    position: absolute;
+    top: 50%;
+    transition: 1s;
+    width: 12%;
+    z-index: $navigation-zindex - 2; // 2 levels behind navigation (menu and rects animation overlay)
+
+    &:hover {
+      margin-left: rem(10);
+      margin-top: rem(-5);
+      transition: 0.5s;
+    }
+
+    &.closer {
+      left: initial;
+      right: 10%;
+      top: 50%;
+      width: 10%;
+
+      &:hover {
+        margin-top: rem(-15);
+      }
+    }
+  }
+
+  .dizzy {
+    animation-direction: alternate;
+    animation-duration: 15s;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+    animation-name: dizzylong;
+    animation-play-state: running;
+    animation-timing-function: ease-in;
+    transform-origin: center center;
+
+    &.inverse {
+      animation-duration: 5s;
+      animation-name: dizzyshortinverse;
+    }
+  }
+}
+
+.maka-plate {
+  @extend %app-maka-plate;
+}

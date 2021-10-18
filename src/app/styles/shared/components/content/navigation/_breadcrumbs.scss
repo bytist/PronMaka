@@ -1,0 +1,46 @@
+cx-page-slot {
+  %cx-breadcrumb {
+    @extend .container; /* stylelint-disable-line */
+
+    flex-direction: row;
+    justify-content: center;
+    padding: ($spacer * 3) 0;
+
+    @include media-breakpoint-up(lg) {
+      justify-content: flex-start;
+    }
+
+    nav {
+      font-size: $xsmall-font-size;
+      padding: 0;
+
+      @include media-breakpoint-up(lg) {
+        // offset-lg-1
+        margin-left: 8.3333333333%;
+        padding-left: rem(15);
+      }
+
+      span {
+        &:not(:last-child)::after {
+          content: '/';
+        }
+
+        a {
+          color: var(--cx-color-inverse);
+        }
+      }
+    }
+
+    h1 {
+      color: var(--cx-color-text);
+      font-family: $font-family-sans-serif;
+      font-size: $xsmall-font-size;
+      font-weight: $font-weight-light;
+      line-height: inherit;
+
+      &::before {
+        content: '/ ';
+      }
+    }
+  }
+}

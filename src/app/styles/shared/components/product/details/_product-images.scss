@@ -1,0 +1,12 @@
+%cx-product-images {
+  .thumbs {
+    cx-media {
+      --cx-color-light: #{$transparent};
+      --cx-color-primary: #{$transparent};
+    }
+  }
+
+  cx-carousel .indicators {
+    display: none;
+  }
+}

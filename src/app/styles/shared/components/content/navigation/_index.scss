@@ -1,0 +1,11 @@
+@import 'footer-navigation';
+@import 'breadcrumbs';
+@import 'navigation-ui';
+
+.navigation-overlay {
+  background: $overlay-color;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: $navigation-zindex - 2;
+}

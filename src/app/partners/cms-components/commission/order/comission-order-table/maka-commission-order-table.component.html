@@ -1,0 +1,44 @@
+<table class="table maka-table">
+  <caption class="d-none">{{ 'partner.commissions.referralOrdersTitle' | cxTranslate }}</caption>
+  <thead class="maka-table-header">
+  <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+    #{{ 'partner.commissions.referralOrders.order' | cxTranslate }}
+  </th>
+  <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+    {{ 'partner.commissions.referralOrders.date' | cxTranslate }}
+  </th>
+  <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+    {{ 'partner.commissions.referralOrders.name' | cxTranslate }}
+  </th>
+  <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+    {{ 'partner.commissions.referralOrders.total' | cxTranslate }}
+  </th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of orders.orders">
+    <td class="font-weight-light text-small">
+      <div class="d-md-none table-mobile-label">#{{ 'partner.commissions.referralOrders.order' | cxTranslate }}</div>
+      <span class="text-xsmall text-md-small">{{ order.code }}</span>
+    </td>
+    <td class="font-weight-light text-small">
+      <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'partner.commissions.referralOrders.date' | cxTranslate }}</div>
+      <span class="text-xsmall text-md-small">{{ order.date | cxDate: 'longDate' }}</span>
+    </td>
+    <td class="font-weight-light text-small">
+      <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'partner.commissions.referralOrders.name' | cxTranslate }}</div>
+      <span class="text-xsmall text-md-small">{{ (order.user.name.toLowerCase() === 'guest' ? ('common.guest' | cxTranslate) : order.user.name) }}</span>
+    </td>
+    <td class="font-weight-light text-small">
+      <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'partner.commissions.referralOrders.totalShort' | cxTranslate }}</div>
+      <span class="text-xsmall text-md-small">{{ order.total.formattedValue }}</span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="bottom d-flex">
+  <div class="ml-auto my-3">
+    <cx-pagination [pagination]="orders.pagination" (viewPageEvent)="pageChange($event)"></cx-pagination>
+  </div>
+</div>
+

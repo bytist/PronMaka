@@ -1,0 +1,85 @@
+cx-page-layout.LandingPage2Template {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  cx-page-slot {
+    &.Section1 {
+      grid-column: 1/3;
+      grid-row: 1/2;
+    }
+
+    &.Section2C {
+      grid-column: 1/3;
+      grid-row: 2/3;
+      height: rem(395);
+
+      @include media-breakpoint-up(md) {
+        height: rem(618);
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: rem(495);
+      }
+    }
+
+    &.Section3A,
+    &.Section3B,
+    &.Section3C {
+      grid-column: 1/3;
+      margin-top: rem(20);
+    }
+
+    &.Section3A {
+      @include media-breakpoint-up(lg) {
+        grid-column: 1/2;
+        grid-row: 3/5;
+      }
+    }
+
+    &.Section3B,
+    &.Section3C {
+      @include media-breakpoint-up(lg) {
+        grid-column: 2/3;
+        margin-left: rem(20);
+      }
+    }
+
+    &.Section3B {
+      @include media-breakpoint-up(lg) {
+        grid-row: 3/4;
+      }
+    }
+
+    &.Section3C {
+      @include media-breakpoint-up(lg) {
+        grid-row: 4/5;
+      }
+    }
+
+    &.Section4 {
+      @include media-breakpoint-up(lg) {
+        grid-column: 1/3;
+        grid-row: 5/6;
+      }
+    }
+
+    &.Section5 {
+      grid-column: 1/2;
+
+      @include media-breakpoint-up(lg) {
+        grid-column: 1/3;
+        grid-row: 6/7;
+      }
+
+      // fix to remove unnecessary white padding in video component just for partners page
+      .video-container.vimeo {
+        height: 56vw;
+        padding: 0;
+      }
+    }
+  }
+}

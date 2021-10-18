@@ -1,0 +1,112 @@
+app-maka-login {
+  margin-bottom: rem(25);
+
+  @include media-breakpoint-up(lg) {
+    border-bottom: 0;
+    display: flex;
+    margin: 0;
+  }
+
+  hr {
+    border-top: rem(1) solid $light;
+  }
+
+  .nav-greeting {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      background-color: var(--cx-color-primary);
+      display: flex;
+      height: 0;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: $header-height;
+      width: 100%;
+      z-index: $navigation-zindex;
+    }
+  }
+
+  .login-link {
+    padding-bottom: rem(25);
+  }
+
+  .opened.animation-done + .HeaderLinks .wrapper {
+    height: rem(450);
+  }
+
+  .HeaderLinks {
+    cx-navigation-ui.flyout {
+      h5 {
+        display: none;
+      }
+
+      cx-icon {
+        display: none;
+      }
+
+      .wrapper {
+        background-color: var(--cx-color-transparent);
+        border: 0;
+
+        .childs {
+          font-size: $medium-font-size;
+          font-weight: $font-weight-light;
+
+          cx-generic-link {
+            border-bottom: 0;
+            white-space: initial;
+
+            a {
+              padding: 0 0 rem(18) 0;
+            }
+          }
+
+          nav:last-child {
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      flex: none;
+
+      cx-navigation-ui.flyout {
+        &:hover {
+          nav > .wrapper {
+            display: flex;
+          }
+        }
+
+        .wrapper {
+          align-items: center;
+          background-color: var(--cx-color-transparent);
+          border: 0;
+          display: flex;
+          height: 0;
+          left: 0;
+          margin: 0;
+          overflow: hidden;
+          padding: 0;
+          top: $header-height;
+          width: 100%;
+          z-index: $navigation-zindex + 10;
+
+          .childs {
+            border-left: rem(1) solid $light;
+            font-size: $large-font-size;
+            font-weight: $font-weight-light;
+            margin-left: auto;
+            padding-left: rem(100);
+            width: 40%;
+
+            nav:last-child a {
+              padding: rem(25) 0 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

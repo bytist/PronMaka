@@ -1,0 +1,21 @@
+<ng-container *ngIf="component.data$ | async as data">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-11 offset-lg-1 text-center text-lg-left">
+                <div class="d-flex flex-column-reverse flex-lg-row">
+                    <div
+                      class="mt-4 mt-lg-0"
+                      [ngClass]="{
+                        'order-lg-2 ml-lg-5': (data.image && data.imageAlignment !== 'RIGHT'),
+                        'mr-lg-5': (data.image && data.imageAlignment === 'RIGHT')
+                      }"
+                    >
+                      <h1 class="text-dark" *ngIf="data.title">{{ data.title }}</h1>
+                      <p class="font-weight-light text-medium text-lg-large" *ngIf="data.subtitle">{{ data.subtitle }}</p>
+                    </div>
+                    <cx-media *ngIf="data.image" [container]="data.image"></cx-media>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

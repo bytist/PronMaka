@@ -1,0 +1,34 @@
+<div class="container">
+  <ng-container *ngIf="order$ | async as order">
+    <div *ngIf="order.recurrence">
+      <div class="content-wrapper offset-lg-1">
+        <div class="recurrence-info-header">
+          {{ 'orderDetails.recurrence.order' | cxTranslate }}
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="order-details-label">
+              {{ 'orderDetails.recurrence.deliveryFrequency' | cxTranslate }}
+            </div>
+            <div class="order-details-value">
+              {{ 'orderDetails.recurrence.each' | cxTranslate }} {{order.recurrence.description}}
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="order-details-label">
+              {{ 'orderDetails.recurrence.nextOrder' | cxTranslate }}
+            </div>
+            <div class="order-details-value">
+              {{order.recurrence.nextExecutionDate}}
+            </div>
+          </div>
+          <div class="col-12 cancel-order-recurrence" *ngIf="isRecurrenceActive(order)">
+            <button class="btn btn-link text-underline" (click)="openModal(order.code)">
+              {{ 'orderDetails.recurrence.cancel' | cxTranslate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,70 @@
+{
+  "partner": {
+    "partnerRedirectClient": "Para acceder al sitio de socios, cierra tu sesión en el sitio de clientes primero y vuelve a intentar.",
+    "invitation": {
+      "form": {
+        "emailAddress": {
+          "label": "Email",
+          "placeholder": "Ingrese su email"
+        }
+      },
+      "summary": {
+        "line1": "No. Socio",
+        "line2": "AQUÍ EL QUE SABE ERES TÚ",
+        "line3": "Y los expertos están para respaldarte",
+        "line4": ", nuestro Socio Keff Keff, te está invitando a darlo de alta como tu experto de cabecera.",
+        "line5": "Si estás de acuerdo, deberás dar click en el link que te llegará al correo.",
+        "line6": "Al aceptar, tu perfil estará asociado al de nuestro socio experto.",
+        "line7": "Con cada compra que tú realices de ahora en adelante, el podrá obtener beneficios y comisiones  siempre y cuando alguno no lo modifique en su perfil.",
+        "line8": "Esperamos inicien una larga y duradera relación.",
+        "line9": "¡Puedes aceptar al experto!",
+        "line10": "Ingresa tu email para enviar la invitación"
+      },
+      "invitationSentMessage": "¡Felicidades!, la invitación ha sido enviada exitosamente"
+    },
+    "commissions": {
+      "period": "CORTE MENSUAL",
+      "cutOffDate": "Fecha de corte",
+      "dueDate": "Fecha límite de cobro",
+      "activeClients": "Número de clientes activos",
+      "totalOrders": "Monto total de las órdenes",
+      "commissionLevelApplied": "Nivel de comisión obtenido",
+      "commissionLevelAppliedShort": "Nivel de comisión",
+      "commissionTotal": "Total de comisión",
+      "commissionTotalShort": "Total Comisión",
+      "loadCfdi": "Cargar CFDI (XML)",
+      "collect": "Enviar a cobro",
+      "chargeCommission": "Cobrar Comisión",
+      "history": "Historial de comisiones",
+      "commissionCode": "Comisión",
+      "status": "Estado",
+      "clients": "Clientes",
+      "weeks": "Semanas",
+      "filterByYear": "Filtrar por año",
+      "allYears": "Todos los años",
+      "emptyClients": "No hay clientes activos",
+      "noOrders": "No hay órdenes en este período.",
+      "noCommissions": "No hay comisiones generadas.",
+      "invitationSentMessage": "¡Felicidades! la invitación ha sido enviada exitosamente",
+      "errors": {
+        "notFound": "No se han generado comisiones durante el período.",
+        "cannotPay": "Recuerda que el envío de tu comisión únicamente está habilitado durante el periodo de cobro, es decir, los primeros 10 días del mes.",
+        "errorUpload": "¡Oh no! Parece que ha ocurrido un error con el envío de tu orden para el pago de tu comisión. Llámanos al 3951126579 para poderlo solucionar lo más pronto posible y que puedas continuar recibiendo los beneficios Keff Keff.",
+        "invalidFileType": "El formato del archivo cargado es incorrecto, por favor asegúrate que sea un archivo XML."
+      },
+      "totalCommission": "TOTAL DE COMISIÓN DEL MES",
+      "currentCommission": "Nivel de comisión actual",
+      "referralOrdersTitle": "ÓRDENES DEL PERIODO EN CURSO",
+      "referralOrders": {
+        "order": "ORDEN",
+        "date": "FECHA",
+        "name": "NOMBRE",
+        "total": "TOTAL DE LA ORDEN",
+        "totalShort": "TOTAL"
+      },
+      "commissionOrders": "ÓRDENES CORRESPONDIENTES",
+      "detail": "DETALLE DE COMISIÓN",
+      "cfdiSuccess": "Tu CFDI ha sido cargado correctamente."
+    }
+  }
+}

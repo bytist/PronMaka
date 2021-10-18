@@ -1,0 +1,8 @@
+.chart-container {
+  color: var(--cx-color-text, #{$text});
+  display: grid;
+  font-size: $small-font-size;
+  font-weight: $font-weight-light;
+  height: 80%;
+  text-transform: uppercase;
+}

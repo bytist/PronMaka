@@ -1,0 +1,91 @@
+cx-page-layout.MultiStepCheckoutSummaryPageTemplate {
+  @extend .container !optional; /* stylelint-disable-line */
+
+  display: flex;
+  padding: rem(40) 0 rem(74);
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+  }
+
+  cx-page-slot {
+    &.BodyContent,
+    &.SideContent,
+    &.BottomContent {
+      @include make-col(12, 12);
+    }
+
+    &.BodyContent {
+      align-content: start;
+
+      @include media-breakpoint-up(lg) {
+        @include make-col-offset(1);
+        @include make-col(7, 12);
+      }
+    }
+
+    &.SideContent {
+      display: initial;
+      margin-bottom: rem(84);
+
+      app-maka-checkout-order-summary {
+        app-maka-order-summary {
+          @include media-breakpoint-down(md) {
+            display: none;
+          }
+
+          &.order-summary-review {
+            display: block;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        @include make-col(4, 12);
+
+        padding-left: rem(40);
+
+        app-maka-checkout-order-summary {
+          display: flex;
+        }
+      }
+
+      app-maka-place-order {
+        @extend cx-place-order;/* stylelint-disable-line */ // @TODO should work this
+      }
+    }
+  }
+
+  // Override OOTB properties, in all checkout steps
+  .cx-checkout-title {
+    color: $dark;
+    font-family: $font-family-sans-serif-secondary;
+    font-weight: normal;
+  }
+}
+
+%checkout-page-content {
+  @include make-col(12, 12);
+
+  @include media-breakpoint-up(lg) {
+    padding-left: rem(20);
+  }
+}
+
+// @TODO to move to file with shared placeholder selectors
+%disabledBtnByCss {
+  cursor: default;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+%section-background {
+  background-color: $gray-400;
+  padding: rem(35);
+}
+
+%cx-card-title {
+  font-size: $small-font-size;
+  font-weight: $font-weight-normal;
+  margin-bottom: rem(20);
+}

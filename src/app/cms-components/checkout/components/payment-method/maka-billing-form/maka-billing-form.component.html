@@ -1,0 +1,159 @@
+<!--PAYMENT ADDRESS DATA-->
+<div [formGroup]="paymentAddressForm" class="mt-5">
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input type="text"
+               class="form-control"
+               [class.is-empty]="!paymentAddressForm.get('rfc').value"
+               formControlName="rfc"/>
+        <span class="label-content required">{{
+          'addressForm.rfc.label' | cxTranslate
+          }}</span>
+      </label>
+      <cx-form-errors [control]="paymentAddressForm.get('rfc')"></cx-form-errors>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input type="text"
+               class="form-control"
+               [class.is-empty]="!paymentAddressForm.get('legalEntityName').value"
+               formControlName="legalEntityName"/>
+        <span class="label-content required">{{
+          'addressForm.legalEntityName.label' | cxTranslate
+          }}</span>
+      </label>
+      <cx-form-errors [control]="paymentAddressForm.get('legalEntityName')"></cx-form-errors>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 form-group">
+      <div class="form-check">
+        <label>
+          <input type="checkbox"
+                 class="form-check-input"
+                 [checked]="isBillingAddressSameAsShipping"
+                 (change)="togglePaymentAddressSameAsShippingAddress()"/>
+          <span class="form-check-label">{{
+            'paymentForm.sameAsShippingAddress' | cxTranslate
+            }}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="!isBillingAddressSameAsShipping">
+    <div class="title-section-heading">
+      {{ 'paymentForm.newBillingData' | cxTranslate }}
+    </div>
+    <div class="row mt-5">
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input type="text"
+                 class="form-control"
+                 [class.is-empty]="!paymentAddressForm.get('streetName').value"
+                 formControlName="streetName"/>
+          <span class="label-content required">{{
+            'addressForm.streetName.label' | cxTranslate
+            }}</span>
+        </label>
+        <cx-form-errors [control]="paymentAddressForm.get('streetName')"></cx-form-errors>
+      </div>
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input type="text"
+                 class="form-control"
+                 [class.is-empty]="!paymentAddressForm.get('streetNumber').value"
+                 formControlName="streetNumber"/>
+          <span class="label-content required">{{
+            'addressForm.streetNumber.label' | cxTranslate
+            }}</span>
+        </label>
+        <cx-form-errors [control]="paymentAddressForm.get('streetNumber')"></cx-form-errors>
+      </div>
+
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input type="text"
+                 class="form-control"
+                 [class.is-empty]="!paymentAddressForm.get('appartement').value"
+                 formControlName="appartement"/>
+          <span class="label-content">{{
+            'addressForm.appartement.label' | cxTranslate
+            }}</span>
+        </label>
+      </div>
+
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input type="text"
+                 class="form-control"
+                 [class.is-empty]="!paymentAddressForm.get('district').value"
+                 formControlName="district"/>
+          <span class="label-content required">{{
+            'addressForm.district.label' | cxTranslate
+            }}</span>
+        </label>
+        <cx-form-errors [control]="paymentAddressForm.get('district')"></cx-form-errors>
+      </div>
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input type="text"
+                 class="form-control"
+                 [class.is-empty]="!paymentAddressForm.get('town').value"
+                 formControlName="town"/>
+          <span class="label-content required">{{
+            'addressForm.city.label' | cxTranslate
+            }}</span>
+        </label>
+        <cx-form-errors [control]="paymentAddressForm.get('town')"></cx-form-errors>
+      </div>
+
+      <ng-container *ngIf="regions$ | async as regions" formGroupName="region">
+        <ng-container *ngIf="regions.length !== 0">
+          <div class="col-12 col-md-6 form-group">
+            <label aria-required="true">
+              <ng-select class="region-select form-control pb-3 pt-1 mb-2"
+                         formControlName="isocode"
+                         [searchable]="true"
+                         [clearable]="false"
+                         [items]="regions"
+                         bindLabel="{{ regions[0].name ? 'name' : 'isocode' }}"
+                         bindValue="{{ regions[0].name ? 'isocode' : 'region' }}">
+              </ng-select>
+              <span class="label-content required">{{
+                'addressForm.state' | cxTranslate
+                }}</span>
+            </label>
+            <cx-form-errors [control]="paymentAddressForm.get('region.isocode')"></cx-form-errors>
+          </div>
+        </ng-container>
+      </ng-container>
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input type="text"
+                 class="form-control"
+                 [class.is-empty]="!paymentAddressForm.get('postalCode').value"
+                 formControlName="postalCode"/>
+          <span class="label-content required">{{
+            'addressForm.zipCode.label' | cxTranslate
+            }}</span>
+        </label>
+        <cx-form-errors [control]="paymentAddressForm.get('postalCode')"></cx-form-errors>
+      </div>
+
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control ng-dirty"
+            disabled
+            value="{{ 'addressForm.country.default' | cxTranslate }}"
+          />
+          <span class="label-content required">{{ 'addressForm.country.label' | cxTranslate }}</span>
+        </label>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+

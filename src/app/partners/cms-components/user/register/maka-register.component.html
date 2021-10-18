@@ -1,0 +1,27 @@
+<app-maka-text-banner
+  imageUrl="/assets/images/register-partner.png"
+  imageAlt="{{ 'register.partner.hi' | cxTranslate }}"
+  title="{{ 'register.partner.join' | cxTranslate }}"
+  subtitle="{{ 'register.partner.keffkeff' | cxTranslate }}"
+></app-maka-text-banner>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-2 col-lg-11 offset-lg-1">
+
+      <h1 class="text-dark text-center text-md-left text-uppercase sans-serif-secondary mb-5">
+        {{ 'register.partner.hi' | cxTranslate }}
+      </h1>
+
+      <app-maka-partner-user-form (submitForm)="submitForm($event)"></app-maka-partner-user-form>
+
+      <p class="text-xxsmall text-lg-small text-center my-3">
+        {{ 'register.haveAccount' | cxTranslate }}
+        <a class="text-underline"
+          [routerLink]="{ cxRoute: 'login' } | cxUrl">
+          {{ 'register.signIn' | cxTranslate }}
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

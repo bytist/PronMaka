@@ -1,0 +1,62 @@
+<ng-container *ngIf="cart$ | async as cart">
+    <h1>{{ 'cartDetails.pageTitle' | cxTranslate }}</h1>
+    <ng-container *ngIf="entries$ | async as entries">
+        <div *ngIf="cart.totalItems > 0" class="cart-details-wrapper">
+            <div class="cx-total">
+                {{ 'cartDetails.cartName' | cxTranslate: { code: cart.code } }}
+            </div>
+
+            <ng-container *ngIf="orderPromotions$ | async as orderPromotions">
+                <cx-promotions [promotions]="orderPromotions"></cx-promotions>
+            </ng-container>
+
+            <cx-cart-item-list [items]="entries" [cartIsLoading]="(cartLoaded$ | async) === false"
+                [promotionLocation]="promotionLocation" [options]="{
+            isSaveForLater: false,
+            optionalBtn: saveForLaterBtn
+          }"></cx-cart-item-list>
+        </div>
+    </ng-container>
+    <div class="form-check recurring-order" *ngIf="displayRecurringOrderOption(cart)">
+        <label>
+          <input
+            type="checkbox"
+            class="form-check-input"
+            (change)="toggleRecurringOrder()"
+            [checked]="recurringOrderSelected"
+          />
+          <span class="form-check-label">
+            {{ 'cartDetails.recurringOrderSelection' | cxTranslate }}
+          </span>
+        </label>
+        <ng-container>
+            <label>
+                <span *ngIf="openPay3DSMin$ | async as opThreshold" class="font-weight-light text-small">
+                   {{ 'cartDetails.recurringOrderThresholdLevelMessage' | cxTranslate: { openPay3DSMin: opThreshold | currency } }}
+                </span>
+            </label>
+            <label aria-required="true" required>
+                <span class="label-content required">
+                    {{ 'cartDetails.recurrenceOptions.label' | cxTranslate }}
+                </span>
+                <ng-select
+                    [searchable]="true"
+                    [clearable]="false"
+                    [items]="recurrenceConfigurations"
+                    bindLabel="description"
+                    [(ngModel)]="recurringFrequencySelected"
+                    (change)="updateRecurrenceConfiguration($event)"
+                    placeholder="{{ 'cartDetails.recurrenceOptions.placeholder' | cxTranslate }}">
+                </ng-select>
+            </label>
+        </ng-container>
+      </div>
+</ng-container>
+
+<ng-template let-ctx #saveForLaterBtn>
+    <div *ngIf="selectiveCartEnabled" class="col-md-3 col-lg-3 col-xl-3 cx-sfl-btn">
+        <button class="link cx-action-link" [disabled]="ctx.loading" (click)="saveForLater(ctx.item)" type="button">
+            {{ 'saveForLaterItems.saveForLater' | cxTranslate }}
+        </button>
+    </div>
+</ng-template>

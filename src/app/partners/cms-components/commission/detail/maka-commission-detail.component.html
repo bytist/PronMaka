@@ -1,0 +1,71 @@
+<ng-container *ngIf="partner$ | async as partner; else loading">
+  <div class="container px-lg-0 py-5">
+    <div class="col-12 col-lg-3 text-center text-lg-left pl-lg-0">
+      <h4 class="text-uppercase text-xlarge text-dark">{{ partner.firstName }} {{ partner.lastName }}</h4>
+      <p class="text-medium text-inverse mb-3">{{ partner.supplierIdERP }}</p>
+      <p class="text-xsmall font-weight-light">{{ partner.email }}</p>
+    </div>
+  </div>
+
+  <div class="bg-gray-400">
+    <div class="container py-5">
+      <h4 class="sans-serif-secondary text-dark pb-3 mb-4 bottom-bordered-black">
+        {{ 'partner.commissions.detail' | cxTranslate }}
+      </h4>
+
+      <ng-container *ngIf="commissionRecord$ | async as commissionRecord">
+        <div class="row">
+          <div class="col-12 col-md-4 text-inverse">
+            <p class="mb-2">#{{ 'partner.commissions.commissionCode' | cxTranslate }}</p>
+            <p class="mb-2 font-weight-light text-xsmall">{{ commissionRecord.code }}</p>
+          </div>
+          <div class="col-12 col-md-4 text-inverse">
+            <p class="mb-2">{{ 'partner.commissions.cutOffDate' | cxTranslate }}</p>
+            <p class="mb-2 font-weight-light text-xsmall">{{ commissionRecord.cutOffDate }}</p>
+          </div>
+        </div>
+
+        <div class="row text-medium mt-5">
+          <div class="col-6">
+            <p>{{ 'partner.commissions.activeClients' | cxTranslate }}</p>
+          </div>
+          <div class="col-6">
+            <p class="text-right text-inverse">{{ commissionRecord.activeClients }}</p>
+          </div>
+        </div>
+
+        <div class="row text-medium" *ngIf="commissionRecord.ordersTotalPriceNet?.formattedValue">
+          <div class="col-6">
+            <p>{{ 'partner.commissions.totalOrders' | cxTranslate }}</p>
+          </div>
+          <div class="col-6">
+            <p class="text-right text-inverse">{{ commissionRecord.ordersTotalPriceNet?.formattedValue }}</p>
+          </div>
+        </div>
+
+        <div class="row text-medium bottom-bordered">
+          <div class="col-6">
+            <p>{{ 'partner.commissions.commissionLevelApplied' | cxTranslate }}</p>
+          </div>
+          <div class="col-6">
+            <p class="text-medium text-right text-inverse">{{ commissionRecord.commissionLevelApplied }}</p>
+          </div>
+        </div>
+
+        <div class="row text-medium mt-3 text-inverse">
+          <div class="col-6">
+            <p class="text-uppercase">{{ 'partner.commissions.commissionTotal' | cxTranslate }}</p>
+          </div>
+          <div class="col-6">
+            <p class="text-right">{{ commissionRecord.total.formattedValue }}</p>
+          </div>
+        </div>
+
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <app-maka-spinner></app-maka-spinner>
+</ng-template>

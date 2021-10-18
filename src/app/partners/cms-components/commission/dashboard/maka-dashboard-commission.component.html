@@ -1,0 +1,27 @@
+<ng-container *ngIf="dashboardCommission$ | async as dashboardCommission; else loading">
+  <div class="bg-primary">
+    <div class="container">
+      <app-maka-dashboard-commission-associate
+        [partner]="dashboardCommission.associate"
+        [cutOffDate]="dashboardCommission.commissionInfo.cutOffDate"
+        [dueDate]="dashboardCommission.commissionInfo.dueDate"
+        [total]="dashboardCommission.commissionInfo.total">
+      </app-maka-dashboard-commission-associate>
+    </div>
+  </div>
+
+  <div class="bg-gray-400">
+      <div class="container py-5">
+        <app-maka-dashboard-commission-level
+          [actualCommissionLevel]="dashboardCommission.commissionInfo.actualCommissionLevel"
+          [nextCommissionLevel]="dashboardCommission.commissionInfo.nextCommissionLevel"
+          [referMoreIncentiveMessageTitle]="dashboardCommission.commissionInfo.referMoreIncentiveMessageTitle"
+          [referMoreIncentiveMessageSubtitle]="dashboardCommission.commissionInfo.referMoreIncentiveMessageSubtitle">
+        </app-maka-dashboard-commission-level>
+      </div>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <app-maka-spinner></app-maka-spinner>
+</ng-template>

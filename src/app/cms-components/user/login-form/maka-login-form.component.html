@@ -1,0 +1,86 @@
+<div [ngClass]="{'container': !coreVersion}">
+  <div class="row">
+    <div *ngIf="!coreVersion" class="col-2 col-lg-1 d-none d-md-block p-0 position-relative">
+      <h6 *ngIf="(isClientSite$ | async)" class="side-text d-none d-md-block text-dark text-uppercase">
+        {{ 'loginForm.client.howYouDoing' | cxTranslate }}
+      </h6>
+    </div>
+    <div
+      [ngClass]="{'col-sm-10 offset-sm-1 col-lg-5 offset-lg-0': !coreVersion}"
+      class="col-12 text-center text-lg-left">
+      <h1 class="text-dark text-uppercase">
+        {{ (isClientSite$ | async) ?
+        ('loginForm.client.hi' | cxTranslate) : ('loginForm.partner.welcome' | cxTranslate) }}
+      </h1>
+      <h2 *ngIf="!coreVersion && (isClientSite$ | async)" class="stroked-dark text-uppercase">
+        {{ 'loginForm.client.welcome' | cxTranslate }}
+      </h2>
+      <p *ngIf="coreVersion" class="font-weight-light text-medium">{{ 'loginForm.client.subtitle' | cxTranslate }}</p>
+
+      <form (ngSubmit)="submitForm()" [formGroup]="loginForm" class="mt-5">
+        <div class="form-group">
+          <label>
+            <input
+              type="email"
+              class="form-control"
+              [class.is-empty]="!loginForm.get('userId').value"
+              formControlName="userId"
+            />
+            <span class="label-content">{{ 'loginForm.emailAddress.label' | cxTranslate }}</span>
+          </label>
+          <cx-form-errors [control]="loginForm.get('userId')"></cx-form-errors>
+        </div>
+        <div class="form-group">
+          <label>
+            <input
+              type="password"
+              class="form-control"
+              [class.is-empty]="!loginForm.get('password').value"
+              formControlName="password"
+            />
+            <span class="label-content">
+              {{ 'loginForm.password.label' | cxTranslate }}
+            </span>
+          </label>
+          <cx-form-errors [control]="loginForm.get('password')"></cx-form-errors>
+        </div>
+        <a
+          [routerLink]="{ cxRoute: 'forgotPassword' } | cxUrl"
+          aria-controls="reset-password"
+          class="text-center text-lg-left d-block text-xxsmall my-4">
+          {{ 'loginForm.forgotPassword' | cxTranslate }}
+        </a>
+
+        <button type="submit" class="btn btn-block btn-action">
+          {{ 'loginForm.signIn' | cxTranslate }}
+        </button>
+      </form>
+
+      <p class="text-xxsmall text-lg-small text-center my-3">
+        {{ 'loginForm.dontHaveAccount' | cxTranslate }}
+
+          <ng-container *ngIf="(isClientSite$ | async); else partnerRegister">
+            <ng-container *ngIf="!loginAsGuest">
+              <a [routerLink]="{ cxRoute: 'register' } | cxUrl"
+                class="text-underline">
+                {{ 'loginForm.register' | cxTranslate }}
+              </a>
+            </ng-container>
+
+            <ng-container *ngIf="loginAsGuest">
+              <a [routerLink]="{ cxRoute: 'checkoutLogin' } | cxUrl"
+                class="text-underline">
+                {{ 'loginForm.guestCheckout' | cxTranslate }}
+              </a>
+            </ng-container>
+          </ng-container>
+          <ng-template #partnerRegister>
+            <a [routerLink]="{ cxRoute: 'register' } | cxUrl"
+               class="text-underline">
+              {{ 'loginForm.pre-register' | cxTranslate }}
+            </a>
+          </ng-template>
+      </p>
+    </div>
+  </div>
+</div>

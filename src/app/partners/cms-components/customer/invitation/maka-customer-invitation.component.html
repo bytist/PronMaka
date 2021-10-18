@@ -1,0 +1,65 @@
+<div class="container" *ngIf="partner$ | async as partner;">
+  <div class="row">
+    <div class="col-1 d-none d-sm-block p-0 mt-5">
+      <h6 class="side-text d-none d-sm-block text-dark text-uppercase">
+        {{ 'common.slogan' | cxTranslate }}
+      </h6>
+    </div>
+    <div class="col-12 col-sm-10 col-lg-11 text-center text-lg-left mt-4 px-0">
+      <div class="bottom-bordered mb-5 pb-4 d-lg-inline-block">
+        <h4 class="text-uppercase text-xlarge">{{ partner.firstName }} {{ partner.lastName }}</h4>
+        <p class="text-medium font-weight-light mb-0 mt-2">
+          <span class="font-weight-normal text-inverse">
+            {{ 'partner.invitation.summary.line1' | cxTranslate }}
+          </span> {{ partner.supplierIdERP }}
+        </p>
+      </div>
+
+      <h1 class="text-dark">{{'partner.invitation.summary.line2' | cxTranslate}}</h1>
+      <p class="text-medium text-dark">{{'partner.invitation.summary.line3' | cxTranslate}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-sm-10 col-lg-6 offset-sm-1 mt-4 px-0">
+      <ol class="mb-5 col-sm-11 mx-sm-auto col-lg-12 mx-lg-0 px-0">
+        <li>
+          <p class="my-0">
+            <span class="text-inverse font-weight-normal">{{ partner.name }}</span>
+            {{ 'partner.invitation.summary.line4' | cxTranslate }}
+          </p>
+        </li>
+        <li>{{ 'partner.invitation.summary.line5' | cxTranslate }}</li>
+        <li>{{ 'partner.invitation.summary.line6' | cxTranslate }}</li>
+        <li>{{ 'partner.invitation.summary.line7' | cxTranslate }}</li>
+      </ol>
+
+      <div class="text-center text-lg-left">
+        <p class="text-dark text-medium text-uppercase my-5">{{ 'partner.invitation.summary.line8' | cxTranslate }}</p>
+        <h1 class="text-dark text-uppercase text-xxlarge">{{ 'partner.invitation.summary.line9' | cxTranslate }}</h1>
+        <p class="text-medium text-inverse">{{ 'partner.invitation.summary.line10' | cxTranslate }}</p>
+      </div>
+
+      <form (ngSubmit)="submitForm()" [formGroup]="invitationForm">
+        <div class="row">
+          <div class="col-12 col-sm-10 col-lg-9 mx-auto mx-lg-0 form-group">
+            <label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                [class.is-empty]="!invitationForm.get('email').value"
+                formControlName="email"
+              />
+              <span class="label-content required">{{ 'partner.invitation.form.emailAddress.label' | cxTranslate }}</span>
+            </label>
+            <cx-form-errors [control]="invitationForm.get('email')"></cx-form-errors>
+            <button type="submit" class="btn btn-block btn-action my-5">
+              {{ 'register.partner.send' | cxTranslate }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

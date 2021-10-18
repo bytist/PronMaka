@@ -1,0 +1,7 @@
+%cx-product-references {
+  cx-product-grid-item {
+    @include media-breakpoint-only(md) {
+      margin: 0 rem(10);
+    }
+  }
+}

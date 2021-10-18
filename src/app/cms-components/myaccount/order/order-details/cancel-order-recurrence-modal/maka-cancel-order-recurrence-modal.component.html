@@ -1,0 +1,42 @@
+<div #dialog>
+  <!-- Modal Header -->
+  <div class="cx-dialog-header modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="dismissModal()">
+      <span aria-hidden="true">
+        <cx-icon [type]="iconTypes.CLOSE"></cx-icon>
+      </span>
+    </button>
+  </div>
+    <!-- Modal Body -->
+  <div class="cx-dialog-body modal-body">
+    <div class="cx-dialog-row">
+      <div class="text-center text-uppercase p-0 col-sm-12">
+        <h2>{{'orderDetails.cancelRecurrenceModal.title' | cxTranslate }}</h2>
+      </div>
+    </div>
+
+    <div class="cx-dialog-row">
+      <div class="dialog-text-content text-center col-sm-12">
+        <p class="dialog-legend">
+          {{'orderDetails.cancelRecurrenceModal.legend' | cxTranslate }}
+        </p>
+        <p class="dialog-legend">
+          {{'orderDetails.cancelRecurrenceModal.legend2' | cxTranslate }}
+        </p>
+        <p class="dialog-legend">
+          {{'orderDetails.cancelRecurrenceModal.legend3' | cxTranslate }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Total container -->
+    <div class="cx-dialog-actions col-sm-12">
+      <!-- Actions -->
+      <div class="cx-dialog-buttons">
+        <button class="btn text-capitalize" (click)="onCancelOrder()">
+          {{'common.accept' | cxTranslate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

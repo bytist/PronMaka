@@ -1,0 +1,22 @@
+<ng-container>
+  <div *ngIf="loading$ | async; else updateForm">
+    <div class="cx-spinner">
+      <cx-spinner></cx-spinner>
+    </div>
+  </div>
+
+  <ng-template #updateForm>
+    <div class="container mt-5">
+      <div class="row">
+        <app-maka-update-profile-form
+          *ngIf="(user$ | async)?.uid"
+          class="col-12 col-lg-11 offset-lg-1"
+          [user]="user$ | async"
+          [titles]="titles$ | async"
+          (cancelled)="onCancel()"
+          (submitted)="onSubmit($event)"
+        ></app-maka-update-profile-form>
+      </div>
+    </div>
+  </ng-template>
+</ng-container>

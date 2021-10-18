@@ -1,0 +1,145 @@
+{
+  "anonymousConsents": {
+    "preferences": "Consent Preferences",
+    "dialog": {
+      "title": "Consent Management",
+      "legalDescription": "We use cookies/browser's storage to personalize the content and improve user experience. We also might share the data about your site usage with our social media. For more, please review our privacy policy.",
+      "selectAll": "Select all",
+      "clearAll": "Clear all"
+    },
+    "banner": {
+      "title": "Let's be clear,",
+      "subTitle": "we are not croquettes.",
+      "title2": "Hello human!",
+      "subTitle2": "To mprove your user experience, this site uses cookies.",
+      "descriptionTitle": "What does it mean?",
+      "description": "When you navigate this site save your visit to personalize your content. This allow us to store data to generate statistics of you navidation. Do not worry, you are not in danger. If you want to know more, see our <a class=\"text-underline\" href=\"/cookies-policy\">Cookies Policy.</a> Thanks!",
+      "allowAll": "I agree",
+      "viewDetails": "View Details"
+    }
+  },
+  "forgottenPassword": {
+    "woof": "Woof Woof!",
+    "resetPassword": "Reset password",
+    "enterEmailAddressAssociatedWithYourAccount": "Enter the email address associated with your account",
+    "emailAddress": {
+      "label": "Email address",
+      "placeholder": "Enter email"
+    },
+    "enterValidEmail": "Please enter a valid email.",
+    "passwordResetEmailSent": "An email has been sent to you with information on how to reset your password.",
+    "passwordResetSuccess": "Success! You can now login using your new password.",
+    "newPassword": "New password",
+    "confirmNewPassword": "Confirm password",
+    "client": {
+      "forgotPasswordTitleLine1": "Did you forget your",
+      "forgotPasswordTitleLine2": "Password?",
+      "forgotPasswordSubTitle": "Don't worry, just enter the email associated with your account and we will send a link to restore your password."
+    }
+  },
+  "loginForm": {
+    "forgotPassword": "Forgot password?",
+    "client": {
+      "hi": "Hello my friend,",
+      "welcome": "Welcome",
+      "howYouDoing": "How are you?",
+      "subtitle": "Just login in order to continue with your purchase."
+    },
+    "partner": {
+      "welcome": "Welcome"
+    },
+    "signIn": "Sign In",
+    "register": "Register",
+    "pre-register": "Pre-Register",
+    "dontHaveAccount": "Don’t have an account?",
+    "emailAddress": {
+      "label": "Email address",
+      "placeholder": "Enter email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Password"
+    },
+    "wrongEmailFormat": "This is not a valid email format.",
+    "guestCheckout": "Guest Checkout"
+  },
+  "register": {
+    "confirmPassword": {
+      "action": "Confirm password",
+      "label": "Confirm password",
+      "placeholder": "Confirm Password"
+    },
+    "client": {
+      "hi": "Are you new?",
+      "welcome": "Register now",
+      "howYouDoing": "You won't regret!"
+    },
+    "partner": {
+      "hi": "Sing up",
+      "join": "Join the associates",
+      "keffkeff": "of Keff Keff",
+      "terms": "Accept terms and conditions.",
+      "register": "Register"
+    },
+    "managmentInMyAccount": "Management in My Account.",
+    "termsAndConditions": "Terms & Conditions",
+    "haveAccount": "I have an account.",
+    "signIn": "Sign In",
+    "register": "Register",
+    "confirmNewPassword": "Confirm New Password",
+    "resetPassword": "Reset Password",
+    "createAccount": "Create an account",
+    "title": "Title",
+    "firstName": {
+      "label": "First name",
+      "placeholder": "First name"
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": "Last name"
+    },
+    "cellphone": {
+      "label": "Cellphone"
+    },
+    "rfc": {
+      "label": "RFC"
+    },
+    "legalEntityName": {
+      "label": "Entity name"
+    },
+    "emailAddress": {
+      "label": "Email address",
+      "placeholder": "Email address"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Password"
+    },
+    "newPassword": "New Password",
+    "emailMarketing": "Use my personal data to receive e-mail newsletters for marketing campaigns. To change your settings, go to Consent Management in My Account.",
+    "confirmThatRead": "I am confirming that I have read and agreed with the",
+    "selectTitle": "Select Title",
+    "passwordMinRequirements": "Password must be six characters minimum, with one uppercase letter, one number, one symbol",
+    "bothPasswordMustMatch": "Both password must match",
+    "titleRequired": "Title is required.",
+    "postRegisterMessage": "Please log in with provided credentials.",
+    "postRegisterMessageWithInvitation": "Congratulations, now your shopping goes hand in hand with our Keff Keff expert: {{associateName}}",
+    "postRegisterMessageInvalidAssociate": "Something went wrong in your registration, verify that the Keff Keff associate that invited you is active."
+
+  },
+  "checkoutLogin": {
+    "emailAddress": {
+      "label": "Email address",
+      "placeholder": "Enter email"
+    },
+    "confirmEmail": {
+      "label": "Confirm email",
+      "placeholder": "Confirm email"
+    },
+    "continue": "Continue as guest",
+    "emailIsRequired": "Invalid email format",
+    "emailsMustMatch": "Email does not match",
+    "title": "Guest",
+    "subtitle": "You can continue as guest only by adding your email."
+  }
+}

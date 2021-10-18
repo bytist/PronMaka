@@ -1,0 +1,70 @@
+$modal-content-border-radius: 0;
+$modal-dialog-margin-sm: 0 !important;
+$modal-max-width: rem(1044) !important;
+$modal-min-width: rem(1044) !important;
+$modal-max-width-md: rem(768) !important;
+$modal-min-width-md: rem(768) !important;
+$modal-max-width-sm: 100% !important;
+$modal-min-width-sm: 100% !important;
+
+.modal {
+  &-header {
+    padding: $modal-header-padding;
+  }
+
+  &-body {
+    padding: 27px 30px;
+  }
+
+  &-content {
+    border-radius: $modal-content-border-radius;
+    border-width: 0;
+    overflow-y: scroll;
+  }
+
+  .close {
+    bottom: 5px;
+    font-size: 38px;
+    font-weight: 100;
+    position: relative;
+  }
+
+  &[aria-hidden='false'] {
+    display: block;
+  }
+}
+
+.modal-xl,
+.modal-lg {
+  max-width: $modal-max-width;
+  min-width: 800px;
+  width: 90%;
+}
+
+@include media-breakpoint-only(md) {
+  .modal-lg {
+    max-width: $modal-max-width-md;
+    min-width: $modal-min-width-md;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .modal-lg {
+    max-width: $modal-min-width-sm;
+    min-width: $modal-max-width-sm;
+  }
+
+  .modal-dialog {
+    margin: $modal-dialog-margin-sm;
+    max-width: $modal-min-width-sm;
+    min-width: $modal-max-width-sm;
+    overflow-y: initial;
+  }
+
+  .modal-dialog-centered {
+    align-items: unset !important;
+    height: 100%;
+    margin: $modal-dialog-margin-sm;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,23 @@
+<ng-container *ngIf="component.data$ | async as banner">
+  <div class="app-maka-banner d-flex flex-fill justify-content-center flex-column"
+     [ngStyle]="{
+       'background-color': banner.backgroundColor ? banner.backgroundColor : ''
+     }"
+  >
+    <div class="banner-container d-flex flex-column"
+     [ngClass]="{
+       'flex-md-column-reverse': (banner.contentAlignment === this.bannerContentAlignment.BOTTOM),
+       'flex-md-row horizontal-alignment': hasHorizontalAlignment(banner.contentAlignment),
+       'flex-md-row-reverse': (banner.contentAlignment === this.bannerContentAlignment.RIGHT),
+       'justify-content-center': (banner.contentAlignment === this.bannerContentAlignment.CENTER)
+     }"
+    >
+      <div class="banner-content d-flex flex-column" [innerHTML]="banner.content"
+        [ngClass]="{
+          'justify-content-md-center': hasHorizontalAlignment(banner.contentAlignment)
+        }"
+      ></div>
+      <cx-media *ngIf="banner.backgroundImage" [container]="banner.backgroundImage"></cx-media>
+    </div>
+  </div>
+</ng-container>

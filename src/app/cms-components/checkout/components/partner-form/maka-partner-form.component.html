@@ -1,0 +1,27 @@
+<div class="mb-5">
+  <div class="title-section-heading">{{ 'paymentForm.partnersData' | cxTranslate }}</div>
+  <p class="text-medium text-inverse font-weight-light mb-5">{{ 'paymentForm.partnersDescription' | cxTranslate }}</p>
+
+  <form (ngSubmit)="setAssociateId()"
+        [formGroup]="partnerForm">
+    <div class="row form-group">
+      <div class="col-12 col-lg-6">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            name="associateId"
+            [class.is-empty]="!partnerForm.get('associateId').value"
+            formControlName="associateId"
+          />
+          <span class="label-content">{{ 'paymentForm.partnerLabel' | cxTranslate }}</span>
+        </label>
+      </div>
+      <div class="col-lg-4 my-lg-0 my-4">
+        <button type="submit" class="btn btn-block btn-action" [disabled]="partnerForm.disabled">
+          {{ 'voucher.apply' | cxTranslate }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

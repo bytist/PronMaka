@@ -1,0 +1,96 @@
+<div class="bg-gray-400">
+
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-12">
+      <div class="row">
+        <div class="col-12 mb-4"
+             [ngClass]="{
+             'col-lg-6': referMoreIncentiveMessageTitle,
+             'col-lg-12': !referMoreIncentiveMessageTitle
+             }">
+          <div class="row mx-0">
+            <div class="col-4 bg-maka-orange rounded-left d-flex small-panel"
+               [ngClass]="{ 'panel-grow': !referMoreIncentiveMessageTitle }">
+              <div class="circle bg-maka-dark-orange text-primary">
+                <p class="m-auto">{{ nextCommissionLevel.commission.rate }}</p>
+              </div>
+            </div>
+            <div class="col-8 rounded-right bg-primary d-flex align-items-center">
+              <div>
+                <p class="text-medium text-inverse">
+                  {{ nextCommissionLevel.incentiveMessage }}
+                </p>
+                <p class="m-0 font-weight-light">{{ nextCommissionLevel.commission.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 mb-4" *ngIf="referMoreIncentiveMessageTitle">
+          <div class="bg-maka-blue rounded text-center text-primary small-panel d-flex align-items-center">
+            <div class="w-100">
+              <p class="mb-3 px-3">{{ referMoreIncentiveMessageTitle }}</p>
+              <p class="m-0 font-weight-light">{{ referMoreIncentiveMessageSubtitle }}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="d-flex d-flex align-items-center rounded bg-primary large-panel">
+        <div class="mx-auto d-flex justify-content-between flex-column">
+          <p class="text-inverse text-medium mb-0 text-center">{{ 'partner.commissions.currentCommission' | cxTranslate }}</p>
+          <div class="circle large-circle bg-maka-blue text-primary">
+            <p class="m-auto">{{ actualCommissionLevel.commission.rate }}</p>
+          </div>
+          <p class="font-weight-light mb-0 text-center">{{ actualCommissionLevel.commission.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-8">
+      <div class="large-panel bg-primary rounded d-flex align-items-center overflow-hidden">
+        <div class="col-12 col-md-10 mx-auto px-0">
+          <p class="text-medium text-inverse text-center">
+            {{ 'partner.commissions.activeClients' | cxTranslate }}
+          </p>
+          <div *ngIf="graphReady; else loading" class="chart-container">
+            <p *ngIf="graphData[0].series.length === 0"
+               class="text-medium text-inverse text-center font-weight-light">
+              {{ 'partner.commissions.emptyClients' | cxTranslate }}
+            </p>
+            <ngx-charts-line-chart
+              *ngIf="graphData[0].series.length > 0"
+              [scheme]="colorScheme"
+              [legend]="false"
+              [showXAxisLabel]="true"
+              [showYAxisLabel]="true"
+              [xAxis]="true"
+              [yAxis]="true"
+              xAxisLabel="{{ 'partner.commissions.weeks' | cxTranslate }}"
+              yAxisLabel="{{ 'partner.commissions.clients' | cxTranslate }}"
+              [referenceLines]="referenceLines"
+              [showRefLines]="true"
+              [showRefLabels]="true"
+              [yScaleMax]="minYAxis"
+              [results]="graphData">
+              <ng-template #tooltipTemplate let-model="model">
+                <p class="text-uppercase text-medium my-0 p-1 sans-serif-secondary">
+                  {{ model.value }} {{ 'partner.commissions.clients' | cxTranslate }}
+                </p>
+              </ng-template>
+            </ngx-charts-line-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<ng-template #loading>
+  <app-maka-spinner [fullHeight]="false"></app-maka-spinner>
+</ng-template>

@@ -1,0 +1,265 @@
+{
+  "orderDetails": {
+    "title": "Detalle de Orden",
+    "orderNumber": "#Orden",
+    "orderId": "Orden #",
+    "created": "Ordenado",
+    "placed": "Ingresada",
+    "status": "Estado",
+    "shippedOn": "Enviado",
+    "inProcess": "En proceso...",
+    "pending": "Pendiente",
+    "deliveryStatus_READY_FOR_PICKUP": "Listo para recojer",
+    "deliveryStatus_PICKUP_COMPLETE": "Recogido",
+    "deliveryStatus_SHIPPED": "Enviado",
+    "deliveryStatus_CANCELLED": "Cancelado",
+    "statusDisplay_cancelled": "Cancelado",
+    "statusDisplay_cancelling": "Cancelación pendiente",
+    "statusDisplay_completed": "Enviada",
+    "statusDisplay_created": "Creada",
+    "statusDisplay_error": "Pendiente",
+    "statusDisplay_Error": "Pendiente",
+    "statusDisplay_open": "Abierta",
+    "statusDisplay_processing": "En proceso",
+    "statusDisplay_shipped": "Enviada",
+    "consignmentTracking": {
+      "action": "Rastrear paquete",
+      "dialog": {
+        "header": "Información de Seguimiento",
+        "shipped": "Enviado",
+        "estimate": "Entrega Estimada",
+        "carrier": "Servicio de Entrega",
+        "trackingId": "No. de Guía",
+        "noTracking": "El paquete no ha sido enviado desde el almacén. La información de seguimiento estará disponible después de que se envíe el paquete.",
+        "loadingHeader": "Seguimiento de Envíos"
+      }
+    },
+    "cancellationAndReturn": {
+      "returnAction": "Solicitar una Devolución",
+      "cancelAction": "Cancelar Artículos",
+      "item": "Artículo",
+      "itemPrice": "Precio del Artículo",
+      "quantity": "Cantidad Máxima",
+      "returnQty": "Cantidad a Devolver",
+      "cancelQty": "Cantidad a Cancelar",
+      "setAll": "Establecer todas las cantidades al máximo",
+      "totalPrice": "Total",
+      "submit": "Enviar Solicitud",
+      "returnSuccess": "Su solicitud de devolución ({{rma}}) fue enviada",
+      "cancelSuccess": "Se envió su solicitud de cancelación (se actualizará el pedido original {{orderCode}})"
+    },
+    "recurrence": {
+      "order": "Orden Recurrente",
+      "deliveryFrequency": "Frecuencia de Entrega",
+      "each": "Cada",
+      "nextOrder": "Próxima Orden",
+      "cancel": "Cancelar Orden Recurrente"
+    }
+  },
+  "orderHistory": {
+    "orderHistory": "Historial de Pedidos",
+    "orderId": "# Orden",
+    "petName": "Mis mascotas",
+    "date": "Fecha",
+    "status": "Estado",
+    "total": "Total",
+    "recurrent": "Orden Recurrente",
+    "noOrders": "No tenemos registro de órdenes para esta cuenta.",
+    "noRecurringOrders": "No tenemos registro de órdenes recurrentes para esta cuenta.",
+    "startShopping": "Empieza a comprar",
+    "sortByMostRecent": "Ordenar por Más Reciente",
+    "showOnlyRecurrentOrders":"Filtrar Órdenes Recurrentes",
+    "recurrentOrderLabel":"Orden Recurrente"
+  },
+  "closeAccount": {
+    "confirmAccountClosure": "Confirmar Cierre de Cuenta",
+    "confirmAccountClosureMessage": "¿Seguro que quieres cerrar tu cuenta?",
+    "closeMyAccount": "CERRAR MI CUENTA",
+    "accountClosedSuccessfully": "Cuenta cerrada con éxito",
+    "accountClosedFailure": "Error al cerrar la cuenta"
+  },
+  "updateEmailForm": {
+    "newEmailAddress": {
+      "label": "Nuevo Correo Electrónico",
+      "placeholder": "Ingrese correo electrónico"
+    },
+    "confirmNewEmailAddress": {
+      "label": "Confirme Nuevo Correo electrónico",
+      "placeholder": "Ingrese correo electrónico"
+    },
+    "enterValidEmail": "Por favor introduzca una dirección de correo electrónico válida.",
+    "bothEmailMustMatch": "Ambos correos electrónicos deben coincidir",
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Introduce la contraseña"
+    },
+    "pleaseInputPassword": "Por favor ingrese la contraseña",
+    "emailUpdateSuccess": "Éxito. Inicie sesión con {{ newUid }}"
+  },
+  "updatePasswordForm": {
+    "oldPassword": {
+      "label": "Contraseña Anterior",
+      "placeholder": "Contraseña anterior"
+    },
+    "oldPasswordIsRequired": "Se requiere contraseña anterior.",
+    "newPassword": {
+      "label": "Nueva Contraseña",
+      "placeholder": "Nueva contraseña"
+    },
+    "passwordMinRequirements": "La contraseña debe tener seis caracteres como mínimo, con una letra mayúscula, un número, un símbolo",
+    "confirmPassword": {
+      "label": "Confirmar Nueva Contraseña",
+      "placeholder": "Confirmar contraseña"
+    },
+    "bothPasswordMustMatch": "Ambas contraseñas deben coincidir",
+    "passwordUpdateSuccess": "Contraseña actualizada con éxito"
+  },
+  "updateProfileForm": {
+    "title": "",
+    "none": "",
+    "firstName": {
+      "label": "Nombre(s)",
+      "placeholder": "Nombre(s)"
+    },
+    "firstNameIsRequired": "Se requiere el primer nombre.",
+    "lastName": {
+      "label": "Apellido(s)",
+      "placeholder": "Apellido(s)"
+    },
+    "lastNameIsRequired": "Se requiere(n) apellido(s).",
+    "associateId": {
+      "label": "Número de Socio Keff Keff",
+      "placeholder": "Número de Socio Keff Keff"
+    },
+    "profileUpdateSuccess": "Datos personales actualizados con éxito",
+    "partnerProfileForm": {
+      "profileTitle": "Información de Cuenta",
+      "message": "¿Algo no anda bien con tus datos? Envíanos un email a socios@keffkeff.com o llámanos al 395 112 6579",
+      "firstName": "Nombre(s)",
+      "lastName": "Apellido(s)",
+      "email": "Correo Electrónico",
+      "cellphone": "Celular",
+      "rfc": "RFC",
+      "legalEntityName": "Razón Social",
+      "addressTitle": "Dirección",
+      "title": "Tratamiento",
+      "businessName": "Nombre del Negocio o Empresa",
+      "streetName": "Nombre de Calle",
+      "streetNumber": "Número del Domicilio",
+      "appartement": "Número del Interior",
+      "district": "Colonia",
+      "city": "Ciudad",
+      "state": "Estado",
+      "zipCode": "Código Postal",
+      "country": {
+        "label": "País",
+        "default": "México"
+      }
+    }
+  },
+  "consentManagementForm": {
+    "clearAll": "Limpiar todo",
+    "selectAll": "Seleccionar todo",
+    "message": {
+      "success": {
+        "given": "Consentimiento otorgado con éxito.",
+        "withdrawn": "Consentimiento retirado con éxito."
+      }
+    }
+  },
+  "myCoupons": {
+    "noCouponsMessage": "No tienes cupones disponibles.",
+    "effectiveTitle": "Eficaz:",
+    "Effective": "EFECTIVO",
+    "PreSession": "EFECTIVO PROXIMAMENTE",
+    "ExpireSoon": "EXPIRARÁ PRONTO",
+    "readMore": "Lee más",
+    "notification": "Notificación",
+    "findProducts": "Encuentra Productos",
+    "status": "Estado:",
+    "dialogTitle": "Cupón",
+    "claimCustomerCoupon": "Has reclamado con éxito este cupón.",
+    "myCoupons": "Mis cupones",
+    "startDateAsc": "Fecha de inicio (ascendente)",
+    "startDateDesc": "Fecha de inicio (descendente)",
+    "endDateAsc": "Fecha de finalización (ascendente)",
+    "endDateDesc": "Fecha de finalización (descendente)",
+    "sortByMostRecent": "Ordenar por Más Reciente",
+    "notesPreffix": "Puede configurar sus canales preferidos para recibir notificaciones de cupones en el",
+    "notesLink": "Canales de Notificaciones",
+    "notesSuffix": " página."
+  },
+  "notificationPreference": {
+    "message": "Seleccione sus canales de notificación preferidos",
+    "note": "Nota:",
+    "noteMessage": "Si desactiva todos los canales, no podrá recibir más notificaciones.",
+    "EMAIL": "Correo Electrónico:",
+    "SMS": "Mensaje de Texto:",
+    "SITE_MESSAGE": "Mensaje en el Sitio"
+  },
+  "myInterests": {
+    "header": "Mis intereses",
+    "item": "ARTICULO",
+    "price": "PRECIO",
+    "notifications": "NOTIFICACIONES",
+    "noInterests": "Aún no tienes intereses registrados.",
+    "inStock": "En stock",
+    "lowStock": "Stock bajo",
+    "outOfStock": "Agotado",
+    "BACK_IN_STOCK": "De nuevo en existencia",
+    "sortByMostRecent": "Ordenar por Más reciente",
+    "expirationDate": " - Hasta {{ expirationDate }}",
+    "productId": "ID {{ code }}",
+    "remove": "ELIMINAR",
+    "sorting": {
+      "byNameAsc": "Nombre (ascendente)",
+      "byNameDesc": "Nombre (descendente)"
+    }
+  },
+  "AccountOrderHistoryTabContainer": {
+    "tabs": {
+      "AccountOrderHistoryComponent": "TODOS LOS PEDIDOS ({{ param }})",
+      "OrderReturnRequestListComponent": "DEVOLUCIONES ({{ param }})"
+    }
+  },
+  "returnRequestList": {
+    "returnRequestId": "Devolución #",
+    "orderId": "Orden #",
+    "date": "Fecha de creación",
+    "status": "Estado",
+    "sortByMostRecent": "Ordenar por Más reciente",
+    "statusDisplay_APPROVAL_PENDING": "Aprobación pendiente",
+    "statusDisplay_CANCELED": "Cancelado",
+    "statusDisplay_CANCELLING": "Cancelado",
+    "statusDisplay_WAIT": "Espere",
+    "statusDisplay_RECEIVED": "Recibido",
+    "statusDisplay_RECEIVING": "Recepción",
+    "statusDisplay_APPROVING": "Aprobatorio",
+    "statusDisplay_REVERSING_PAYMENT": "Revertir pago",
+    "statusDisplay_PAYMENT_REVERSED": "Pago invertido",
+    "statusDisplay_PAYMENT_REVERSAL_FAILED": "Error de reversión de pago",
+    "statusDisplay_REVERSING_TAX": "Impuesto reverso",
+    "statusDisplay_TAX_REVERSED": "Impuesto revertido",
+    "statusDisplay_TAX_REVERSAL_FAILED": "Reversión fiscal fallida",
+    "statusDisplay_COMPLETED": "Terminado"
+  },
+  "returnRequest": {
+    "returnRequestId": "Solicitud de devolución #",
+    "orderCode": "Para ordenar #",
+    "status": "Estado de devolución",
+    "cancel": "Cancelar solicitud de devolución",
+    "item": "Descripción",
+    "itemPrice": "Precio del articulo",
+    "returnQty": "Cantidad de devolución",
+    "total": "Total",
+    "summary": "Totales de devolución",
+    "subtotal": "Total parcial",
+    "deliveryCode": "Coste de envío",
+    "estimatedRefund": "Reembolso estimado",
+    "note": "Los totales se estiman y pueden no incluir los impuestos aplicables u otros cargos.",
+    "cancelSuccess": "Su solicitud de devolución ({{rma}}) fue cancelada"
+  },
+  "wishlist": {
+    "empty": "No hay productos en tu lista de deseos todavía"
+  }
+}

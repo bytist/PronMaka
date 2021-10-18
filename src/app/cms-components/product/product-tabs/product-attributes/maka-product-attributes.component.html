@@ -1,0 +1,22 @@
+<ng-container *ngIf="product$ | async as product">
+    <div class="container">
+        <h2>{{ 'productDetails.specification' | cxTranslate }}</h2>
+        <ng-container *ngFor="let class of product.classifications">
+            <table *ngIf="class.code.indexOf('-specifications') > -1">
+                <th>
+                    <h3>{{ class.name }}</h3>
+                </th>
+                <tr *ngFor="let feature of class.features">
+                    <td>{{ feature.name }}</td>
+                    <td>
+                        <ul>
+                            <li *ngFor="let featureValue of feature?.featureValues">
+                                {{ featureValue?.value }}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </ng-container>
+    </div>
+</ng-container>

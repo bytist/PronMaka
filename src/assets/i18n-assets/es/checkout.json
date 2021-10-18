@@ -1,0 +1,55 @@
+{
+  "checkoutAddress": {
+    "shippingAddress": "Dirección de Envío",
+    "selectYourShippingAddress": "Seleccione su dirección de envío",
+    "defaultShippingAddress": "Dirección de Entrega Predeterminada",
+    "verifyYourAddress": "Verifica tu direccion",
+    "ensureAccuracySuggestChange": "Para garantizar la precisión de la entrega, sugerimos el cambio seleccionado a continuación.",
+    "chooseAddressToUse": "Elija la dirección que desea utilizar:",
+    "suggestedAddress": "Dirección sugerida",
+    "enteredAddress": "Dirección ingresada",
+    "addNewAddress": "Agregar nueva dirección",
+    "shipToThisAddress": "Enviar a esta dirección",
+    "editAddress": "Editar dirección",
+    "saveAddress": "Guardar dirección",
+    "invalidRecurrenceOrder": "WOOF! Tú seguridad es primero, no podemos ofrecer Ordenes Recurrentes con un valor total mayor o igual a {{openPay3DSMin}} MXN. ¡Modifica tu orden e inténtalo de nuevo!"
+  },
+  "checkoutOrderConfirmation": {
+    "confirmationOfOrder": "Confirmación de orden:",
+    "thankYou": "¡Gracias por su orden!",
+    "invoiceHasBeenSentByEmail": "Se ha enviado una factura por correo electrónico. Deberías recibirlo pronto.",
+    "orderItems": "Encargar artículos",
+    "orderPlacedSuccessfully": "Pedido realizado con éxito",
+    "createAccount": "¿Crea una cuenta?",
+    "createAccountForNext": "Cree una cuenta para <{{email}}> para un pago más rápido en su próxima visita."
+  },
+  "checkoutReview": {
+    "review": "Revisión",
+    "orderItems": "Encargar artículos",
+    "confirmThatRead": "Confirmo que he leído y estoy de acuerdo con el",
+    "placeOrder": "Realizar pedido",
+    "termsAndConditions": "Términos y condiciones",
+    "editShippingAddress": "Editar dirección de envío",
+    "editShippingMethod": "Editar método de envío",
+    "editPaymentMethod": "Editar forma de pago"
+  },
+  "checkoutShipping": {
+    "shippingMethod": "Método de Envío",
+    "standardDelivery": "Entrega Estándar",
+    "premiumDelivery": "Entrega Premium"
+  },
+  "checkout": {
+    "backToCart": "Volver al Carrito",
+    "placementError": "Algo anda mal en los datos de pago que proporcionaste, revisalos e inténtalo de nuevo",
+    "waitingTitle": "¡Hey ni un click más humano!",
+    "waitingMessage": "Estamos registrando tu compra para que tus croquetas lleguen sanas y salvas.",
+    "tokenizationError": "Ups! detectamos un proceso de pago abandonado. Por favor recuérdanos tus datos de pago nuevamente para completar tu compra"
+  },
+  "checkoutProgress": {
+    "shippingAddress": "Dirección de Envío",
+    "deliveryMode": "Modo de entrega",
+    "paymentDetails": "Detalles del pago",
+    "reviewOrder": "Revisar orden",
+    "placingOrder": "Procesando orden ..."
+  }
+}

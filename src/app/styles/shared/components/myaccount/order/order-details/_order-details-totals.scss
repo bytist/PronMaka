@@ -1,0 +1,18 @@
+app-maka-order-details-totals {
+  margin-top: rem(15);
+
+  .cx-summary-partials {
+    padding: 0;
+  }
+
+  .cx-order-summary {
+    .order-summary-wrapper-column {
+      padding: 0;
+    }
+  }
+
+  h4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,10 @@
+%MakaCheckoutLoginPageTemplate {
+  cx-page-slot.RightContentSlot {
+    position: initial;
+    width: 100%;
+  }
+}
+
+.CheckoutLoginPageTemplate {
+  @extend %MakaCheckoutLoginPageTemplate;
+}

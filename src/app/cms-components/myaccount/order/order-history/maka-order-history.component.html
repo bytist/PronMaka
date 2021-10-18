@@ -1,0 +1,73 @@
+<ng-container *ngIf="orders$ | async as orders; else loading">
+    <div class="container mt-5">
+      <div class="row">
+        <div class="cx-order-history-body col-12 col-lg-11 offset-lg-1">
+
+            <div class="cx-order-history-sort top row"  *ngIf="orders.pagination.totalResults > 0">
+              <div class="cx-order-history-form-group form-group col-6 offset-6 col-md-4 offset-md-8 my-5">
+                <cx-sorting
+                  [sortOptions]="orders.sorts"
+                  [sortLabels]="getSortLabels() | async"
+                  (sortListEvent)="changeSortCode($event)"
+                  [selectedOption]="orders.pagination.sort"
+                  placeholder="{{ 'orderHistory.sortByMostRecent' | cxTranslate }}"
+                ></cx-sorting>
+              </div>
+            </div>
+
+            <div class="row mb-4 maka-form">
+              <div class="col-md-12 form-group">
+                <div class="form-check text-left">
+                  <label>
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      (change)="toggleRecurringOrderFilter()"
+                      [checked]="recurringOrderFilterSelected"
+                    />
+                    <span class="form-check-label font-weight-light text-xsmall">
+                      {{ 'orderHistory.showOnlyRecurrentOrders' | cxTranslate }}
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <app-maka-order-history-table
+              *ngIf="orders.pagination.totalResults > 0"
+              [orders]="orders"
+              (navigateToDetail)="goToOrderDetail($event)"
+            ></app-maka-order-history-table>
+
+            <div class="cx-order-history-sort bottom d-flex" *ngIf="orders.pagination.totalResults > 0">
+              <div class="cx-order-history-pagination ml-auto my-3">
+                <cx-pagination
+                  [pagination]="orders.pagination"
+                  (viewPageEvent)="pageChange($event)"
+                ></cx-pagination>
+              </div>
+            </div>
+
+            <div class="cx-order-history-no-order row" *ngIf="orders.pagination.totalResults === 0 && (isLoaded$ | async)">
+              <div class="col-12">
+                <p class="text-center text-lg-left text-dark text-medium mb-4 font-weight-light">
+                  {{ (recurringOrderFilterSelected) ? ('orderHistory.noRecurringOrders' | cxTranslate) : ('orderHistory.noOrders' | cxTranslate) }}
+                </p>
+                <a
+                  [routerLink]="'/Open-Catalog/Pet-Food/Dog-Food/c/dog-food'"
+                  routerLinkActive="active"
+                  class="btn btn-action btn-block col-12 col-md-6 col-lg-5 mx-auto mx-lg-0">
+                  {{ 'orderHistory.startShopping' | cxTranslate }}
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</ng-container>
+<ng-template #loading>
+  <div class="cx-spinner my-5">
+    <cx-spinner></cx-spinner>
+  </div>
+</ng-template>
+  

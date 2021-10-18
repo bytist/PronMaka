@@ -1,0 +1,21 @@
+%cx-star-rating {
+  .star {
+    --cx-color-primary: #{$inverse};
+    --cx-color-light: #{$gray-500};
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+
+    &.cx-icon {
+      font-size: rem(15);
+      padding: rem(2) 0;
+    }
+  }
+}
+
+.cx-product-rating {
+  font-size: $medium-font-size;
+  font-weight: $font-weight-light;
+  margin-bottom: $spacer * 0.25;
+}

@@ -1,0 +1,413 @@
+app-maka-cart-details {
+  @include make-col(12, 12);
+
+  @include media-breakpoint-only(sm) {
+    margin-top: rem(-28);
+  }
+
+  .cart-details-wrapper {
+    margin-bottom: rem(20);
+
+    .cx-promotions {
+      @extend %cart-promotions !optional;
+    }
+  }
+
+  h1,
+  .cx-total { // cart id
+    padding: rem(20) rem(18);
+
+    @include media-breakpoint-up(md) {
+      padding: rem(20) 0;
+    }
+  }
+
+  h1 {
+    color: $dark;
+    font-size: rem(40);
+    line-height: 1;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      text-align: left;
+    }
+  }
+
+  .cx-total {
+    font-size: $medium-font-size;
+    font-weight: $font-weight-light;
+  }
+
+  cx-cart-item-list {
+    @extend %cart-item-list;
+  }
+
+  .cx-item-list-header.row {
+    @extend %cart-item-list-header;
+  }
+
+  cx-cart-item .row {
+    @extend %cx-cart-item-row;
+
+    .cx-image-container {
+      @extend %cx-image-container;
+    }
+
+    .cx-info {
+      @extend %cx-info;
+    }
+
+    .cx-info-container.row {
+      @extend %cx-info-container;
+    }
+
+    cx-promotions {
+      .cx-promotions {
+        @extend %cx-cart-item-promotions;
+      }
+    }
+
+    .cx-actions .cx-remove-btn {
+      @extend %cx-action-remove;
+    }
+  }
+
+  .form-check.recurring-order {
+    margin-bottom: rem(50);
+    margin-top: rem(10);
+
+    @include media-breakpoint-up(md) {
+      max-width: 47%;
+      padding-top: 0;
+    }
+
+    .ng-select .ng-dropdown-panel {
+      border-width: 0;
+      box-shadow: 0 2px 5px $gray-600;
+
+      .ng-dropdown-panel-items div.ng-option.ng-option-marked {
+        background-color: $gray-400;
+      }
+    }
+
+    label {
+      cursor: pointer;
+      line-height: 1.2;
+      margin-bottom: rem(34);
+    }
+
+    input[type=checkbox] {
+      @extend %maka-form-check;
+
+      height: rem(18);
+      margin-right: rem(11);
+      width: rem(18);
+
+      &:checked::after {
+        border-color: $white;
+        left: rem(4);
+        top: rem(3);
+      }
+    }
+
+    .form-check-label {
+      color: $text;
+      font-size: $small-font-size;
+    }
+
+    .label-content {
+      color: $inverse;
+      font-size: $medium-font-size;
+      margin-bottom: 0;
+    }
+  }
+}
+
+%cart-promotions {
+  ul {
+    background-color: $gray-400;
+    padding: rem(15) rem(24);
+
+    @include media-breakpoint-up(md) {
+      margin: 0 rem(20) 0 0;
+    }
+
+    li {
+      color: $text;
+      font-weight: $font-weight-normal;
+      text-transform: initial;
+    }
+  }
+}
+
+%cart-item-list-header {
+  @include media-breakpoint-up(md) {
+    font-family: $font-family-sans-serif-secondary;
+    font-size: $xlarge-font-size;
+    margin: 0;
+    padding: rem(25) 0 rem(8) 0;
+    text-align: left;
+
+    .cx-item-list-desc {
+      @include make-col(6, 12);
+    }
+
+    .cx-item-list-price {
+      @include make-col(2, 12);
+
+      padding-left: rem(10);
+      text-align: left;
+    }
+
+    .cx-item-list-qty {
+      @include make-col(2, 12);
+
+      padding: 0;
+      text-align: center;
+
+      @include media-breakpoint-only(xl) {
+        padding-left: 3%;
+        text-align: left;
+      }
+    }
+
+    .cx-item-list-total {
+      @include make-col(2, 12);
+    }
+  }
+
+  .cx-item-list-price {
+    @include media-breakpoint-only(md) {
+      padding-left: 3%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding-left: rem(20);
+    }
+  }
+}
+
+%cart-item-list {
+  @include media-breakpoint-up(md) {
+    border-bottom: $border-standard;
+    display: block;
+    margin-right: rem(20);
+    padding-bottom: rem(75);
+  }
+
+  .cx-item-list-items {
+    padding: 0;
+  }
+
+  .cx-item-list-row {
+    border-width: 0;
+
+    @include media-breakpoint-up(md) {
+      padding: rem(30) 0 0;
+    }
+  }
+}
+
+%cx-cart-item-row {
+  margin: 0;
+
+  @include media-breakpoint-up(md) {
+    align-items: center;
+  }
+}
+
+%cx-image-container {
+  border-right: $border-standard;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(2, 12);
+
+    border-width: 0;
+    height: auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  a {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  cx-media {
+    @include media-breakpoint-up(md) {
+      align-items: center;
+      display: flex !important;
+      height: 100%;
+    }
+
+    img {
+      @include media-breakpoint-up(md) {
+        max-height: rem(110);
+      }
+    }
+  }
+}
+
+%cx-info {
+  margin: 0;
+  padding: 0 0 0 rem(20);
+
+  @include media-breakpoint-up(md) {
+    @include make-col(10, 12);
+
+    border-left: $border-standard;
+    margin: rem(10) 0;
+    padding: rem(20) 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(10, 12);
+  }
+}
+
+%cx-info-container {
+  $name-md-cols: 4;
+  $price-md-cols: 3;
+  $qty-md-cols: 3;
+  $total-md-cols: 2;
+
+  $name-lg-cols: 5;
+  $price-lg-cols: 2;
+
+  margin: 0;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+
+  // name and description column
+  & > :first-child {
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      @include make-col($name-md-cols, 12);
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include make-col($name-lg-cols, 12);
+    }
+
+    .cx-name {
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+        padding-left: rem(20);
+      }
+    }
+  }
+
+  .cx-price {
+    @include media-breakpoint-up(md) {
+      @include make-col($price-md-cols, 12);
+
+      padding: 0 rem(20);
+      text-align: center;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include make-col($price-lg-cols, 12);
+
+      padding: 0;
+    }
+
+    .cx-value {
+      @include media-breakpoint-up(md) {
+        width: 100%;
+      }
+
+      @include media-breakpoint-up(xl) {
+        text-align: left;
+      }
+    }
+  }
+
+  .cx-quantity {
+    max-width: 100%;
+
+    @include media-breakpoint-up(md) {
+      @include make-col($qty-md-cols, 12);
+
+      padding: 0;
+      width: 100%;
+    }
+
+    .cx-label {
+      margin-right: rem(10);
+    }
+
+    .cx-value {
+      @include media-breakpoint-up(md) {
+        margin-left: 15%;
+        padding-left: 0;
+      }
+
+      @include media-breakpoint-only(lg) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .cx-total {
+    font-family: $font-family-sans-serif;
+    font-size: $medium-font-size;
+    font-weight: $font-weight-light;
+
+    @include media-breakpoint-up(md) {
+      @include make-col($total-md-cols, 12);
+
+      padding: 0;
+
+      .cx-value {
+        padding: 0;
+        text-align: right;
+        width: 100%;
+      }
+    }
+  }
+}
+
+%cx-cart-item-promotions {
+  @include media-breakpoint-up(md) {
+    padding: 0;
+  }
+
+  ul {
+    padding: rem(8);
+
+    @include media-breakpoint-up(md) {
+      margin: rem(10) 0 rem(10) rem(20);
+    }
+  }
+}
+
+%cx-action-remove {
+  padding: 0;
+
+  @include media-breakpoint-up(md) {
+    @include make-col(5, 12);
+
+    padding-left: 4%;
+  }
+
+  @include media-breakpoint-only(lg) {
+    padding: 0;
+  }
+}

@@ -1,0 +1,22 @@
+<ng-container *ngIf="product$ | async as product">
+  <h4 class="text-uppercase mb-1">{{ product?.name }}</h4>
+
+  <div class="rating" *ngIf="product.averageRating">
+    <cx-star-rating
+      [rating]="product?.averageRating"
+      [disabled]="true"
+    ></cx-star-rating>
+
+    <span class="count font-weight-light text-small mx-2">({{ product?.numberOfReviews }})</span>
+
+    <a *ngIf="reviewsTabAvailable | async"
+      href="#"
+      class="font-weight-light pointer"
+      (click)="showReviews($event)"
+    >{{ 'productSummary.showReviews' | cxTranslate }}</a>
+
+  </div>
+  <div class="cx-product-rating" *ngIf="!product.averageRating">
+    {{ 'productDetails.noReviews' | cxTranslate }}
+  </div>
+</ng-container>

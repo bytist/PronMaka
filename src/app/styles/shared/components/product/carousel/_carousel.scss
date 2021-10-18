@@ -1,0 +1,37 @@
+%cx-carousel {
+  & > h3 {
+    --cx-font-size: #{$h5-font-size};
+
+    border-bottom: $border-width solid $gray-500;
+    font-family: $font-family-sans-serif-secondary;
+    font-weight: $font-weight-normal !important;
+    margin: $spacer 0;
+    padding-bottom: $spacer * 0.5;
+    text-align: left !important;
+  }
+
+  .carousel-panel {
+    button.previous,
+    button.next {
+      color: var(--cx-color-text, #{$text});
+
+      &:focus,
+      &:hover {
+        color: var(--cx-color-text, #{$text});
+        outline: none;
+      }
+
+      cx-icon {
+        font-size: $xlarge-font-size;
+      }
+    }
+
+    button.previous {
+      padding-right: rem(10);
+    }
+
+    button.next {
+      padding-left: rem(10);
+    }
+  }
+}

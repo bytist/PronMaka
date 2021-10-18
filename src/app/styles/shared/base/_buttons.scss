@@ -1,0 +1,117 @@
+a.btn,
+button.btn {
+  &:hover,
+  &:focus {
+    transform: scale(1.05) translateZ(0);
+    transition-duration: $link-transition-duration;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.16, 1.08, 0.38, 0.98);
+  }
+
+  &:disabled:hover,
+  &.disabled:hover,
+  &:disabled:focus,
+  &.disabled:focus {
+    transform: unset;
+  }
+}
+
+%btn-action {
+  background-color: var(--cx-color-primary, #{$primary});
+  border-color: var(--cx-color-inverse, #{$inverse});
+  color: var(--cx-color-inverse, #{$inverse});
+
+  &:hover,
+  &:focus {
+    background-color: var(--cx-color-primary, #{$primary});
+    border-color: var(--cx-color-inverse, #{$inverse});
+    color: var(--cx-color-inverse, #{$inverse});
+  }
+}
+
+.btn-action {
+  @extend %btn-action;
+}
+
+.btn-secondary {
+  background-color: var(--cx-color-primary, #{$primary});
+  border-color: var(--cx-color-gray-300, #{$gray-300});
+  color: var(--cx-color-gray-300, #{$gray-300});
+
+  &:hover,
+  &:focus,
+  &.disabled, // implicitly imported opacity 0.65 for disabled
+  &:disabled {
+    background-color: var(--cx-color-primary, #{$primary});
+    border-color: var(--cx-color-gray-300, #{$gray-300});
+    color: var(--cx-color-gray-300, #{$gray-300});
+  }
+}
+
+%btn-primary {
+  background-color: $maka-blue;
+  border-color: $maka-blue;
+  color: var(--cx-color-primary, #{$primary});
+
+  &:hover,
+  &:focus,
+  &.disabled, // implicitly imported opacity 0.65 for disabled
+  &:disabled {
+    background-color: $maka-blue;
+    border-color: $maka-blue;
+    color: var(--cx-color-primary, #{$primary});
+  }
+}
+
+.btn-primary {
+  @extend %btn-primary;
+}
+
+.btn-danger {
+  background-color: var(--cx-color-danger, #{$danger});
+  border-color: var(--cx-color-danger, #{$danger});
+  color: var(--cx-color-primary, #{$primary});
+
+  &:hover,
+  &:focus,
+  &.disabled, // implicitly imported opacity 0.65 for disabled
+  &:disabled {
+    background-color: var(--cx-color-danger, #{$danger});
+    border-color: var(--cx-color-danger, #{$danger});
+    color: var(--cx-color-primary, #{$primary});
+  }
+}
+
+%btn-chip {
+  background-color: var(--cx-color-gray-700, #{$gray-700});
+  border-color: var(--cx-color-gray-700, #{$gray-700});
+  color: var(--cx-color-dark, #{$dark});
+  display: flex;
+  font-size: $small-font-size;
+  font-weight: $font-weight-light;
+  margin: ($spacer / 2);
+  padding: 0 rem(10);
+  transform: none;
+
+  &:hover,
+  &:focus,
+  &.disabled, // implicitly imported opacity 0.65 for disabled
+  &:disabled {
+    background-color: var(--cx-color-gray-700, #{$gray-700});
+    border-color: var(--cx-color-gray-700, #{$gray-700});
+    color: var(--cx-color-dark, #{$dark});
+  }
+
+  span {
+    margin-left: $spacer;
+    margin-right: $spacer;
+  }
+}
+
+.btn-chip {
+  @extend %btn-chip;
+}
+
+button.close {
+  outline: none;
+}

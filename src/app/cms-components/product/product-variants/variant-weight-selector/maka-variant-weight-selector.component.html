@@ -1,0 +1,17 @@
+<ng-container>
+  <div class="variant-selector form-group col-5 col-md-4 px-0 mt-5 mt-md-0">
+    <label class="text-inverse text-medium">{{ 'variant.weight' | cxTranslate }}</label>
+      <ng-select
+        [searchable]="false"
+        [clearable]="false"
+        (change)="changeWeight($event, product?.name)"
+        [(ngModel)]="selectedCode"
+      >
+        <ng-option
+          *ngFor="let v of variants?.options"
+          [value]="v.code">
+          {{ getVariantOptionValue(v.variantOptionQualifiers) }} {{ 'variant.kg' | cxTranslate }}
+        </ng-option>
+      </ng-select>
+  </div>
+</ng-container>

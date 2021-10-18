@@ -1,0 +1,45 @@
+<div class="container">
+  <ng-container *ngIf="order$ | async as order">
+    <div class="content-wrapper offset-lg-1">
+      <h3 class="headline-title text-left text-uppercase font-weight-light">{{ 'orderDetails.title' | cxTranslate }}</h3>
+      <div class="headline-content">
+        <div class="d-md-flex">
+          <div class="flex-md-grow-1">
+            <div class="order-details-label">
+              {{ 'orderDetails.orderNumber' | cxTranslate }}
+            </div>
+            <div class="order-details-value">{{ order?.code }}</div>
+          </div>
+          <div class="flex-md-grow-1">
+            <div class="order-details-label">
+              {{ 'orderDetails.created' | cxTranslate }}
+            </div>
+            <div class="headline-value text-capitalize order-details-value">{{ order?.created | cxDate: 'd MMMM y' }}</div>
+          </div>
+          <div class="flex-md-grow-1">
+            <div class="order-details-label">
+              {{ 'orderDetails.status' | cxTranslate }}
+            </div>
+            <div class="order-details-value" *ngIf="order?.statusDisplay">
+              {{
+              'orderDetails.statusDisplay'
+                | cxTranslate: {context: order?.statusDisplay}
+              }}
+            </div>
+          </div>
+          <div class="flex-md-grow-1" *ngIf="order?.carrierTrackingNumber">
+            <div class="order-details-label">
+              {{ 'orderDetails.consignmentTracking.dialog.trackingId' | cxTranslate }}
+            </div>
+            <div class="order-details-value">
+              <a href="{{ order?.carrierUrl }}" target="_blank" rel="noopener noreferrer"
+                 class="text-underline order-carrier-url">
+                {{ order?.carrierTrackingNumber }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

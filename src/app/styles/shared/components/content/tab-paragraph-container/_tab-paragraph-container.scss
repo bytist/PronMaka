@@ -1,0 +1,95 @@
+%makaPdpTabs {
+  @include media-breakpoint-only(md) {
+    grid-template-columns: percentage(3 / 12) percentage(3 / 12) percentage(3 / 12) percentage(3 / 12);
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: percentage(1 / 12) percentage(3 / 12) percentage(3 / 12) percentage(3 / 12) percentage(2 / 12);
+  }
+
+  > div {
+    border-top: 0;
+    font-weight: $font-weight-light;
+    grid-column: 1;
+    grid-column-end: none;
+    margin-top: $spacer * 1.5;
+
+    @include media-breakpoint-up(lg) {
+      grid-column: 2;
+      grid-column-end: none;
+      margin-top: $spacer;
+    }
+
+    h3 {
+      color: var(--cx-color-inverse, #{$inverse});
+      font-size: $medium-font-size;
+      font-weight: $font-weight-normal;
+      text-transform: uppercase;
+    }
+
+    cx-product-details-tab,
+    cx-product-attributes,
+    app-maka-product-attributes,
+    app-maka-product-reviews {
+      .container {
+        margin: 0;
+        max-width: 100%;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  > button {
+    color: var(--cx-color-text, #{$text});
+    font-family: $font-family-sans-serif-secondary;
+    font-size: $xlarge-font-size;
+    text-align: left;
+
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      border-bottom: $table-border-width solid var(--cx-color-light, #{$light});
+      text-align: center;
+    }
+
+    &:first-of-type {
+      grid-column: 1;
+
+      @include media-breakpoint-up(lg) {
+        grid-column: 2;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--cx-color-text, #{$text});
+    }
+
+    &.active {
+      color: var(--cx-color-text, #{$text});
+
+      &::after {
+        background: var(--cx-color-text);
+
+        @include media-breakpoint-down(md) {
+          width: 100%;
+        }
+      }
+    }
+
+    &::after {
+      left: 0;
+      margin: rem(5) auto 0 auto;
+      position: relative;
+      top: rem(3);
+      width: 100%;
+    }
+  }
+}
+
+cx-page-slot cx-tab-paragraph-container {
+  @extend %makaPdpTabs;
+}

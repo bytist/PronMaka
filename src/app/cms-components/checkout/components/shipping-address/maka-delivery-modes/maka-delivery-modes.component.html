@@ -1,0 +1,47 @@
+<div [formGroup]="mode" class="maka-delivery-modes">
+  <div class="row">
+    <div class="col-md-12">
+      <ng-container
+        *ngIf="(supportedDeliveryModes$ | async)?.length; else loading"
+      >
+        <h4>
+          {{ 'checkoutShipping.shippingMethod' | cxTranslate }}
+        </h4>
+        <div
+          class="form-check"
+          *ngFor="let mode of supportedDeliveryModes$ | async"
+        >
+          <input
+            class="form-check-input"
+            role="radio"
+            type="radio"
+            id="deliveryMode-{{ mode.code }}"
+            aria-checked="true"
+            (change)="changeMode(mode.code)"
+            [value]="mode.code"
+            [attr.disabled]="disableOptions ? '' : null"
+            formControlName="deliveryModeId"
+          />
+          <label
+            class="cx-delivery-label form-check-label form-radio-label"
+            for="deliveryMode-{{ mode.code }}"
+          >
+            <div class="cx-delivery-title">
+              <div class="cx-delivery-mode">{{ mode.name }}</div>
+              <div class="cx-delivery-price" *ngIf="mode.deliveryCost.value">
+                {{ mode.deliveryCost.formattedValue }}
+              </div>
+            </div>
+            <div class="cx-delivery-details">{{ mode.description }}</div>
+          </label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="cx-spinner">
+    <cx-spinner></cx-spinner>
+  </div>
+</ng-template>

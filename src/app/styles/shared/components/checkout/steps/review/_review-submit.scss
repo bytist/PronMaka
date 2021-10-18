@@ -1,0 +1,286 @@
+app-maka-review-submit {
+  .cx-review {
+    @include media-breakpoint-up(lg) {
+      padding-left: rem(20);
+    }
+  }
+
+  .cx-review-title {
+    font-family: $font-family-sans-serif-secondary;
+    font-size: rem(45);
+    text-transform: uppercase;
+  }
+
+  .order-information-title {
+    border-bottom: 1px solid var(--cx-color-inverse);
+    padding-bottom: rem(30);
+  }
+
+  .cx-review-summary.row {
+    & > div.col-md-4 {
+      padding-right: 0;
+    }
+
+    & > div.col-md-4:last-child {
+      padding-right: rem(10);
+
+      @include media-breakpoint-up(md) {
+        .cx-review-summary-wrapper {
+          border-right-width: 0;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(70);
+    }
+  }
+
+  .cx-review-summary-wrapper {
+    border-bottom: $border-standard;
+    border-color: $gray-800;
+    margin: rem(15) 0;
+    padding: rem(5) 0 rem(10);
+
+    @include media-breakpoint-up(md) {
+      border-bottom-width: 0;
+      border-right: $border-standard;
+      height: 100%;
+      margin-bottom: 0;
+      padding: 0 rem(10) 0 0;
+    }
+
+    &.payment-address-wrapper {
+      border-bottom-width: 0;
+
+      @include media-breakpoint-up(md) {
+        border-right-width: 0;
+      }
+    }
+
+    .cx-card {
+      border-bottom: $border-standard;
+
+      &:last-child {
+        border-bottom-width: 0;
+      }
+
+      .cx-card-title {
+        @extend %cx-card-title;
+      }
+
+      .card-body {
+        border-top-width: 0;
+        font-size: $xsmall-font-size;
+        font-weight: $font-weight-light;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .cx-review-summary-card {
+    margin-bottom: rem(10);
+  }
+
+  .cx-review-summary-edit-step {
+    font-size: $xxsmall-font-size;
+    height: auto;
+    margin: rem(10) 0 0;
+    padding: 0;
+  }
+
+  .delivery-method-wrapper {
+    margin: rem(55) 0 rem(25) 0;
+    padding-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  .cx-review-card-payment {
+    padding-bottom: rem(35);
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: initial;
+    }
+  }
+
+  .cx-review-cart-heading {
+    border-bottom: 1px solid var(--cx-color-inverse, #{$inverse});
+    font-size: $medium-font-size;
+    font-weight: $font-weight-normal;
+    margin-top: rem(35);
+    padding: rem(30) 0;
+  }
+
+  .cx-review-cart-total {
+    display: flex;
+    font-size: $medium-font-size;
+    justify-content: space-between;
+    margin: rem(35) 0 rem(15);
+    text-transform: uppercase;
+
+    .cart-total-value {
+      display: none;
+    }
+  }
+
+  .cx-review-cart-item {
+    padding: 0;
+
+    cx-promotions {
+      .cx-promotions {
+        @extend %cx-cart-item-promotions !optional;
+        @extend %cart-promotions !optional;
+
+        margin: 0;
+        padding: 0;
+
+        ul {
+          margin: rem(25) 0 0 0;
+        }
+      }
+    }
+  }
+
+  .cx-item-list-header {
+    @extend %cart-item-list-header;
+  }
+
+  cx-cart-item-list {
+    @extend %cart-item-list;
+
+    @include media-breakpoint-up(md) {
+      border-bottom-width: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 0;
+    }
+  }
+
+  .cx-item-list-header.row {
+    @extend %cart-item-list-header;
+  }
+
+  cx-cart-item .row {
+    @extend %cx-cart-item-row;
+
+    .cx-image-container {
+      @extend %cx-image-container;
+    }
+
+    .cx-info {
+      @extend %cx-info;
+
+      @include media-breakpoint-up(md) {
+        min-height: 85px;
+      }
+    }
+
+    .cx-info-container.row {
+      @extend %cx-info-container;
+
+      .cx-quantity .cx-value {
+        margin-left: 30%;
+      }
+    }
+
+    cx-promotions {
+      .cx-promotions {
+        @extend %cx-cart-item-promotions;
+      }
+    }
+
+    .cx-actions .cx-remove-btn {
+      @extend %cx-action-remove;
+    }
+  }
+}
+
+// spartacus uses this selector for some of the internal components, so this is the way to replace the styles
+cx-page-layout.MultiStepCheckoutSummaryPageTemplate cx-page-slot.SideContent .summary-bottom-content,
+.summary-bottom-content {
+  display: flex;
+  margin-top: rem(10);
+  padding: 0;
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: rem(-33);
+  }
+
+  app-maka-place-order {
+    width: 100%;
+
+    form.cx-place-order-form {
+      margin-bottom: 0;
+      padding-bottom: rem(75);
+
+      &.paypal-payment {
+        padding-bottom: 0;
+      }
+
+      .form-group {
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 0;
+          padding-bottom: rem(28);
+        }
+      }
+    }
+
+    app-maka-payment-paypal {
+      margin-top: rem(30);
+      position: absolute;
+      width: 100%;
+
+      .paypal-button-container {
+        &.disable-btn {
+          @extend %disabledBtnByCss;
+        }
+      }
+    }
+
+    label {
+      margin: 0 rem(18);
+      padding: 0;
+
+      @include media-breakpoint-up(lg) {
+        border-top: $border-standard;
+        margin-bottom: 0;
+        padding: rem(25) 0 0;
+      }
+    }
+
+    input.form-check-input {
+      @extend %maka-form-check !optional;
+
+      margin-top: rem(3);
+      top: auto !important;
+    }
+
+    span.form-check-label {
+      font-size: rem(13);
+      padding-right: rem(16);
+
+      @include media-breakpoint-up(lg) {
+        margin-left: rem(33);
+      }
+
+      a {
+        color: var(--cx-color-inverse, $inverse);
+      }
+    }
+
+    button {
+      @extend %add-to-cart-button !optional;
+
+      bottom: 0;
+      left: 0;
+      padding: rem(18) 0;
+      position: absolute;
+    }
+  }
+}

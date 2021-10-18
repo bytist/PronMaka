@@ -1,0 +1,21 @@
+%AccountPageTemplate {
+  @extend %LoginPageTemplate;
+
+  cx-page-slot {
+    &.BodyContent {
+      margin: 0;
+      max-width: 100%;
+      overflow: hidden;
+      padding: 0;
+      padding-bottom: rem(80);
+
+      @include media-breakpoint-up(lg) {
+        padding-bottom: rem(100);
+      }
+
+      cx-media {
+        display: block;
+      }
+    }
+  }
+}

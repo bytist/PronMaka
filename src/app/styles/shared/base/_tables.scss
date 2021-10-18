@@ -1,0 +1,40 @@
+.table {
+  thead {
+    display: none;
+
+    th {
+      border-bottom: 0;
+      border-top: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: table-header-group;
+    }
+  }
+
+  tr {
+    @include media-breakpoint-down(sm) {
+      border-bottom: $table-border-width solid $gray-600;
+      display: block;
+      padding: ($spacer * 1.5) 0;
+
+      td {
+        border-width: 0;
+        display: flex;
+        padding: ($spacer * 0.25) 0;
+        width: 100%;
+
+        .table-mobile-label {
+          color: var(--cx-color-inverse, #{$inverse});
+          font-weight: $font-weight-normal;
+          text-transform: uppercase;
+          width: 50%;
+
+          & + span {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}

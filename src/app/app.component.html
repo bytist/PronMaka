@@ -1,0 +1,14 @@
+<ng-template cxOutletRef="cx-header" cxOutletPos="after">
+  <div class="header-rects">
+    <div class="header-rect">
+    </div>
+    <div class="header-rect">
+    </div>
+    <div class="header-rect">
+    </div>
+    <div class="header-rect">
+    </div>
+  </div>
+</ng-template>
+<div class="navigation-overlay d-none d-lg-block" *ngIf="myAccountMenuOpened$ | async"></div>
+<cx-storefront></cx-storefront>

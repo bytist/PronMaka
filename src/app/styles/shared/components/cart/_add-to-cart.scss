@@ -1,0 +1,88 @@
+$add-to-cart-font-size: rem(25);
+
+%add-to-cart-button {
+  background: $gray-300;
+  border-radius: 0;
+  border-width: 0;
+  color: var(--cx-var-primary, #{$primary});
+  font-family: $font-family-sans-serif-secondary;
+  font-size: $xlarge-font-size;
+  font-weight: $font-weight-normal;
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $add-to-cart-font-size;
+  }
+
+  &:hover,
+  &:focus {
+    background: $gray-300;
+  }
+}
+
+%add-to-cart-animated {
+  @include media-breakpoint-up(lg) {
+    background: var(--cx-var-transparent, #{$transparent});
+    color: var(--cx-var-text, #{$text});
+
+    &:hover,
+    &:focus {
+      background: var(--cx-var-transparent, #{$transparent});
+      color: var(--cx-var-primary, #{$primary});
+      transform: none;
+
+      &::before {
+        transform: scaleY(1);
+        transition-duration: $button-transition-duration;
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.16, 1.08, 0.38, 0.98);
+      }
+    }
+
+    &::before {
+      background: $gray-300;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: scaleY(0);
+      transform-origin: 50% 100%;
+      z-index: -1;
+    }
+  }
+}
+
+%cx-add-to-cart {
+  label {
+    --cx-font-weight-bold: #{$font-weight-normal};
+    --cx-font-size: #{$medium-font-size};
+
+    color: var(--cx-color-inverse, #{$inverse});
+  }
+
+  input {
+    font-size: $small-font-size;
+  }
+
+  div.quantity {
+    cx-item-counter:not(.readonly) {
+      > input {
+        width: 3.5rem;
+      }
+
+      > button {
+        width: 2.5rem;
+      }
+    }
+  }
+
+  .info {
+    display: none;
+  }
+
+  .btn-primary {
+    @extend %add-to-cart-button;
+  }
+}

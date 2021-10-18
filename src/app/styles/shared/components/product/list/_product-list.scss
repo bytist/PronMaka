@@ -1,0 +1,84 @@
+%app-maka-product-list {
+  .container {
+    padding: 0;
+
+    .col-12.col-sm-6.col-md-4 {
+      // product grid item
+      @include media-breakpoint-up(sm) {
+        min-height: rem(460);
+
+        @include make-col(6, 12);
+      }
+
+      @include media-breakpoint-up(lg) {
+        @include make-col(4, 12);
+      }
+    }
+
+    .cx-sorting {
+      &.top {
+        .row {
+          align-items: flex-end;
+          position: relative;
+        }
+
+        .mr-auto {
+          // sorting
+          margin-left: auto !important;
+          margin-right: 0 !important;
+
+          @include make-col(6, 12);
+
+          @include media-breakpoint-up(md) {
+            @include make-col(4, 12);
+          }
+
+          .form-group {
+            margin: 0;
+
+            .ng-select-container {
+              padding: 0;
+            }
+          }
+
+          & ~ .col-auto {
+            // pagination
+            display: none;
+          }
+
+          & ~ .col-auto.ml-auto.ml-lg-0 {
+            // product views
+            display: block;
+            left: 0;
+            position: absolute;
+          }
+        }
+      }
+
+      &.bottom {
+        border-top: $border-width solid var(--cx-color-light, #{$light});
+        padding-top: $spacer * 1.5;
+
+        .col-12.col-lg-4.mr-auto {
+          // sorting
+          display: none;
+
+          & ~ .col-auto {
+            // pagination
+            text-align: center;
+            width: 100%;
+          }
+
+          & ~ .col-auto.ml-auto.ml-lg-0 {
+            // product views
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+cx-product-list {
+  @extend %app-maka-product-list;
+}

@@ -1,0 +1,34 @@
+{
+  "asm": {
+    "mainLogoLabel": "SAP",
+    "mainTitle": "Modo de Servicio Asistido",
+    "logout": "Desconectar",
+    "hideUi": "Cerrar MSA",
+    "loginForm": {
+      "submit": "Registrarse",
+      "userId": {
+        "label": "ID del agente",
+        "required": "Se requiere identificación del agente"
+      },
+      "password": {
+        "label": "Contraseña",
+        "required": "se requiere contraseña"
+      }
+    },
+    "customerSearch": {
+      "searchTerm": {
+        "label": "Nombre del cliente / Dirección de correo electrónico"
+      },
+      "submit": "Iniciar sesión",
+      "noMatch": "No se ha encontrado ningún cliente."
+    },
+    "csagentTokenExpired": "Su sesión de agente de atención al cliente ha caducado.",
+    "endSession": "Finalizar sesión",
+    "agentSessionTimer": {
+      "label": "Hora de término de la sesión",
+      "minutes": "min",
+      "reset": "Reiniciar"
+    },
+    "standardSessionInProgress": "Sesión de cliente estándar en progreso."
+  }
+}

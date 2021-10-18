@@ -1,0 +1,38 @@
+<div class="py-5">
+  <div class="row">
+    <div class="col-12 col-lg-3 right-bordered text-center text-lg-left pl-lg-0">
+      <h4 class="text-uppercase text-xlarge text-dark">{{ partner.firstName }} {{ partner.lastName }}</h4>
+      <p class="text-medium text-inverse mb-3">{{ partner.supplierIdERP }}</p>
+      <p class="text-xsmall font-weight-light">{{ partner.email }}</p>
+    </div>
+    <div class="col-12 col-lg-9 text-dark pl-lg-5 mt-lg-0 mt-4 text-center text-md-left">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-8">
+          <p class="text-medium text-uppercase font-weight-light mb-0">
+            {{ 'partner.commissions.totalCommission' | cxTranslate }}
+          </p>
+          <p class="text-xlarge sans-serif-secondary mb-3">
+            {{ total.formattedValue }}
+          </p>
+          <p class="text-xsmall font-weight-light text-inverse mb-0">
+            {{ 'partner.commissions.cutOffDate' | cxTranslate }}: {{ cutOffDate | cxDate: 'longDate' }}
+          </p>
+          <p class="text-xsmall font-weight-light text-inverse mb-0">
+            {{ 'partner.commissions.dueDate' | cxTranslate }}: {{ dueDate | cxDate: 'longDate' }}
+          </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 text-center my-4 my-md-0">
+          <a [routerLink]="'/commissions/payment'" class="btn btn-block btn-primary mb-4">
+            {{ 'partner.commissions.chargeCommission' | cxTranslate }}
+          </a>
+          <a
+            [routerLink]="'/commissions/payment'"
+            fragment="history"
+            class="text-underline text-medium">
+            {{ 'partner.commissions.history' | cxTranslate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

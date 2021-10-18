@@ -1,0 +1,68 @@
+{
+  "partner": {
+    "partnerRedirectClient": "You must first logout from the clients site to access the partners site.",
+    "invitation": {
+      "form": {
+        "emailAddress": {
+          "label": "Email",
+          "placeholder": "Enter email"
+        }
+      },
+      "summary": {
+        "line1": "Associate number",
+        "line2": "HERE YOU'RE THE ONE WHO KNOWS",
+        "line3": "And the experts to back you up",
+        "line4": "The vet is inviting you to register him as your expert.",
+        "line5": "If you agree, you must click on the link that will arrive in the email.",
+        "line6": "By accepting, your profile will be associated to our expert partner.",
+        "line7": "With each purchase that you make now on, he will be able to obtain benefits and commissions as long as any of you do not modify it in your profile.",
+        "line8": "We hope you start a long and lasting relationship.",
+        "line9": "You can accept the expert!",
+        "line10": "Enter your email to send the invitation"
+      },
+      "invitationSentMessage": "¡Congratulations!, invitation has been sent successfully"
+    },
+    "commissions": {
+      "period": "MONTHLY SUMMARY",
+      "cutOffDate": "CutOff Date",
+      "dueDate": "Payment Limit Date",
+      "activeClients": "Active number of customers",
+      "totalOrders": "Orders Total",
+      "commissionLevelApplied": "Commission Level Achieved",
+      "commissionLevelAppliedShort": "Comission Level",
+      "commissionTotal": "Commission Total",
+      "commissionTotalShort": "Commission Total",
+      "loadCfdi": "Load CFDI (XML)",
+      "collect": "Send to Payment",
+      "chargeCommission": "Charge Comission",
+      "history": "Commissions History",
+      "commissionCode": "Commission",
+      "status": "Status",
+      "clients": "Clients",
+      "weeks": "Weeks",
+      "filterByYear": "Select year",
+      "allYears": "All years",
+      "emptyClients": "There are no clients",
+      "noOrders": "There are no orders in this period.",
+      "noCommissions": "There are no commissions.",
+      "errors": {
+        "notFound": "No commissions generated during last period.",
+        "cannotPay": "Dear partner, the sending of the commission is only available during payment period, the first 10 days of the month.",
+        "errorUpload": "¡Oh no! It looks like an error ocurred with the sending of the commission payment. Call us to 3951126579 so that we can solve it as soon as possible and you can continue receiving Keff Keff benefits.",
+        "invalidFileType": "The selected file has an invalid format, please make sure it is an XML file."
+      },
+      "totalCommission": "MONTHLY COMMISSION TOTAL",
+      "currentCommission": "Current commission level",
+      "referralOrdersTitle": "CURRENT PERIOD ORDERS",
+      "referralOrders": {
+        "order": "ORDER",
+        "date": "DATE",
+        "name": "NAME",
+        "total": "ORDER TOTAL"
+      },
+      "commissionOrders": "LINKED ORDERS",
+      "detail": "COMMISSION DETAIL",
+      "cfdiSuccess": "Your CFDI has been uploaded successfully."
+    }
+  }
+}

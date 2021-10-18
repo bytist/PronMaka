@@ -1,0 +1,13 @@
+<a
+  class="text-decoration-none ml-lg-4 d-flex"
+  [attr.aria-label]="
+    'miniCart.item' | cxTranslate: { count: quantity$ | async }
+  "
+  [routerLink]="{ cxRoute: 'cart' } | cxUrl"
+>
+  <span class="icon-cart text-xlarge" aria-hidden="true"></span>
+
+  <span *ngIf="quantity$ | async as quantity" class="count text-xxsmall ml-1">
+    {{ 'miniCart.count' | cxTranslate: { count: quantity } }}
+  </span>
+</a>

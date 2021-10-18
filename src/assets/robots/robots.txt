@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /*?*
+
+# Block access to specific groups of pages
+Disallow: /cart
+Disallow: /checkout
+Disallow: /my-account
+
+# Allow search crawlers to discover the sitemap
+# TODO: Update this URL in Production
+Sitemap: https://storefront-d1.y.keffkeff.com/sitemap.xml

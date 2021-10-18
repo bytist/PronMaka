@@ -1,0 +1,196 @@
+.ng-select {
+  font-size: $small-font-size;
+  font-weight: $font-weight-light;
+
+  .ng-select-container {
+    border: 0;
+    border-bottom: $input-border-width solid $input-border-color;
+    border-radius: 0;
+
+    .ng-value-container {
+      padding-left: 0;
+    }
+  }
+
+  ng-dropdown-panel {
+    bottom: auto;
+  }
+
+  &.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+    border-color: inherit;
+    box-shadow: none;
+  }
+
+  .ng-dropdown-panel {
+    border: 0;
+
+    @extend %shadowed;
+  }
+
+  &.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    padding: 0;
+
+    & > input {
+      font-weight: $font-weight-light;
+      margin-top: rem(4);
+    }
+  }
+
+  &.ng-select-disabled > .ng-select-container {
+    background-color: var(--cx-color-primary, #{$primary});
+  }
+}
+
+%maka-form-check {
+  border-color: var(--cx-color-dark);
+  border-radius: rem(4);
+  border-width: rem(1);
+
+  &:checked {
+    background-color: var(--cx-color-inverse);
+    border-color: var(--cx-color-inverse);
+    font-style: normal;
+
+    &::after {
+      border-color: var(--cx-color-primary);
+      color: var(--cx-color-primary);
+    }
+  }
+}
+
+form,
+.form-group,
+.maka-form {
+  label {
+    font-weight: $font-weight-light;
+    position: relative;
+
+    .label-content {
+      bottom: 0;
+      left: 0;
+      margin-bottom: 0;
+      padding: $input-padding-y $input-padding-x;
+      pointer-events: none;
+      position: absolute;
+      transition: $input-transition-duration;
+      transition-timing-function: cubic-bezier(0.16, 1.08, 0.38, 0.98);
+
+      &.required::after {
+        content: ' *';
+      }
+
+      &.textarea-label {
+        top: 0;
+      }
+
+      &.dropdown-label {
+        font-weight: $font-weight-light;
+        padding: 0;
+        top: 100%;
+      }
+    }
+  }
+
+  .form-control {
+    border: 0;
+    border-bottom: $input-border-width solid $input-border-color;
+
+    &:focus ~ .label-content,
+    &.ng-valid:not(.is-empty) ~ .label-content,
+    &.ng-dirty:not(.is-empty) ~ .label-content,
+    &:disabled:not(.is-empty) ~ .label-content,
+    &.ng-select:not(.is-empty) ~ .label-content,
+    &.ng-select-opened ~ .label-content {
+      color: var(--cx-color-inverse);
+      font-weight: $font-weight-normal;
+      transform: translateY(rem(-30));
+    }
+
+    &:focus,
+    &.ng-dirty.ng-valid:not(.is-empty) {
+      border-color: var(--cx-color-inverse);
+    }
+  }
+
+  .form-check input[type=checkbox] {
+    @extend %maka-form-check;
+  }
+
+  .form-check .form-check-label {
+    top: rem(2);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  cx-form-errors p {
+    font-size: $xxsmall-font-size;
+    margin-bottom: rem(20);
+    text-align: left;
+
+    &::after,
+    &::before {
+      color: var(--cx-color-primary);
+      height: rem(14);
+      line-height: rem(14);
+      width: rem(14);
+    }
+  }
+}
+
+.form-group {
+  .form-check input[type=checkbox] {
+    @extend %maka-form-check;
+  }
+}
+
+.form-check input[type=radio] {
+  border: 1px solid $dark;
+  height: rem(17);
+  margin-top: rem(8);
+  width: rem(17);
+
+  &:checked {
+    background-color: var(--cx-color-primary);
+    border: 1px solid var(--cx-color-inverse) !important;
+
+    &::after {
+      background-color: var(--cx-color-inverse);
+      height: rem(11);
+      left: rem(2);
+      top: rem(2);
+      width: rem(11);
+    }
+  }
+}
+
+.cx-value,
+.quantity {
+  cx-item-counter {
+    height: rem(38);
+
+    &:not(.readonly) {
+      border-radius: 0;
+
+      input {
+        height: rem(36);
+        max-height: rem(36);
+        min-width: rem(37);
+        padding: rem(7.6);
+        width: rem(37);
+      }
+    }
+
+    button {
+      border-radius: 0;
+      line-height: 1;
+      min-width: rem(26);
+      padding: rem(7.6);
+
+      &:hover {
+        color: var(--cx-color-text);
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<ng-container *ngIf="items">
+  <div class="row h-100">
+    <div class="col-12 col-lg-2 px-0">
+      <ul class="showcase-tabs d-md-flex justify-content-center pb-2 pb-lg-0 px-2 rotate-lg-center">
+        <li *ngFor="let item of items">
+          <a
+            [ngClass]="{ 'showcase-active': item.active }"
+            class="showcase-tab text-uppercase pointer {{ item.cssClasses }}"
+            (click)="selectItem($event, item)">
+            {{ item.tab | cxTranslate }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-12 col-lg-10 showcase-container" [ngClass]="{'scrollable': scrollable}">
+      <div *ngFor="let item of items" [ngClass]="{ 'showcase-active-container': item.active }">
+        <div class="row h-100" *ngIf="item.active" @hideAndShowContent>
+          <div class="col-12 col-lg-7 d-flex align-items-center pl-lg-0">
+            <div>
+              <h1 class="text-dark text-center text-lg-left">{{ item.title | cxTranslate }}</h1>
+              <h3 class="stroked-dark text-uppercase text-center text-lg-left">{{ item.subtitle | cxTranslate }}</h3>
+              <p class="font-weight-light py-4 col-10 mx-auto col-lg-12 text-center text-md-left px-0 mb-0"
+                 [innerHtml]="item.description | cxTranslate">
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5 showcase-image-container d-flex align-items-center">
+            <img class="col-6 col-lg-12 mx-auto" src="{{ item.imageUrl }}" alt="{{ item.title | cxTranslate }}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

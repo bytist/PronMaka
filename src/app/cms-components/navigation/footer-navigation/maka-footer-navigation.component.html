@@ -1,0 +1,36 @@
+<div class="footer-content" [ngClass]="{'force-primary': darkMode}">
+  <div class="container">
+    <div class="row">
+      <div class="col-2 col-lg-1 d-lg-flex align-items-lg-end">
+        <div class="col-10 col-lg-5" [innerHtml]="sociaNetworksLinks$ | async"></div>
+      </div>
+      <div class="col-10 col-lg-5" [innerHtml]="contactInfoHtml$ | async"></div>
+      <div class="col-10 offset-2 col-lg-6 offset-lg-0">
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <cx-navigation-ui
+              [node]="node$ | async"
+              [flyout]="false"
+              [ngClass]="styleClass$ | async"
+              class="d-lg-flex justify-content-lg-center"
+            ></cx-navigation-ui>
+          </div>
+          <div class="col-12 col-sm-6 d-lg-flex justify-content-lg-center" [innerHtml]="helpInfoHtml$ | async">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div
+        class="col-10 offset-2 col-lg-6 offset-lg-0 order-lg-2 d-lg-flex justify-content-lg-center"
+        [innerHtml]="customLinksHtml$ | async">
+      </div>
+      <div class="col-10 offset-2 col-lg-5 offset-lg-1 order-lg-1" [innerHtml]="noticeHtml$ | async"></div>
+    </div>
+  </div>
+</div>
+<!-- bg before animation -->
+<div class="footer-bg"></div>
+<!-- bg after animation -->
+<div class="footer-layer"></div>
+

@@ -1,0 +1,20 @@
+%app-maka-payment-methods {
+  .cx-card-container {
+    display: flex;
+
+    .cx-card-img-container {
+      margin-left: auto;
+
+      .fab,
+      .fas {
+        &::before {
+          font-size: rem(36);
+        }
+      }
+    }
+  }
+}
+
+app-maka-payment-methods {
+  @extend %app-maka-payment-methods;
+}

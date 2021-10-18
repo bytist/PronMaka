@@ -1,0 +1,175 @@
+$frame-width: 369;
+$frame-height: 349;
+$bag-width: 180;
+
+.journey-animation {
+  opacity: 0;
+
+  &.journey-display {
+    opacity: 1;
+  }
+}
+
+.product-journey-background {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -2;
+}
+
+.product-journey {
+  height: 100vh;
+
+  .journey-text {
+    margin-bottom: rem(400);
+    transform-origin: 50% 50%;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+      transform-origin: 0 50%;
+    }
+  }
+
+  .journey-text h1 {
+    font-size: rem(65);
+
+    @include media-breakpoint-up(md) {
+      font-size: rem(120);
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: rem(140);
+    }
+
+    @media (max-height: $mobile-landscape-height) {
+      font-size: $h3-font-size !important;
+    }
+  }
+}
+
+.product-journey-container {
+  height: 100%;
+
+  @media (max-height: $mobile-landscape-height) {
+    height: 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: auto;
+  }
+}
+
+.journey-360-wrapper {
+  height: 100vh;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  @media (max-height: $mobile-landscape-height) {
+    z-index: 2;
+  }
+
+  .journey-sprite {
+    /** we need to center the image at the end of the rotation
+       * The bag takes 180px width of the sprite, to center it,
+       * so we apply margin-left = (widthViewport + bagWidth) / 2  - frameWidth
+       */
+    $bag-offset: ($bag-width / 2) - $frame-width;
+
+    height: rem($frame-height); // height of each frame (height of the image as well)
+    margin: 0 auto;
+    margin-left: calc(50% + #{rem($bag-offset)});
+    margin-top: rem(220);
+    overflow: hidden;
+    position: relative;
+    width: rem($frame-width); // width of each frame (total width of image / qty of frames)
+
+    @include media-breakpoint-up(md) {
+      margin-top: rem(350);
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 50%;
+      margin-top: 0;
+    }
+
+    @media (max-height: $mobile-landscape-height) {
+      margin-top: 0 !important;
+    }
+
+    img {
+      max-width: none; // remove the max width for the sprite :)
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
+  }
+}
+
+.product-showcase {
+  height: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+
+  .showcase-container {
+    height: calc(100% - #{rem(130)});
+    overflow: hidden;
+
+    &.scrollable {
+      overflow-y: scroll;
+
+      @include media-breakpoint-up(lg) {
+        overflow-y: hidden;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      height: calc(100% - #{rem(50)});
+    }
+
+    @include media-breakpoint-up(lg) {
+      overflow-y: hidden;
+    }
+  }
+
+  .showcase-active-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+
+    @include media-breakpoint-up(md) {
+      padding-top: $spacer * 2;
+    }
+  }
+
+  .showcase-active {
+    border-radius: $border-radius;
+    padding: 0 $btn-padding-x;
+
+    &.maka-red-tab {
+      background: $maka-red;
+    }
+
+    &.maka-blue-tab {
+      background: $maka-blue;
+    }
+
+    &.maka-orange-tab {
+      background: $maka-orange;
+    }
+  }
+}
+
+.animated-tile-spinner {
+  left: 10%;
+  width: 80%;
+
+  & + img {
+    padding-top: rem(80);
+  }
+}

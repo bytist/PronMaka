@@ -1,0 +1,20 @@
+cx-page-layout.CartPageTemplate {
+  @extend .container !optional; /* stylelint-disable-line */
+
+  padding: 0;
+
+  .TopContent {
+    @include media-breakpoint-up(lg) {
+      @include make-col-offset(1);
+      @include make-col(7, 12);
+
+      padding-left: rem(20);
+    }
+  }
+
+  .CenterRightContentSlot {
+    @include media-breakpoint-up(lg) {
+      @include make-col(4, 12);
+    }
+  }
+}

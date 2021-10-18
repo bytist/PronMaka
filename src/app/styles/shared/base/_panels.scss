@@ -1,0 +1,44 @@
+.small-panel {
+  height: rem(200);
+
+  @include media-breakpoint-up(lg) {
+    height: rem(130);
+  }
+
+  &.panel-grow {
+    @include media-breakpoint-only(md) {
+      height: rem(424);
+    }
+  }
+}
+
+.large-panel {
+  height: rem(360);
+
+  @include media-breakpoint-up(md) {
+    height: rem(424);
+  }
+
+  & > div {
+    height: 80%;
+  }
+}
+
+.circle {
+  border-radius: rem(80);
+  color: var(--cx-color-primary, #{$primary});
+  display: flex;
+  font-family: $font-family-sans-serif-secondary;
+  font-size: $xxlarge-font-size;
+  height: rem(80);
+  margin: auto;
+  text-align: center;
+  width: rem(80);
+
+  &.large-circle {
+    border-radius: rem(120);
+    font-size: rem(40);
+    height: rem(120);
+    width: rem(120);
+  }
+}

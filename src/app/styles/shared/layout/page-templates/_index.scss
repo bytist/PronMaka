@@ -1,0 +1,12 @@
+@import 'common-template';
+@import 'login-page';
+@import 'account-page';
+@import 'product-detail-page';
+@import 'checkout-login-page';
+@import 'multistep-checkout-page';
+@import 'product-list-page';
+@import 'invitation-page';
+@import 'partners-homepage';
+@import 'two-column-template';
+
+$page-template-blacklist: (ProductDetailsPageTemplate, ProductListPageTemplate, ProductGridPageTemplate, LandingPage2Template); /* stylelint-disable-line */

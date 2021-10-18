@@ -1,0 +1,96 @@
+<ng-container *ngIf="cards$ | async as cards">
+  <ng-container *ngIf="!forceLoader && ((isLoading$ | async) !== true); else loading">
+    <ng-container
+      *ngIf="
+        cards?.length && !newAddressFormManuallyOpened;
+        else newAddressForm
+      "
+    >
+      <div class="cx-checkout-top-btns mb-5 row d-flex justify-content-end">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <button
+            class="btn btn-block btn-action"
+            (click)="showNewAddressForm()"
+          >
+            {{ 'checkoutAddress.addNewAddress' | cxTranslate }}
+          </button>
+        </div>
+      </div>
+
+      <div class="cx-checkout-body row">
+        <div
+          class="cx-shipping-address-card col-md-6 col-lg-6"
+          *ngFor="let card of cards; let i = index"
+        >
+          <div
+            class="cx-shipping-address-card-inner"
+            (click)="selectAddress(card.address)"
+          >
+            <cx-card
+              [border]="true"
+              [fitToContainer]="true"
+              [content]="card.card"
+              (sendCard)="selectAddress(card.address)"
+            ></cx-card>
+          </div>
+        </div>
+      </div>
+
+      <app-maka-delivery-modes></app-maka-delivery-modes>
+
+      <div class="d-lg-none">
+        <app-maka-checkout-order-summary></app-maka-checkout-order-summary>
+      </div>
+
+      <div class="cx-checkout-btns row">
+        <div class="col-md-12 col-lg-6">
+          <button
+            class="cx-btn btn btn-block btn-action"
+            (click)="goPrevious()"
+          >
+            {{ 'checkout.backToCart' | cxTranslate }}
+          </button>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <button
+            class="cx-btn btn btn-block btn-primary"
+            [disabled]="!(selectedAddress$ | async)?.id"
+            (click)="goNext()"
+          >
+            {{ 'common.continue' | cxTranslate }}
+          </button>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #newAddressForm>
+      <ng-container *ngIf="cards.length; else initialAddressForm">
+        <app-maka-address-form
+          [displayCheckoutSummary]="true"
+          [showTitleCode]="true"
+          (backToAddress)="hideNewAddressForm(false)"
+          (submitAddress)="addAddress($event)"
+        ></app-maka-address-form>
+      </ng-container>
+      <ng-template #initialAddressForm>
+        <app-maka-address-form
+          [displayDeliveryModes]="true"
+          [displayCheckoutSummary]="true"
+          [showTitleCode]="true"
+          [setAsDefaultField]="!isGuestCheckout"
+          [makaAddressData]="selectedAddress$ | async"
+          cancelBtnLabel="{{ 'checkout.backToCart' | cxTranslate }}"
+          (backToAddress)="hideNewAddressForm(true)"
+          (submitAddress)="addAddress($event)"
+        ></app-maka-address-form>
+      </ng-template>
+    </ng-template>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="cx-spinner">
+      <cx-spinner></cx-spinner>
+    </div>
+  </ng-template>
+</ng-container>
+

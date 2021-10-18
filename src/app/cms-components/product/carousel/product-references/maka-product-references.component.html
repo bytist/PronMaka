@@ -1,0 +1,42 @@
+<ng-container *ngIf="items$ | async as items">
+  <div class="container mb-5 px-0" *ngIf="items.length > 0">
+    <div class="row">
+      <div class="col-12 col-lg-11 offset-lg-1">
+        <cx-carousel
+          class="d-none d-md-flex d-lg-none"
+          [itemWidth]="'50%'"
+          [items]="items"
+          [template]="carouselItem"
+          [hideIndicators]="true"
+          title="{{ 'productList.references' | cxTranslate }}"
+        >
+        </cx-carousel>
+
+        <cx-carousel
+          class="d-none d-lg-flex"
+          [itemWidth]="'30%'"
+          [items]="items"
+          [template]="carouselItem"
+          [hideIndicators]="true"
+          title="{{ 'productList.references' | cxTranslate }}"
+        >
+        </cx-carousel>
+
+        <cx-carousel
+          class="d-flex d-md-none"
+          [itemWidth]="'100%'"
+          [items]="items"
+          [template]="carouselItem"
+          [hideIndicators]="true"
+          title="{{ 'productList.references' | cxTranslate }}"
+        >
+        </cx-carousel>
+
+        <ng-template #carouselItem let-item="item">
+          <cx-product-grid-item [product]="item" class="in-carousel"></cx-product-grid-item>
+        </ng-template>
+
+      </div>
+    </div>
+  </div>
+</ng-container>

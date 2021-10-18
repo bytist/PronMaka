@@ -1,0 +1,74 @@
+<div class="journey-animation" [ngClass]="{ 'journey-display': display }">
+  <div class="position-relative">
+    <div class="bg-maka-red product-journey-background"></div>
+    <div class="text-white product-journey d-flex align-items-center">
+      <div class="container px-0 product-journey-container">
+        <div class="row">
+          <div class="col-12 journey-text text-center text-lg-left pt-4 pt-lg-0">
+            <h1>
+              {{ 'common.homeAnimations.weAre' | cxTranslate }}
+            </h1>
+            <h1 class="stroked-primary-thick" [ngClass]="{ 'stroked-maka-red': zoomOutDone }">
+              {{ 'common.homeAnimations.yourPet' | cxTranslate }}
+            </h1>
+            <h1>{{ 'common.homeAnimations.needs' | cxTranslate }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-360-wrapper align-items-center position-fixed" [ngClass]="{ 'd-flex': zoomOutDone, 'd-none': !zoomOutDone }">
+      <div class="journey-sprite">
+        <img src="/assets/images/KEFF_tira_3.png" class="image-360"
+             alt="{{ 'common.homeAnimations.weAre' | cxTranslate }}
+              {{ 'common.homeAnimations.yourPet' | cxTranslate }}
+              {{ 'common.homeAnimations.needs' | cxTranslate }} " />
+      </div>
+    </div>
+
+    <div class="product-showcase align-items-center d-flex container py-3 position-fixed">
+      <app-maka-showcase class="h-100" [items]="showcaseItems" [scrollable]="showcaseSlideDone"></app-maka-showcase>
+    </div>
+  </div>
+
+  <div class="product-animated-grid container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-dark text-center text-lg-left">{{ 'common.homeAnimations.animatedGrid.title' | cxTranslate }}</h1>
+        <h2 class="stroked-dark text-uppercase text-center text-lg-left">{{ 'common.homeAnimations.animatedGrid.subtitle' | cxTranslate }}</h2>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-12 col-md-6">
+        <app-maka-animated-tile
+          ctaText="common.homeAnimations.animatedGrid.buy"
+          [ctaRoute]="seniorRoute"
+          imageUrl="/assets/images/costal-senior.png"
+          spinnerColorCSSClass="text-maka-orange"
+          title="common.homeAnimations.animatedGrid.senior.title"
+          subtitle="common.homeAnimations.animatedGrid.senior.subtitle"
+        ></app-maka-animated-tile>
+      </div>
+      <div class="col-12 col-md-6">
+        <app-maka-animated-tile
+          ctaText="common.homeAnimations.animatedGrid.buy"
+          [ctaRoute]="puppyRoute"
+          imageUrl="/assets/images/costal-cachorro.png"
+          spinnerColorCSSClass="text-maka-blue"
+          title="common.homeAnimations.animatedGrid.puppy.title"
+          subtitle="common.homeAnimations.animatedGrid.puppy.subtitle"
+        ></app-maka-animated-tile>
+      </div>
+      <div class="col-12 col-md-6 mx-auto">
+        <app-maka-animated-tile
+          ctaText="common.homeAnimations.animatedGrid.buy"
+          [ctaRoute]="adultRoute"
+          imageUrl="/assets/images/costal-adulto.png"
+          spinnerColorCSSClass="text-maka-red"
+          title="common.homeAnimations.animatedGrid.adult.title"
+          subtitle="common.homeAnimations.animatedGrid.adult.subtitle"
+        ></app-maka-animated-tile>
+      </div>
+    </div>
+  </div>
+</div>

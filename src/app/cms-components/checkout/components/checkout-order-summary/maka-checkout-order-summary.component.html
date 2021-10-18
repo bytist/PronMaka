@@ -1,0 +1,5 @@
+<app-maka-order-summary [cart]="cart$ | async" [ngClass]="{'order-summary-review' : (isCheckoutOrderReviewPage$ | async)}">
+  <div *ngIf="(isCheckoutOrderReviewPage$ | async)" class="summary-bottom-content">
+    <app-maka-place-order></app-maka-place-order>
+  </div>
+</app-maka-order-summary>

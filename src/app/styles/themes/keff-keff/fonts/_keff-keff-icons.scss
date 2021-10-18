@@ -1,0 +1,118 @@
+@import 'variables';
+
+@font-face {
+  font-display: swap;
+  font-family: '#{$icomoon-font-family}';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('#{$font-src-path}/#{$icomoon-font-family}.ttf?rvsc3f') format('truetype'),
+    url('#{$font-src-path}/#{$icomoon-font-family}.woff?rvsc3f') format('woff'),
+    url('#{$font-src-path}/#{$icomoon-font-family}.svg?rvsc3f##{$icomoon-font-family}') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+
+  /* Better Font Rendering =========== */
+  -webksit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: never;
+  text-transform: none;
+}
+
+.icon-arrow-right {
+  &::before {
+    content: $icon-arrow-right;
+  }
+}
+
+.icon-grid {
+  &::before {
+    content: $icon-grid;
+  }
+}
+
+.icon-list {
+  &::before {
+    content: $icon-list;
+  }
+}
+
+.icon-chevron-left {
+  &::before {
+    content: $icon-chevron-left;
+  }
+}
+
+.icon-chevron-right {
+  &::before {
+    content: $icon-chevron-right;
+  }
+}
+
+.icon-tiktok {
+  &::before {
+    content: $icon-tiktok;
+  }
+}
+
+.icon-youtube {
+  &::before {
+    content: $icon-youtube;
+  }
+}
+
+.icon-linkedin {
+  &::before {
+    content: $icon-linkedin;
+  }
+}
+
+.icon-star {
+  &::before {
+    content: $icon-star;
+  }
+}
+
+.icon-star-outline {
+  &::before {
+    content: $icon-star-outline;
+  }
+}
+
+.icon-cart {
+  &::before {
+    content: $icon-cart;
+  }
+}
+
+.icon-tw {
+  &::before {
+    content: $icon-tw;
+  }
+}
+
+.icon-ig {
+  &::before {
+    content: $icon-ig;
+  }
+}
+
+.icon-fb {
+  &::before {
+    content: $icon-fb;
+  }
+}
+
+.icon-arrow-down {
+  &::before {
+    content: $icon-arrow-down;
+  }
+}

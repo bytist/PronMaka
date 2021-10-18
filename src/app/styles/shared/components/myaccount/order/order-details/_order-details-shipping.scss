@@ -1,0 +1,13 @@
+app-maka-order-detail-shipping {
+  app-maka-order-overview {
+    .cx-order-review-summary-wrapper {
+      @include make-col(12, 12);
+
+      padding: 0;
+
+      @include media-breakpoint-up(lg) {
+        padding: 0 0 0 rem(20);
+      }
+    }
+  }
+}

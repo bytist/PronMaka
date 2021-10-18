@@ -1,0 +1,44 @@
+<div class="cx-order-review-summary" *ngIf="order$ | async as order">
+  <div class="container">
+    <div class="cx-order-review-summary-wrapper">
+      <div class="row" *ngIf="displayTitle">
+        <div class="col-sm-12">
+          <h3 class="order-review-title text-medium font-weight-normal">{{ 'checkoutReview.orderInformationTitle' | cxTranslate }}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-4 d-md-flex">
+          <div class="summary-card-column pl-lg-0">
+            <div class="summary-card">
+              <cx-card [content]="deliveryAddressCardContent$ | async"></cx-card>
+            </div>
+
+            <div class="summary-card">
+              <cx-card [content]="deliveryModeCardContent$ | async"></cx-card>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 d-md-flex">
+          <div class="summary-card-column">
+            <div class="summary-card">
+              <cx-card [content]="paymentMethodCardContent$ | async"></cx-card>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 d-md-flex" *ngIf="order.paymentAddress">
+          <div class="summary-card-column border-bottom-0 border-right-0">
+            <div class="summary-card">
+              <cx-card [content]="billingAddressCardContent$ | async"></cx-card>
+            </div>
+
+            <div class="summary-card">
+              <cx-card [content]="taxInfoCardContent$ | async"></cx-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

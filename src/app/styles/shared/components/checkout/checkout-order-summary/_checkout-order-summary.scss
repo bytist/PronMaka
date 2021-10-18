@@ -1,0 +1,56 @@
+app-maka-checkout-order-summary {
+  @extend %checkout-page-content !optional;
+
+  app-maka-order-summary {
+    @extend %order-summary !optional;
+
+    border: $border-standard;
+    margin-bottom: rem(20);
+    margin-top: rem(50);
+    padding: rem(30) 0 0;
+
+    & > * {
+      padding-left: rem(18);
+      padding-right: rem(18);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(8, 12);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(12, 12);
+
+      margin-top: rem(80);
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include make-col-offset(2);
+    }
+
+    h4 {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    cx-order-summary,
+    .cx-summary-partials {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    .cx-summary-partials {
+      @include media-breakpoint-up(lg) {
+        padding: rem(18) rem(18) 0;
+      }
+    }
+
+    .cx-summary-row:last-child {
+      margin: 0 0 rem(22);
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "productDetails": {
+    "id": "ID",
+    "quantity": "Cantidad",
+    "productDetails": "Detalles de producto",
+    "specification": "Especificaciones",
+    "reviews": "Opiniones sin filtro",
+    "shipping": "Envío",
+    "share": "Compartir",
+    "showReviews": "Ver opiniones sin filtro",
+    "noReviews": "Aún no hay opiniones sin filtro"
+  },
+  "productList": {
+    "filterBy": {
+      "label": "Filtrar por",
+      "action": "Filtrar por"
+    },
+    "showResults": "Mostrar {{count}} resultados",
+    "clearFacets": "Limpiar todo",
+    "references": "También te podría gustar",
+    "appliedFilter": "Filtros aplicados:",
+    "showLess": "Mostrar menos...",
+    "showMore": "Mostrar más...",
+    "sortByRelevance": "Ordenar por relevancia",
+    "backToTopBtn": "VOLVER ARRIBA",
+    "showMoreBtn": "MOSTRAR MÁS"
+  },
+  "productFacetNavigation": {
+    "filterBy": {
+      "label": "Filtrado por",
+      "action": "Filtrado por"
+    },
+    "appliedFilter": "Filtros aplicados:",
+    "showLess": "Muestra menos...",
+    "showMore": "Mostrar más...",
+    "sortByRelevance": "Ordenar por relevancia"
+  },
+  "productSummary": {
+    "id": "CARNÉ DE IDENTIDAD",
+    "showReviews": "Ver opiniones sin filtro",
+    "share": "Compartir"
+  },
+  "productReview": {
+    "overallRating": "Calificación general",
+    "reviewTitle": "Título",
+    "writeYourComments": "Comentario",
+    "rating": "Rating",
+    "reviewerName": "Nombre (opcional)",
+    "writeReview": "Opina sin filtro",
+    "more": "Más",
+    "less": "Menos",
+    "thankYouForReview": "Gracias por el comentario! Ten en cuenta que las opiniones pueden requerir una revisión antes de aparecer aquí."
+  },
+  "addToCart": {
+    "itemsAddedToYourCart": "Artículo (s) agregado a su carrito",
+    "itemsIncrementedInYourCart": "Este artículo ya estaba en su carro de compras. La cantidad fue actualizada.",
+    "artículos": "artículos",
+    "updatingCart": "Actualizando carrito ...",
+    "addToCart": "Añadir al carrito",
+    "viewCart": "ver carrito",
+    "proceedToCheckout": "Ir al Checkout",
+    "quantity": "Cantidad",
+    "outOfStock": "Agotado",
+    "inStock": "En stock",
+    "selectStyleAndSize": "Seleccione estilo y tamaño para consultar stock"
+  },
+  "TabPanelContainer": {
+    "tabs": {
+      "ProductDetailsTabComponent": "¿Por qué Keff Keff?",
+      "ProductSpecsTabComponent": "Ingredientes claros",
+      "ProductReviewsTabComponent": "Opiniones sin filtro",
+      "deliveryTab": "Envío Consciente"
+    }
+  },
+  "variant": {
+    "style": "Estilo",
+    "selectedStyle": "Estilo seleccionado",
+    "size": "Talla",
+    "color": "Color",
+    "sizeGuideLabel": "Guía de estilo",
+    "weight": "Kilos",
+    "kg": "Kg"
+  },
+  "addToWishList": {
+    "add": "Añadir a la lista de deseos",
+    "remove": "Eliminar de la lista de deseos",
+    "anonymous": "Inicie sesión para agregar a la lista de deseos"
+  },
+  "stockNotification": {
+    "notifyMe": "NOTIFICARME",
+    "stopNotify": "DETENER NOTIFICACION",
+    "getNotify": "Reciba notificaciones cuando este producto esté disponible.",
+    "getNotifySuffix": "para recibir una notificación cuando este producto esté disponible.",
+    "activateChannelsPrefix": "Para recibir una notificación, debe activar el",
+    "channelsLink": "Canales de notificaciones",
+    "activateChannelsSuffix": ".",
+    "notified": "Se le notificará cuando este producto vuelva a estar en stock.",
+    "getNotified": "Reciba notificaciones cuando este producto vuelva a estar disponible.",
+    "unsubscribeSuccess": "No recibirá una notificación de devolución de existencias para este producto.",
+    "subscriptionDialog": {
+      "header": "Suscripción agotada",
+      "notifiedPrefix": "Se le notificará sobre:",
+      "notifiedSuffix": "tan pronto como este producto vuelva a estar en stock.",
+      "manageChannelsPrefix": "Administre sus canales de notificación preferidos en el",
+      "manageChannelsLink": "Preferencia de notificación",
+      "manageChannelsSuffix": " página.",
+      "manageSubscriptionsPrefix": "Puede administrar sus suscripciones en",
+      "manageSubscriptionsLink": "Mis intereses",
+      "manageSubscriptionsSuffix": " página.",
+      "okBtn": "Okay",
+      "subscribing": "Suscribiéndote a notificaciones de Agotado para este producto"
+    }
+  }
+}

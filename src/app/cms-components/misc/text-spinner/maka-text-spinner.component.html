@@ -1,0 +1,20 @@
+<div class="text-spinner-circle">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px" y="0px"
+    viewBox="0 0 200 200"
+    enable-background="new 0 0 200 200"
+    xml:space="preserve">
+    <defs>
+      <path id="circlePath"
+        d="M 30, 100
+          a 70,70 0 1,1 140, 0
+          a 70,70 0 1,1 -140, 0"/>
+    </defs>
+    <g>
+      <text class="{{ (cssClasses) ? cssClasses: 'text-text' }}">
+        <textPath xlink:href="#circlePath">{{ 'spinner.slogan' | cxTranslate }}</textPath>
+      </text>
+    </g>
+  </svg>
+</div>

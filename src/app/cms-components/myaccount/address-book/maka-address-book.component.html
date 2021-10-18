@@ -1,0 +1,91 @@
+<div class="cx-section mt-5">
+  <ng-container
+    *ngIf="
+      (addresses$ | async).length &&
+      !(showAddAddressForm || showEditAddressForm)
+    "
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-11 offset-lg-1">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <button
+                class="btn btn-block btn-action"
+                (click)="addAddressButtonHandle()">
+                {{ 'addressBook.addNewAddress' | cxTranslate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="row cx-address-deck mt-5"
+        *ngIf="(addressesStateLoading$ | async) === false; else loading"
+      >
+        <div class="col-12 col-lg-11 offset-lg-1">
+          <div class="row">
+            <div
+              *ngFor="let address of addresses$ | async"
+              class="col-md-6 cx-address-card"
+            >
+              <cx-card
+                [fitToContainer]="true"
+                [content]="getMakaCardContent(address) | async"
+                (editCard)="editAddressButtonHandle(address)"
+                (setDefaultCard)="setAddressAsDefault(address.id)"
+                (deleteCard)="setEdit(address.id)"
+                [editMode]="address.id === editCard"
+                (cancelCard)="cancelCard()"
+              ></cx-card>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!(addresses$ | async).length || showAddAddressForm">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-11 offset-lg-1">
+          <h5 class="mb-5 text-center text-lg-left section-subheading">{{ 'addressBook.addNewShippingAddress' | cxTranslate }}</h5>
+          <app-maka-address-form
+            class="cx-form"
+            [showCancelBtn]="!((addresses$ | async).length === 0)"
+            actionBtnLabel="{{ 'addressBook.addAddress' | cxTranslate }}"
+            cancelBtnLabel="{{ 'addressBook.backToAddressList' | cxTranslate }}"
+            [setAsDefaultField]="!((addresses$ | async).length === 0)"
+            (submitAddress)="addAddressSubmit($event)"
+            (backToAddress)="addAddressCancel()"
+          ></app-maka-address-form>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="showEditAddressForm">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-11 offset-lg-1">
+          <h5 class="mb-5 text-center text-lg-left section-subheading">{{ 'addressBook.editShippingAddress' | cxTranslate }}</h5>
+          <app-maka-address-form
+            actionBtnLabel="{{ 'addressBook.updateAddress' | cxTranslate }}"
+            cancelBtnLabel="{{ 'addressBook.backToAddressList' | cxTranslate }}"
+            [makaAddressData]="currentAddress"
+            (submitAddress)="editAddressSubmit($event)"
+            (backToAddress)="editAddressCancel()"
+          ></app-maka-address-form>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  <div class="col-md-12 cx-address-spinner">
+    <cx-spinner></cx-spinner>
+  </div>
+</ng-template>

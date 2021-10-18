@@ -1,0 +1,37 @@
+.text-spinner-circle {
+  opacity: 0.65;
+  overflow: hidden;
+}
+
+.text-spinner-circle svg {
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-name: rotate;
+  animation-timing-function: linear;
+  font-size: 0.83rem;
+  font-weight: $headings-font-weight;
+  height: 100%;
+  letter-spacing: rem(2);
+  width: 100%;
+
+  .text-text {
+    fill: var(--cx-color-text, #{$text});
+  }
+
+  .text-maka-red {
+    fill: $maka-red;
+  }
+
+  .text-maka-orange {
+    fill: $maka-orange;
+  }
+
+  .text-maka-blue {
+    fill: $maka-blue;
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,181 @@
+$dialog-padding-sm: rem(20);
+$dialog-padding-lg: rem(33);
+$dialog-width-tablet: rem(452);
+$border-gray: 1px solid $gray-500;
+
+cx-added-to-cart-dialog {
+  .cx-dialog-header {
+    position: relative;
+
+    &.modal-header {
+      align-items: center;
+      border-bottom: $border-gray; // is this a reusable style in the page?
+      display: flex;
+      padding: rem(30) 0 rem(30) $dialog-padding-sm;
+
+      @include media-breakpoint-up(md) {
+        font-size: $xlarge-font-size;
+        padding: rem(26) rem(68);
+      }
+    }
+
+    .cx-dialog-title {
+      font-size: $medium-font-size;
+      font-weight: $font-weight-light;
+      padding-right: rem(20);
+      text-transform: uppercase;
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    .close {
+      color: $text;
+      float: none;
+      font-size: rem(15.5);
+      margin-right: $dialog-padding-sm;
+      opacity: 1;
+      padding: 0;
+      position: static;
+
+      @include media-breakpoint-up(md) {
+        display: block;
+        font-size: rem(19);
+        height: auto;
+        margin: 0;
+        position: absolute;
+        right: rem(25);
+        top: rem(3);
+        width: rem(19);
+      }
+    }
+  }
+
+  .cx-dialog-body.modal-body {
+    background-color: $background;
+    min-width: rem(375);
+
+    @include media-breakpoint-only(md) {
+      margin: rem(49) auto;
+      padding: 0;
+      width: $dialog-width-tablet;
+
+      .cx-dialog-row {
+        flex-flow: column;
+        padding: 0;
+
+        .cx-dialog-item,
+        .cx-dialog-separator,
+        .cx-dialog-actions {
+          flex-shrink: 0;
+          max-width: none;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: rem(50) $dialog-padding-lg;
+    }
+
+    .cx-dialog-row {
+      @include media-breakpoint-up(lg) {
+        padding: 0;
+      }
+    }
+
+    .cx-dialog-item {
+      padding: rem(30) $dialog-padding-sm rem(35);
+
+      @include media-breakpoint-up(md) {
+        padding: 0;
+      }
+    }
+
+    .cx-dialog-separator {
+      margin: 0 $dialog-padding-sm;
+      width: calc(100% - #{$dialog-padding-sm * 2});
+
+      @include media-breakpoint-only(md) {
+        border-top: $border-gray;
+        display: block !important; // we need to overwrite the bootstrap class d-md-none
+        margin: rem(40) 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .cx-dialog-row .cx-dialog-actions {
+    padding: rem(20);
+
+    @include media-breakpoint-only(md) {
+      border-width: 0;
+      padding: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding: 0 rem(33) 0 rem(36);
+    }
+
+    .cx-dialog-total {
+      font-family: $font-family-sans-serif;
+      font-size: $small-font-size;
+      font-weight: $font-weight-normal;
+      text-transform: uppercase;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: rem(28);
+        padding: rem(10) 0 0 0;
+      }
+    }
+  }
+
+  .cx-dialog-actions .cx-dialog-promotions {
+    margin: 0;
+    padding: 0;
+
+    .cx-promotions {
+      margin-bottom: rem(36);
+      margin-top: rem(40);
+      padding: 0;
+
+      @include media-breakpoint-up(md) {
+        margin: 0 0 rem(36) 0;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+      }
+
+      ul {
+        background-color: $gray-400;
+        padding: rem(15) rem(24);
+
+        li {
+          color: $text;
+          font-weight: $font-weight-normal;
+        }
+      }
+    }
+  }
+
+  .cx-dialog-buttons {
+    @include media-breakpoint-up(md) {
+      margin: rem(36) auto 0 auto;
+      width: 80%;
+    }
+
+    .btn {
+      font-size: $medium-font-size;
+    }
+
+    .btn-primary {
+      @extend %btn-action;
+    }
+
+    .btn-secondary {
+      @extend %btn-primary;
+    }
+  }
+}

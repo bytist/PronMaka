@@ -1,0 +1,61 @@
+#!/bin/bash
+
+pass=true
+RED='\033[1;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+
+# check the branch name
+if [[ `git rev-parse --abbrev-ref HEAD` =~ ^(feature|bug|hotfix)\/(MAKA)\-[0-9]+$  ]]; then
+  printf "${GREEN}the name of the branch is correct\n"
+else
+	printf "${RED}Branch name should be something like feature/MAKA-001\n"
+	exit 1
+fi
+echo "Running Linters and Unit Testing:"
+
+# Run lint and get the output and return code
+lint=$(yarn run lint)
+ret_code=$?
+
+if [ $ret_code != 0 ]; then
+	printf "${RED}lint failed:${NC}"
+	echo "$lint \n"
+	exit 1
+else
+	printf "${GREEN}lint passed.${NC}\n"
+fi
+
+
+# Run stylelint and get the output and return code
+#styleLint=$(yarn run stylelint 'src/**/*.scss')
+#ret_code=$?
+
+#if [ $ret_code != 0 ]; then
+#	printf "${RED}styleLint failed:${NC}"
+#	echo "$stylelint\n"
+#	exit 1
+#else
+#	printf "${GREEN}styleLint passed.${NC}\n"
+#fi
+
+# Run unit testing and get the output and return code
+printf "${NC} Running test cases \n"
+test=$( ng test --watch=false --browsers=ChromeHeadless)
+ret_code=$?
+
+if [ $ret_code != 0 ]; then
+	printf "${RED}test failed:${NC} ${test}"
+	echo "$test \n"
+	exit 1
+else
+	printf "${GREEN}test passed.${NC}\n"
+fi
+
+# If there were no failures, it is good to commit
+if $pass; then
+	exit 0
+fi
+
+exit 1

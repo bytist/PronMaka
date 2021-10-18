@@ -1,0 +1,30 @@
+.AccountPageTemplate app-maka-order-detail-headline {
+  @extend %AccountPageTemplateContent !optional;
+
+  .content-wrapper {
+    @include media-breakpoint-up(lg) {
+      padding-left: rem(8);
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include make-col(5, 12);
+    }
+  }
+
+  .headline-title {
+    color: var(--cx-color-inverse, #{$inverse});
+    font-family: $font-family-sans-serif;
+    font-size: rem(20);
+    margin-bottom: rem(30);
+  }
+
+  .headline-content {
+    border-top: 1px solid $inverse;
+    margin-bottom: rem(20);
+    padding: rem(14) 0;
+  }
+
+  .order-carrier-url {
+    font-weight: $font-weight-bold;
+  }
+}

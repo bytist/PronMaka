@@ -1,0 +1,11 @@
+<div class="position-relative">
+  <div class="position-absolute animated-tile-spinner">
+    <app-maka-text-spinner [cssClasses]="spinnerColorCSSClass"></app-maka-text-spinner>
+  </div>
+  <img src="{{ imageUrl }}" alt="{{ title | cxTranslate }}" class="d-block col-8 mx-auto mt-5" />
+</div>
+<h4 class="text-center text-uppercase text-xlarge">{{ title | cxTranslate }}</h4>
+<p class="text-center sans-serif-secondary text-uppercase text-xlarge">{{ subtitle | cxTranslate }}</p>
+<button (click)="navigate()" class="btn btn-primary col-8 offset-2 text-uppercase sans-serif-secondary">
+  {{ ctaText | cxTranslate }}
+</button>

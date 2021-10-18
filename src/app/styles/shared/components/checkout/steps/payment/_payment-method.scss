@@ -1,0 +1,99 @@
+app-maka-payment-method {
+  padding-bottom: rem(100);
+  position: relative;
+
+  > .form-check {
+    @extend %section-background;
+
+    .form-group {
+      & > hr {
+        margin-top: 0;
+
+        &:last-of-type {
+          display: none;
+        }
+      }
+
+      label {
+        font-weight: $font-weight-light;
+        margin-bottom: 0; // override
+        min-height: rem(65);
+      }
+
+      .payment-description {
+        color: $secondary;
+        display: block;
+        font-size: $xsmall-font-size;
+      }
+    }
+
+    cx-form-errors {
+      &.control-touched {
+        display: block;
+      }
+    }
+  }
+
+  /* Style for CC saved */
+  .cx-card {
+    .card-header {
+      font-size: $medium-font-size;
+    }
+
+    .card-body {
+      .cx-card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .cx-card-label-bold {
+          text-transform: capitalize;
+        }
+
+        .cx-icon {
+          font-size: rem(40);
+        }
+      }
+
+      .cx-card-actions {
+        margin-top: rem(25);
+      }
+
+      .cx-card-title {
+        @extend %cx-card-title;
+      }
+    }
+
+    .card-header + .card-body .card-link {
+      display: none;
+    }
+  }
+
+  /* Display/hide CTA buttons new CC and payment-method */
+  app-maka-openpay.new-payment {
+    & ~ .payment-method-btns {
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+
+      .previous {
+        display: none;
+      }
+    }
+
+    .new-cc-btns {
+      bottom: 0;
+      padding-bottom: rem(40);
+      position: absolute;
+      width: 100%;
+
+      > .col-12 {
+        z-index: 9;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="container my-5">
+  <h4 class="sans-serif-secondary text-dark pb-3 mb-4 bottom-bordered-black">
+    {{ 'partner.commissions.referralOrdersTitle' | cxTranslate }}
+  </h4>
+
+  <ng-container *ngIf="referralOrders$ | async as referralOrders">
+    <app-maka-commission-order-table
+      *ngIf="referralOrders.pagination.totalResults > 0"
+      [orders]="referralOrders"
+      (gotToPage)="pageChange($event)"
+    ></app-maka-commission-order-table>
+
+    <p
+      *ngIf="referralOrders.pagination.totalResults === 0"
+      class="text-dark text-medium mb-4 font-weight-light">
+      {{ 'partner.commissions.noOrders' | cxTranslate }}
+    </p>
+  </ng-container>
+</div>

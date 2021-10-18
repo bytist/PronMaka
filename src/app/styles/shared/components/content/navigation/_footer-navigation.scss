@@ -1,0 +1,87 @@
+app-maka-footer-navigation {
+  color: var(--cx-color-dark);
+  position: relative;
+
+  .footer-content {
+    color: var(--cx-color-dark);
+    padding: rem(90) 0;
+    position: relative;
+
+    // apply footer text animation via CSS class
+    &.force-primary {
+      * {
+        color: var(--cx-color-primary) !important;
+      }
+
+      .stroked-dark {
+        @include text-stroke($primary, $transparent);
+      }
+
+      nav a,
+      .footer-nav-list li {
+        opacity: 0.65;
+      }
+
+      nav a:hover {
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: rem(90) 0 rem(145) 0;
+
+      .social-network {
+        margin-bottom: rem(-150);
+      }
+    }
+
+    * {
+      color: var(--cx-color-dark);
+      transition-duration: $footer-transition-duration;
+    }
+
+    h5 {
+      font-family: $font-family-sans-serif-secondary;
+      margin-bottom: rem(16);
+      text-transform: uppercase;
+    }
+
+    .footer-nav-list li,
+    .wrapper nav {
+      font-size: $small-font-size;
+      margin-bottom: rem(6);
+    }
+
+    cx-navigation-ui > nav,
+    .footer-nav-list {
+      margin-top: rem(50);
+
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+      }
+    }
+
+    .icon-arrow-down {
+      font-size: rem(50);
+    }
+  }
+
+  .footer-bg {
+    background: var(--cx-color-primary);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+  }
+
+  .footer-layer {
+    background: var(--cx-color-dark);
+    bottom: 0;
+    height: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+}

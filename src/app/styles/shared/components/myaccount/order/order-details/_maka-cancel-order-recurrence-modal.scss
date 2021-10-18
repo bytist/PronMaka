@@ -1,0 +1,104 @@
+ngb-modal-window.modal.cancel-recurrence-modal {
+  max-height: 100vh;
+  overflow-y: scroll;
+
+  @include media-breakpoint-down(sm) {
+    height: auto;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 90%;
+  }
+
+  @include media-breakpoint-only(sm) {
+    width: 85%;
+  }
+
+  .cx-dialog-header {
+    border-bottom: 0;
+  }
+
+  .modal-dialog {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    margin: 0 auto;
+    max-width: rem(415);
+
+    @include media-breakpoint-up(md) {
+      max-width: rem(686);
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: rem(832);
+    }
+
+    h2,
+    .dialog-text-content {
+      color: var(--cx-color-dark, #{$dark});
+      text-align: center;
+    }
+
+    h2 {
+      font-family: $font-family-sans-serif-secondary;
+      font-size: rem(30);
+      margin-bottom: rem(40);
+
+      @include media-breakpoint-up(md) {
+        font-size: rem(45);
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 auto rem(40);
+        max-width: rem(460);
+      }
+    }
+
+    .cx-dialog-body {
+      padding: 0 rem(9) rem(70) rem(15);
+
+      @include media-breakpoint-up(md) {
+        padding: 0 rem(115) rem(70);
+      }
+    }
+
+    .dialog-legend {
+      @include media-breakpoint-up(md) {
+        font-size: rem(15);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .dialog-text-content {
+      font-size: rem(14);
+    }
+
+    .cx-dialog-actions {
+      margin-top: rem(40);
+    }
+
+    .cx-dialog-buttons {
+      text-align: center;
+
+      .btn {
+        background-color: $secondary;
+        color: $white;
+        width: rem(180);
+
+        @include media-breakpoint-up(md) {
+          width: rem(336);
+        }
+
+        @include media-breakpoint-up(lg) {
+          width: rem(302);
+        }
+      }
+    }
+  }
+}

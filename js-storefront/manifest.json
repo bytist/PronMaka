@@ -1,0 +1,10 @@
+{
+  "applications": [
+    {
+      "name": "maka-storefront",
+      "path": "maka-storefront",
+      "enableSSR": true
+    }
+  ],
+  "nodeVersion": "12"
+}

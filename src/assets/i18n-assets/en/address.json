@@ -1,0 +1,104 @@
+{
+  "addressForm": {
+    "title": "Title",
+    "address": "Address",
+    "shippingAddress": "Shipping address",
+    "businessName": {
+      "label": "Business name"
+    },
+    "firstName": {
+      "label": "First name",
+      "placeholder": "First Name"
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": "Last Name"
+    },
+    "petName": {
+      "label": "Pet's Name",
+      "placeholder": "Pet's Name"
+    },
+    "address1": "Address 1",
+    "address2": "Address 2 (optional)",
+    "streetName": {
+      "label": "Street Name",
+      "placeholder": "Street Name"
+    },
+    "streetNumber": {
+      "label": "Street Number",
+      "placeholder": "Street Number"
+    },
+    "appartement": {
+      "label": "Apt, Suite",
+      "placeholder": "Apt, Suite"
+    },
+    "reference": {
+      "label": "Reference",
+      "placeholder": "Reference"
+    },
+    "district": {
+      "label": "District",
+      "placeholder": "District"
+    },
+    "country": {
+      "label": "Country",
+      "default": "México"
+    },
+    "city": {
+      "label": "City",
+      "placeholder": "City"
+    },
+    "state": "State",
+    "zipCode": {
+      "label": "Zip Code",
+      "placeholder": "Zip Code"
+    },
+    "phoneNumber": {
+      "label": "Phone number (optional)",
+      "placeholder": "(555) 555 - 0123"
+    },
+    "cellphone": {
+      "label": "Cell Phone",
+      "placeholder": "Cell Phone"
+    },
+    "rfc": {
+      "label": "RFC",
+      "placeholder": "RFC"
+    },
+    "legalEntityName": {
+      "label": "Legal entity name",
+      "placeholder": "Legal entity name"
+    },
+    "titleSection": {
+      "title": "What would your dogs say if they could talk?",
+      "description": "¡Hi human! share the name of your pets with us so that your purchases are special for them"
+    },
+    "saveAsDefault": "Save as default",
+    "chooseAddress": "Choose address",
+    "streetAddress": "Street Address",
+    "aptSuite": "Apt, Suite",
+    "selectOne": "Select One...",
+    "setAsDefault": "Set as default",
+    "titleRequired": "Title is required.",
+    "userAddressAddSuccess": "New address was added successfully!",
+    "userAddressUpdateSuccess": "Address updated successfully!",
+    "userAddressDeleteSuccess": "Address deleted successfully!",
+    "invalidAddress": "Invalid Address"
+  },
+  "addressBook": {
+    "addNewShippingAddress": "Add New Shipping Address",
+    "editShippingAddress": "Edit Shipping Address",
+    "areYouSureToDeleteAddress": "Are you sure you want to delete this address?",
+    "addNewAddress": "New address",
+    "addAddress": "Add address",
+    "updateAddress": "Update address",
+    "backToAddressList": "Back to address list"
+  },
+  "addressCard": {
+    "default": "DEFAULT",
+    "selected": "Selected",
+    "setAsDefault": "Set as default",
+    "shipTo": "Ship To",
+    "billTo": "Bill To"
+  }
+}

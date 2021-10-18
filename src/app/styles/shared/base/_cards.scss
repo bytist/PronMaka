@@ -1,0 +1,51 @@
+.cx-card {
+  .card-header {
+    height: ($spacer * 2.5);
+  }
+
+  .card-body {
+    font-size: $small-font-size;
+    font-weight: $font-weight-light;
+    padding: ($spacer * 1.5) 0;
+
+    &:first-child {
+      border-top: $card-border-width solid var(--cx-color-light, #{$light});
+      margin-top: ($spacer * 2.5) - $card-border-width; // needed to align header border bottom with body border top
+    }
+
+    &.cx-card-delete {
+      border-top: $card-border-width solid var(--cx-color-danger, #{$danger});
+
+      .cx-card-delete-msg {
+        color: var(--cx-color-danger, #{$danger});
+        font-weight: $font-weight-normal;
+        padding-bottom: ($spacer * 1.5);
+      }
+
+      button {
+        font-size: $small-font-size;
+        margin-top: ($spacer * 2);
+
+        &.btn-primary {
+          @extend .btn-danger; /* stylelint-disable-line */
+        }
+      }
+    }
+
+    .cx-card-actions {
+      display: flex;
+      margin-top: ($spacer * 2);
+
+      a {
+        cursor: pointer;
+        font-size: $xxsmall-font-size;
+        margin-right: ($spacer * 3);
+        text-decoration: underline;
+
+        &:hover {
+          color: var(--cx-color-inverse);
+        }
+      }
+    }
+  }
+}

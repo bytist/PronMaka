@@ -1,0 +1,40 @@
+.PLPBannerContentSlot {
+  @extend .container; /* stylelint-disable-line */
+
+  padding: 0;
+  position: relative;
+
+  cx-paragraph:nth-child(1) {
+    flex: initial;
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(1, 12);
+
+      padding-left: rem(20);
+    }
+
+    p {
+      left: rem(10);
+      position: absolute;
+      top: 5rem;
+      z-index: 10;
+    }
+  }
+
+  cx-banner {
+    @include make-col(12, 12);
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 0 rem(20); // this padding respects the width of the "keff keff así de simple" vertical text
+
+    @include media-breakpoint-up(md) {
+      min-height: rem(470);
+    }
+
+    cx-generic-link {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<form
+  (ngSubmit)="submitForm()"
+  class="cx-place-order-form form-check"
+  [ngClass]="{'paypal-payment' : (isPaymentWithPaypal && paypalPayment)}"
+  [formGroup]="checkoutSubmitForm"
+>
+  <div class="form-group">
+    <label>
+      <input
+        formControlName="termsAndConditions"
+        class="form-check-input"
+        type="checkbox"
+        (change)="toggleTAndC()"
+      />
+      <span class="form-check-label">
+        {{ 'checkoutReview.confirmThatRead' | cxTranslate }}
+        <a
+          [routerLink]="{ cxRoute: 'termsAndConditions' } | cxUrl"
+          class="btn-link text-underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ 'checkoutReview.termsAndConditions' | cxTranslate }}
+        </a>
+      </span>
+      <cx-form-errors
+        [control]="checkoutSubmitForm.get('termsAndConditions')"
+      ></cx-form-errors>
+    </label>
+  </div>
+
+  <ng-container *ngIf="isPaymentWithPaypal && paypalPayment; else placeOrderOotb">
+    <app-maka-payment-paypal
+      [payment]="paypalPayment"
+      [disableBtn]="!tAndCToggler">
+    </app-maka-payment-paypal>
+  </ng-container>
+
+  <ng-template #placeOrderOotb>
+    <button
+      type="submit"
+      class="btn btn-primary btn-block"
+      [disabled]="!tAndCToggler || disableBtn"
+    >
+      {{ 'checkoutReview.placeOrder' | cxTranslate }}
+    </button>
+  </ng-template>
+</form>
+
+<div *ngIf="disableBtn">
+  <div class="spinner-overlay">
+    <div class="col-md-8 col-10 mx-auto">
+      <h1 class="text-center mb-3">{{ 'checkout.waitingTitle' | cxTranslate }}</h1>
+      <h4 class="text-center mb-4">{{ 'checkout.waitingMessage' | cxTranslate }}</h4>
+      <app-maka-spinner [fullHeight]="false"></app-maka-spinner>
+    </div>
+
+  </div>
+</div>

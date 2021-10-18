@@ -1,0 +1,142 @@
+<form (ngSubmit)="submitUserForm()" [formGroup]="userForm">
+
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          name="firstName"
+          [class.is-empty]="!userForm.get('firstName').value"
+          formControlName="firstName"
+        />
+        <span class="label-content" [class.required]="!isProfileForm">{{ 'register.firstName.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="userForm.get('firstName')"></cx-form-errors>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          name="lastName"
+          [class.is-empty]="!userForm.get('lastName').value"
+          formControlName="lastName"
+        />
+        <span class="label-content" [class.required]="!isProfileForm">{{ 'register.lastName.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="userForm.get('lastName')"></cx-form-errors>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          [class.is-empty]="!userForm.get('email').value"
+          formControlName="email"
+        />
+        <span class="label-content" [class.required]="!isProfileForm">{{ 'register.emailAddress.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="userForm.get('email')"></cx-form-errors>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          name="cellphone"
+          maxlength="10"
+          [class.is-empty]="!userForm.get('cellphone').value"
+          formControlName="cellphone"
+        />
+        <span class="label-content" [class.required]="!isProfileForm">{{ 'register.cellphone.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="userForm.get('cellphone')"></cx-form-errors>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          name="rfc"
+          [class.is-empty]="!userForm.get('rfc').value"
+          formControlName="rfc"
+        />
+        <span class="label-content" [class.required]="!isProfileForm">{{ 'register.rfc.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="userForm.get('rfc')"></cx-form-errors>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          name="legalEntityName"
+          [class.is-empty]="!userForm.get('legalEntityName').value"
+          formControlName="legalEntityName"
+        />
+        <span class="label-content">{{ 'register.legalEntityName.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="userForm.get('legalEntityName')"></cx-form-errors>
+    </div>
+  </div>
+
+  <app-maka-partner-address-form [parentForm]="userForm"></app-maka-partner-address-form>
+
+  <ng-container *ngIf="!isProfileForm">
+    <div class="row mt-5">
+      <div class="form-group col-md-6">
+        <label>
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            formControlName="password"
+          />
+          <span class="label-content" [class.required]="!isProfileForm">{{ 'register.password.label' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors  [control]="userForm.get('password')"></cx-form-errors>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>
+          <input
+            class="form-control"
+            type="password"
+            name="confirmpassword"
+            formControlName="passwordconf"
+          />
+          <span class="label-content" [class.required]="!isProfileForm">{{ 'register.confirmPassword.label' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors  [control]="userForm.get('passwordconf')"></cx-form-errors>
+      </div>
+    </div>
+
+    <div class="form-group mt-5">
+      <div class="form-check text-left">
+        <label>
+          <input
+            type="checkbox"
+            name="termsandconditions"
+            formControlName="termsandconditions"/>
+          <span class="form-check-label text-xsmall">{{ 'register.partner.terms' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors [control]="userForm.get('termsandconditions')"></cx-form-errors>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-block btn-action col-12 col-lg-5 mx-auto mt-5">
+      {{ 'register.partner.register' | cxTranslate }}
+    </button>
+  </ng-container>
+
+</form>

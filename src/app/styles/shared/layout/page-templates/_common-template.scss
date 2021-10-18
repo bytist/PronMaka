@@ -1,0 +1,8 @@
+footer {
+  cx-page-layout {
+    &.footer {
+      background: none;
+      color: var(--cx-color-dark, var(--cx-color-inverse));
+    }
+  }
+}

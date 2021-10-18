@@ -1,0 +1,186 @@
+{
+  "common": {
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "remove": "Eliminar",
+    "edit": "Editar",
+    "back": "Regresar",
+    "submit": "Enviar",
+    "continue": "Continuar",
+    "save": "Guardar",
+    "done": "Completado",
+    "home": "Inicio",
+    "slogan": "KEFF KEFF ASÍ DE SIMPLE",
+    "guest": "Invitado",
+    "homeAnimations": {
+      "makaPlateTitle": "Seamos claros",
+      "weAreNot": "No somos",
+      "croquettes": "croquetas.",
+      "weAre": "Somos lo que",
+      "yourPet": "Tu mascota",
+      "needs": "Necesita",
+      "showcase": {
+        "tabOne": {
+          "title": "Hacemos keff keff",
+          "subtitle": "Con nuestro origen",
+          "tab": "Cachorro",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis porttitor augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ultrices nulla eu nunc commodo condimentum. Aliquam in dapibus eros. Duis sagittis, arcu eu malesuada gravida, orci nunc vehicula nisl, eu volutpat neque odio a purus."
+        },
+        "tabTwo": {
+          "title": "Hacemos keff keff",
+          "subtitle": "Con nuestro origen",
+          "tab": "Adulto",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis porttitor augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ultrices nulla eu nunc commodo condimentum. Aliquam in dapibus eros. Duis sagittis, arcu eu malesuada gravida, orci nunc vehicula nisl, eu volutpat neque odio a purus."
+        },
+        "tabThree": {
+          "title": "Hacemos keff keff",
+          "subtitle": "Con nuestro origen",
+          "tab": "Senior",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis porttitor augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ultrices nulla eu nunc commodo condimentum. Aliquam in dapibus eros. Duis sagittis, arcu eu malesuada gravida, orci nunc vehicula nisl, eu volutpat neque odio a purus."
+        }
+      },
+      "animatedGrid": {
+        "buy": "Comprar",
+        "title": "Estás a 3 clicks",
+        "subtitle": "De que lleguen a tu casa",
+        "senior": {
+          "title": "Keff Keff Senior",
+          "subtitle": "Costal de croquetas 4kg"
+        },
+        "puppy": {
+          "title": "Keff Keff Cachorro",
+          "subtitle": "Costal de croquetas 4kg"
+        },
+        "adult": {
+          "title": "Keff Keff Adulto",
+          "subtitle": "Costal de croquetas 4kg"
+        }
+      }
+    }
+  },
+  "pageMetaResolver": {
+    "category": {
+      "title": "Resultado de {{count}} para {{query}}",
+      "title_plural": "Resultados de {{count}} para {{query}}"
+    },
+    "checkout": {
+      "title": "Pagar {{count}} Artículo",
+      "title_plural": "Pagar {{count}} Artículos"
+    },
+    "search": {
+      "title": "{{count}} resultado para \"{{query}}\"",
+      "title_plural": "{{count}} resultados para \"{{query}}\"",
+      "findProductTitle": "{{count}} resultado para el \"{{coupon}}\"",
+      "findProductTitle_plural": "{{count}} resultados para el  \"{{coupon}}\""
+    },
+    "product": {
+      "description": "{{description}}",
+      "heading": "{{heading}}",
+      "title": "{{title}}"
+    }
+  },
+  "spinner": {
+    "loading": "Cargando...",
+    "slogan": "KEFF KEFF ASÍ DE SIMPLE - KEFF KEFF ASÍ DE SIMPLE -"
+  },
+  "navigation": {
+    "shopAll": "Comprar todos {{ navNode}} >"
+  },
+  "searchBox": {
+    "placeholder": "Busca aquí...",
+    "help": {
+      "insufficientChars": "Por favor escriba más caracteres",
+      "noMatch": "No se encontró ningún resultado",
+      "exactMatch": "{{ term }}",
+      "empty": "Pregúntenos cualquier cosa"
+    }
+  },
+  "sorting": {
+    "date": "Fecha",
+    "orderNumber": "Número de Orden",
+    "rma": "Número de Devolución"
+  },
+  "httpHandlers": {
+    "badGateway": "Se produjo un error en el servidor. Por favor, inténtelo de nuevo más tarde.",
+    "badRequestPleaseLoginAgain": "Uno o más de los datos proporcionados son incorrectos, verifica la información y vuelve a intentarlo.",
+    "badRequestOldPasswordIncorrect": "Contraseña anterior incorrecta.",
+    "conflict": "Ya existe",
+    "forbidden": "No tiene autorización para realizar esta acción.",
+    "gatewayTimeout": "El servidor no responde, intente nuevamente más tarde.",
+    "internalServerError": "Se produjo un error interno del servidor. Por favor, inténtelo de nuevo más tarde.",
+    "unknownError": "Ocurrió un error desconocido",
+    "duplicatedUser":"¡Parece que ya te has registrado anteriormente! Recupera tu contraseña.",
+    "associate_invalid_grant": "Oh oh, tu número de socio aún no ha sido activado, ponte en contacto con nosotros",
+    "associateNotValidError": "El Socio Keff Keff que ingresaste no está registrado o aún no ha completado su activación.",
+    "unauthorized": {
+      "common": "Ha ocurrido un error de autorización",
+      "invalid_client": "Credenciales de cliente inválidas"
+    },
+    "validationErrors": {
+      "missing": {
+        "card_cardType": "La tarjeta de crédito seleccionada no es compatible. Por favor seleccione otra.",
+        "card_accountNumber": "El número de tarjeta de crédito ingresado no es válido.",
+        "card_cvNumber": "El código de seguridad ingresado no es válido.",
+        "card_expirationMonth": "La fecha de vencimiento de la tarjeta de crédito ingresada no es válida.",
+        "card_expirationYear": "La fecha de vencimiento de la tarjeta de crédito ingresada no es válida.",
+        "billTo_firstName": "El primer nombre ingresado no es válido.",
+        "billTo_lastName": "El apellido ingresado no es válido.",
+        "billTo_street1": "La dirección ingresada no es válida.",
+        "billTo_street2": "La dirección ingresada no es válida.",
+        "billTo_city": "La ciudad ingresada no es válida para esta tarjeta de crédito.",
+        "billTo_state": "El estado / provincia ingresado no es válido para esta tarjeta de crédito.",
+        "billTo_country": "El país ingresado no es válido para esta tarjeta de crédito.",
+        "billTo_postalCode": "El código postal no es válido para esta tarjeta de crédito.",
+        "country": {
+          "isocode": "Ingrese un País"
+        }
+      },
+      "invalid": {
+        "card_expirationMonth": "La fecha de vencimiento de la tarjeta de crédito ingresada no es válida.",
+        "postalCode":"Tan cerca y tan lejos... Por motivos de cobertura no podemos llegar hasta tu dirección. Pero podemos resolverlo ponte en contacto con nosotros al correo hola@keffkeff.com",
+        "cfdi": "Ha ocurrido un error al momento de cargar tu CFDI",
+        "firstName": "El nombre ingresado no es válido.",
+        "lastName": "El apellido ingresado no es válido.",
+        "password": "La contraseña ingresada no es válida.",
+        "uid": "El email ingresado no es válido.",
+        "login": "El email ingresado no es válido."
+      }
+    },
+    "cartNotFound": "El carrito no fue encontrado",
+    "paymentCaptureError": "El pago no pudo ser procesado"
+  },
+  "miniCart": {
+    "item": "{{count}} artículo actualmente en su carrito",
+    "item_plural": "{{count}} artículos actualmente en su carrito"
+  },
+  "miniLogin": {
+    "userGreeting": "¡Hola, {{name}}!",
+    "signInRegister": "Iniciar Sesión / Registrarse",
+    "signInPreRegister": "Iniciar Sesión / Pre-Registro",
+    "myAccount": "Mi Cuenta",
+    "access": "Entrar"
+  },
+  "skipLink": {
+    "skipTo": "Pasemos a",
+    "labels": {
+      "header": "Encabezado",
+      "main": "Contenido principal",
+      "footer": "Pie de página",
+      "productFacets": "Facetas del producto",
+      "productList": "Lista de Productos"
+    }
+  },
+  "formErrors": {
+    "globalMessage": "Los datos que estas intentendo ingresar contienen errores.",
+    "required": "Este campo es requerido",
+    "minlength": "El campo no cumple con el mínimo requerido",
+    "maxlength": "El campo supera el largo máximo",
+    "cxInvalidEmail": "El email no tiene un formato válido",
+    "cxInvalidPassword": "La contraseña debe contener al menos seis caracteres, incluyendo una mayúscula, un símbolo y un número.",
+    "cxPasswordsMustMatch": "Los campos de contraseña no tienen el mismo valor",
+    "cxEmailsMustMatch": "El email debe ser el mismo en ambos campos",
+    "cxStarRatingEmpty": "El campo de calificación es requerido",
+    "cxNoSelectedItemToCancel": "Selecciona al menos un artículo para cancelar",
+    "pattern": "El campo no tiene un formato válido"
+  }
+}

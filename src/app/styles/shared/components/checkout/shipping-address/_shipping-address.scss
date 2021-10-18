@@ -1,0 +1,145 @@
+app-maka-shipping-address {
+  @extend %checkout-page-content !optional;
+
+  .cx-checkout-top-btns .btn {
+    font-size: $medium-font-size;
+  }
+
+  cx-card {
+    .card-header {
+      font-size: $medium-font-size;
+      font-weight: normal;
+    }
+
+    .card-body .cx-card-title {
+      display: none;
+    }
+  }
+
+  .cx-checkout-body {
+    margin-bottom: rem(50);
+  }
+
+  .maka-delivery-modes {
+    margin-top: rem(35);
+
+    h4 {
+      border-bottom: 1px solid var(--cx-color-inverse);
+      font-size: $medium-font-size;
+      font-weight: normal;
+      margin-bottom: rem(25);
+      padding-bottom: rem(30);
+    }
+
+    .form-check {
+      border-bottom: $border-standard;
+      margin-bottom: rem(26);
+      padding-bottom: rem(26);
+
+      @include media-breakpoint-up(md) {
+        width: 50%;
+      }
+
+      &:last-child {
+        border-width: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .cx-delivery-label {
+      width: 100%;
+
+      .cx-delivery-title {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+
+        .cx-delivery-mode {
+          color: var(--cx-color-inverse);
+          font-size: $medium-font-size;
+          font-weight: normal;
+        }
+
+        .cx-delivery-price {
+          font-weight: $font-weight-light;
+        }
+      }
+
+      .cx-delivery-details {
+        font-weight: $font-weight-light;
+      }
+    }
+  }
+
+  .cx-checkout-btns {
+    margin: rem(45) 0 0 0;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(8, 12);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(12, 12);
+    }
+
+    & > div {
+      padding: 0;
+
+      @include media-breakpoint-up(lg) {
+        &:first-child {
+          padding: 0 rem(16) 0 0;
+        }
+      }
+    }
+
+    .btn {
+      margin-bottom: rem(26);
+    }
+  }
+}
+
+app-maka-address-form {
+  .address-form > .row {
+    align-items: baseline;
+  }
+
+  .title-description {
+    margin-bottom: rem(35);
+    max-width: 85%;
+
+    @include media-breakpoint-up(xl) {
+      max-width: 70%;
+    }
+  }
+
+  .label-content {
+    font-size: $medium-font-size;
+  }
+
+  .form-group-heading {
+    margin: rem(30) 0 rem(15);
+  }
+
+  .form-group:not(.cx-checkout-btns) {
+    margin-bottom: rem(15);
+
+    input.ng-dirty,
+    input:focus {
+      &:not([type='checkbox']) {
+        margin-top: rem(15);
+      }
+    }
+
+    .region-select {
+      margin-top: rem(15);
+    }
+  }
+
+  .set-default-address {
+    margin-top: rem(10);
+  }
+
+  cx-form-errors p {
+    margin-bottom: 0;
+  }
+}

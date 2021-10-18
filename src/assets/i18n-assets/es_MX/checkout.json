@@ -1,0 +1,68 @@
+{
+  "checkoutAddress": {
+    "shippingAddress": "Dirección de Envío",
+    "selectYourShippingAddress": "Seleccione su dirección de envío",
+    "defaultShippingAddress": "Dirección de Entrega Predeterminada",
+    "verifyYourAddress": "Verifica tu direccion",
+    "ensureAccuracySuggestChange": "Para garantizar la precisión de la entrega, sugerimos el cambio seleccionado a continuación.",
+    "chooseAddressToUse": "Elija la dirección que desea utilizar:",
+    "suggestedAddress": "Dirección sugerida",
+    "enteredAddress": "Dirección ingresada",
+    "addNewAddress": "+ Nueva dirección",
+    "shipToThisAddress": "Enviar a esta dirección",
+    "editAddress": "Editar dirección",
+    "saveAddress": "Guardar dirección",
+    "invalidRecurrenceOrder": "WOOF! Tú seguridad es primero, no podemos ofrecer Ordenes Recurrentes con un valor total mayor o igual a {{openPay3DSMin}} MXN. ¡Modifica tu orden e inténtalo de nuevo!"
+  },
+  "checkoutOrderConfirmation": {
+    "confirmationOfOrder": "Confirmación de orden:",
+    "thankYou": "¡Manos a la obra!",
+    "yourOrderIsInProcess": "Tu pedido está en proceso, encuentra los detalles de tu compra debajo de tu referencia.",
+    "invoiceHasBeenSentByEmail": "Haz recibido un email de confirmación, si no lo encuentras revisa en correos no deseados.",
+    "simpleLikeThat": "¡Así de simple es elegir lo mejor para tu mascota!",
+    "orderItems": "¿Qué Ordenaste?",
+    "orderPlacedSuccessfully": "Pedido realizado con éxito",
+    "createAccount": "¿Crea una cuenta?",
+    "createAccountForNext": "Cree una cuenta para <{{email}}> para un pago más rápido en su próxima visita."
+  },
+  "checkoutReview": {
+    "review": "¡Solo un click más!",
+    "description": "Revisa tu pedido para finalizar tu compra",
+    "orderInformationTitle": "Información de Orden",
+    "shippingAddress": "Dirección de entrega",
+    "orderItems": "Encargar artículos",
+    "confirmThatRead": "Confirmo que he leído y estoy de acuerdo con los",
+    "placeOrder": "Finalizar Compra",
+    "orderDetails": "Detalles de Orden",
+    "termsAndConditions": "Términos y condiciones",
+    "editShippingAddress": "Editar dirección de entrega",
+    "editShippingMethod": "Editar método de envío",
+    "paymentMethod": "Método de pago",
+    "paymentAddress": "Dirección de Facturación",
+    "editPaymentAddress": "Editar dirección de facturación",
+    "taxInfo": "Datos de facturación",
+    "editTaxInfo": "Editar datos de facturación",
+    "editPaymentMethod": "Editar método de pago",
+    "expiration": "Expiración: {{ month }}/{{ year }}",
+    "cartTotal": "Total carrito ({{count}} artículo(s))"
+  },
+  "checkoutShipping": {
+    "shippingMethod": "Método de envío",
+    "standardDelivery": "Entrega Estándar",
+    "premiumDelivery": "Entrega Premium"
+  },
+  "checkout": {
+    "backToCart": "Regresar a mi carrito",
+    "placementError": "Algo anda mal en los datos de pago que proporcionaste, revisalos e inténtalo de nuevo",
+    "waitingTitle": "¡Hey ni un click más humano!",
+    "waitingMessage": "Estamos registrando tu compra para que tus croquetas lleguen sanas y salvas.",
+    "tokenizationError": "Ups! detectamos un proceso de pago abandonado. Por favor recuérdanos tus datos de pago nuevamente para completar tu compra"
+  },
+  "checkoutProgress": {
+    "shippingAddress": "Envío",
+    "deliveryMode": "Modo de entrega",
+    "paymentDetails": "Pago",
+    "reviewOrder": "Revisión de orden",
+    "placingOrder": "Procesando orden ..."
+  }
+}

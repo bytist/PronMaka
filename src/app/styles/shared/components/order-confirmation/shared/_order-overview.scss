@@ -1,0 +1,74 @@
+app-maka-order-overview {
+  .cx-order-review-summary-wrapper {
+    @include media-breakpoint-up(lg) {
+      @include make-col-offset(1);
+      @include make-col(10, 12);
+    }
+
+    .order-review-title {
+      border-bottom: 1px solid $inverse;
+      padding: rem(30) 0;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: rem(37);
+      }
+    }
+
+    .row > .col-sm-12:last-child .summary-card-column {
+      border-bottom-width: 0;
+      border-right-width: 0;
+    }
+  }
+
+  .cx-order-review-summary {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      margin: rem(51) 0;
+    }
+
+    .summary-card-column {
+      border-bottom: $border-standard;
+      padding: rem(37) 0;
+
+      @include media-breakpoint-up(md) {
+        border-bottom-width: 0;
+        border-right: $border-standard;
+        flex: 1 1 auto;
+        padding: 0;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 0 10%;
+      }
+    }
+
+    .summary-card {
+      margin-bottom: rem(47);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .cx-card-title {
+        color: $gray-900;
+        font-size: $small-font-size;
+        font-weight: normal;
+        margin-bottom: rem(23);
+      }
+
+      .card-body.cx-card-body {
+        border-top-width: 0;
+        font-size: rem(13);
+        margin-top: 0;
+        padding: 0;
+      }
+    }
+
+    .container {
+      padding: 0;
+    }
+  }
+}

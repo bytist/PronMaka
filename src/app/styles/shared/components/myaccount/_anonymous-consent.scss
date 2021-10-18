@@ -1,0 +1,39 @@
+.anonymous-consent-banner {
+  background-color: var(--cx-color-primary);
+  bottom: 0;
+  color: var(--cx-color-text);
+  opacity: 0;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+
+  &.banner-display {
+    opacity: 1;
+  }
+
+  button,
+  img {
+    width: 50%;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+    right: 0;
+    top: 0;
+    width: 45%;
+
+    button,
+    img {
+      width: 75%;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 30%;
+
+    button,
+    img {
+      width: 65%;
+    }
+  }
+}

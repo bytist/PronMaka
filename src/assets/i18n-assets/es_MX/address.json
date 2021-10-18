@@ -1,0 +1,104 @@
+{
+  "addressForm": {
+    "title": "Título",
+    "address": "Dirección",
+    "shippingAddress": "Dirección de envío",
+    "businessName": {
+      "label": "Nombre del negocio o empresa"
+    },
+    "firstName": {
+      "label": "Nombres",
+      "placeholder": "Nombres"
+    },
+    "lastName": {
+      "label": "Apellidos",
+      "placeholder": "Apellidos"
+    },
+    "petName": {
+      "label": "Nombre de tus mascotas",
+      "placeholder": "Nombre de tus mascotas"
+    },
+    "address1": "Dirección 1",
+    "address2": "Dirección 2 (opcional)",
+    "streetName": {
+      "label": "Calle",
+      "placeholder": "Calle"
+    },
+    "streetNumber": {
+      "label": "Número Exterior",
+      "placeholder": "Número Exterior"
+    },
+    "appartement": {
+      "label": "Número Interior",
+      "placeholder": "Número Interior"
+    },
+    "reference": {
+      "label": "Referencia",
+      "placeholder": "Referencia"
+    },
+    "district": {
+      "label": "Colonia",
+      "placeholder": "Colonia"
+    },
+    "country": {
+      "label": "País",
+      "default": "México"
+    },
+    "city": {
+      "label": "Ciudad",
+      "placeholder": "Ciudad"
+    },
+    "state": "Estado",
+    "zipCode": {
+      "label": "Código Postal",
+      "placeholder": "Código Postal"
+    },
+    "phoneNumber": {
+      "label": "número de teléfono (opcional)",
+      "placeholder": "(555) 555-0123"
+    },
+    "cellphone": {
+      "label": "Teléfono Celular",
+      "placeholder": "Teléfono Celular"
+    },
+    "rfc": {
+      "label": "RFC",
+      "placeholder": "RFC"
+    },
+    "legalEntityName": {
+      "label": "Nombres o Razón Social",
+      "placeholder": "Nombres o Razón Social"
+    },
+    "titleSection": {
+      "title": "¿Si tus perritos hablaran que nos dirían?",
+      "description": "¡Hola humano! compártenos aquí el nombre de tus mascotas para que tus compras sean especiales para ellos."
+    },
+    "saveAsDefault": "Guardar como predeterminada",
+    "chooseAddress": "Elegir dirección",
+    "streetAddress": "Dirección",
+    "aptSuite": "Número Interior",
+    "selectOne": "Seleccione uno...",
+    "setAsDefault": "Establecer como predeterminada",
+    "titleRequired": "Se requiere título.",
+    "userAddressAddSuccess": "¡Bien hecho! Tu dirección ha sido agregada exitosamente.",
+    "userAddressUpdateSuccess": "¡Bien hecho! Tu dirección ha sido actualizada exitosamente.",
+    "userAddressDeleteSuccess": "¡Bien hecho! Tu dirección ha sido eliminada exitosamente.",
+    "invalidAddress": "Dirección inválida"
+  },
+  "addressBook": {
+    "addNewShippingAddress": "Agregar una Nueva Dirección de Envío",
+    "editShippingAddress": "Editar Dirección de Envío",
+    "areYouSureToDeleteAddress": "¿Estás seguro que quieres eliminar esta dirección?",
+    "addNewAddress": "+ Nueva dirección",
+    "addAddress": "Guardar Dirección",
+    "updateAddress": "Actualizar Dirección",
+    "backToAddressList": "Regresar a Mis direcciones"
+  },
+  "addressCard": {
+    "default": "Dirección Predeterminada",
+    "selected": "Dirección Seleccionada",
+    "setAsDefault": "Establecer como predeterminada",
+    "shipTo": "Envíe a",
+    "billTo": "Cobrar a"
+  }
+}

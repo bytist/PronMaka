@@ -1,0 +1,21 @@
+%app-maka-active-facets {
+  margin: $spacer 0;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0 0 0 ($spacer * 2);
+  }
+
+  .active-facets-section {
+    padding: $spacer ($spacer * 2);
+  }
+
+  h4 {
+    font-size: $small-font-size;
+    margin: 0;
+  }
+}
+
+app-maka-active-facets {
+  @extend %app-maka-active-facets;
+}

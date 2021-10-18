@@ -1,0 +1,21 @@
+<div class="container">
+  <ng-container *ngIf="order$ | async as order">
+    <ng-container *ngIf="order.unconsignedEntries?.length">
+      <div class="content-wrapper offset-lg-1">
+        <div class="cx-list row">
+          <div class="cx-list-item col-12">
+            <ng-container *ngIf="order.appliedOrderPromotions">
+              <cx-promotions [promotions]="order.appliedOrderPromotions"></cx-promotions>
+            </ng-container>
+
+            <cx-cart-item-list
+              [items]="order?.unconsignedEntries"
+              [readonly]="true"
+              [promotionLocation]="promotionLocation"
+            ></cx-cart-item-list>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

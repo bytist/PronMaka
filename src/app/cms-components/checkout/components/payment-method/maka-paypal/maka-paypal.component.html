@@ -1,0 +1,14 @@
+<p *ngIf="paypalPayment.description" class="paypal-description text-grey">{{ paypalPayment.description }}</p>
+<div class="method-content-container">
+  <div class="method-content paypal-buttons">
+    <div id="paypal-button-container"
+         class="paypal-button-container"
+         [class.disable-btn]="disableBtn">
+    </div>
+  </div>
+  <ng-container *ngIf="(isLoading$ | async)">
+    <div class="cx-spinner">
+      <cx-spinner></cx-spinner>
+    </div>
+  </ng-container>
+</div>

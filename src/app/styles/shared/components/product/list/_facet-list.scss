@@ -1,0 +1,101 @@
+$intialExpandedFacets: 3;
+
+%cx-facet-list {
+  &.dialog {
+    &.active {
+      z-index: $navigation-zindex + 1;
+    }
+
+    @extend %cx-modal;
+
+    > div.inner {
+      height: 100vh;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: $navigation-zindex + 1;
+
+      @include media-breakpoint-up(md) {
+        height: 95vh;
+        top: auto;
+        width: 80%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 100vh;
+        left: 0;
+        width: 35%;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .padded {
+        padding: $spacer ($spacer * 2);
+      }
+
+      .facets-header {
+        height: 10%;
+      }
+
+      .close {
+        font-size: $xlarge-font-size;
+        opacity: 1;
+      }
+
+      .facets-container {
+        max-height: 80%;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        app-maka-active-facets {
+          margin: 0;
+        }
+
+        cx-facet {
+          border-bottom: $border-width solid var(--cx-color-light, #{$light});
+
+          button.heading {
+            --cx-font-weight-semi: #{$font-weight-normal};
+
+            border-bottom: 0;
+            color: var(--cx-color-dark, #{$dark});
+            font-size: $medium-font-size;
+            font-weight: $font-weight-light;
+            padding: 0;
+            text-transform: uppercase;
+
+            &:hover,
+            &:focus {
+              --cx-color-primary: #{$dark};
+            }
+          }
+
+          a.value {
+            color: var(--cx-color-dark, #{$dark});
+            font-size: $small-font-size;
+            font-weight: $font-weight-light;
+
+            &:hover,
+            &:focus {
+              color: var(--cx-color-dark, #{$dark});
+
+              &:not(.selected)::before {
+                --cx-color-primary: #{$light};
+              }
+            }
+
+            &.selected::before {
+              --cx-color-primary: #{$inverse};
+              --cx-color-inverse: #{$primary};
+            }
+          }
+        }
+      }
+    }
+  }
+}

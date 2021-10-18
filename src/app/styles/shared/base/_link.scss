@@ -1,0 +1,13 @@
+%maka-link {
+  color: var(--cx-color-text);
+  transition-duration: $link-transition-duration;
+
+  &:hover {
+    color: var(--cx-color-inverse, #{$inverse});
+  }
+}
+
+a,
+.btn-link {
+  @extend %maka-link;
+}

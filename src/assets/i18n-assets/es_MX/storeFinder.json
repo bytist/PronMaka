@@ -1,0 +1,23 @@
+{
+  "storeFinder": {
+    "openUntil": "Abierto hasta",
+    "closed": "Cerrado",
+    "call": "Llamada",
+    "getDirections": "Obtener las direcciones",
+    "listView": "Vista de la lista",
+    "mapView": "Vista del mapa",
+    "noStoresFound": "No se encontraron tiendas.",
+    "storeHours": "Horario de la tienda",
+    "storeFeatures": "Características de la tienda",
+    "fromStoresFound": "de la tienda {{count}} encontrada",
+    "fromStoresFound_plural": "de {{count}} tiendas encontradas",
+    "findStore": "Encuentra tienda",
+    "useMyLocation": "Usa mi ubicación",
+    "viewAllStores": "Ver todas las tiendas",
+    "contactUs": "Contáctenos",
+    "searchBox": "Ingrese el código postal, ciudad o dirección",
+    "backToList": "Volver a la lista",
+    "noStoresMessage": "No se encontraron tiendas en la base de datos ...",
+    "geolocationNotEnabled": "No se pueden localizar tiendas cercanas. El consentimiento de geolocalización no se ha habilitado"
+  }
+}

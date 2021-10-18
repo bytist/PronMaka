@@ -1,0 +1,101 @@
+%LoginPageTemplate {
+  overflow: hidden;
+  position: relative;
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 0 !important;
+  }
+
+  cx-page-slot {
+    &.LeftContentSlot,
+    &.RightContentSlot {
+      margin: 0;
+      max-width: 100%;
+      overflow: hidden;
+      padding: 0;
+
+      cx-media {
+        display: block; // needed to fix iOS strech image issue (MAKA-93)
+      }
+    }
+
+    &.RightContentSlot {
+      @extend %TwoColumnRightContentSlot !optional;
+
+      app-maka-text-spinner {
+        margin-right: rem(-225); // half the width
+        margin-top: rem(-225); // half the height
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: rem(450);
+        z-index: 20;
+
+        @include media-breakpoint-down(sm) {
+          margin-right: rem(-150);
+          margin-top: rem(-150);
+          width: rem(300);
+        }
+      }
+    }
+
+    > * {
+      --cx-max-width: 100%;
+
+      padding: 0;
+    }
+  }
+}
+
+%TwoColumnRightContentSlot {
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    z-index: -2;
+
+    cx-banner {
+      height: 100%;
+
+      cx-generic-link {
+        height: 100%;
+
+        a {
+          height: 100%;
+        }
+
+        a cx-media {
+          height: 100%;
+          text-align: right;
+
+          img {
+            bottom: 0;
+            position: absolute;
+            right: 0;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  app-maka-text-spinner {
+    margin-right: rem(-225); // half the width
+    margin-top: rem(-225); // half the height
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: rem(450);
+    z-index: 20;
+
+    @include media-breakpoint-down(sm) {
+      margin-right: rem(-150);
+      margin-top: rem(-150);
+      width: rem(300);
+    }
+  }
+}

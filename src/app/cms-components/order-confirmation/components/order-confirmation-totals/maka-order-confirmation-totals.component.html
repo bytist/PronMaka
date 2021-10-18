@@ -1,0 +1,11 @@
+<div class="cx-order-summary container" *ngIf="order$ | async as order">
+  <div class="row">
+      <div class="col-sm-12
+        offset-md-4 col-md-8
+        offset-lg-7 col-lg-5
+        offset-xl-7 col-xl-4
+      ">
+        <app-maka-order-confirmation-summary [order$]="order$"></app-maka-order-confirmation-summary>
+      </div>
+  </div>
+</div>

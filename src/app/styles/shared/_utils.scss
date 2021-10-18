@@ -1,0 +1,17 @@
+@function rem($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  $value: $pixels / $context * 1rem;
+
+  @if ($value == 0rem) { /* stylelint-disable-line */
+    $value: 0;
+  }
+
+  @return $value;
+}

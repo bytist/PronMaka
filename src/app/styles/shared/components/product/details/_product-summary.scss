@@ -1,0 +1,15 @@
+%maka-product-summary {
+  .price {
+    font-family: $font-family-sans-serif-secondary;
+    font-size: $xxlarge-font-size;
+    margin: ($spacer * 2) 0;
+  }
+
+  .summary {
+    font-weight: $font-weight-light;
+  }
+}
+
+cx-product-summary {
+  @extend %maka-product-summary;
+}

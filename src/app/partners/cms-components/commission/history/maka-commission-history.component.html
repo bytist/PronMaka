@@ -1,0 +1,92 @@
+<ng-container *ngIf="commissionRecordsHistoryPageWrapper$ | async as commissionRecordHistoryPage; else loading">
+  <div id="history" class="container px-lg-0 my-5">
+    <div class="d-md-flex bottom-bordered-black pb-3 mb-4">
+      <h4 class="sans-serif-secondary text-dark">
+        {{ 'partner.commissions.history' | cxTranslate }}
+      </h4>
+      <ng-container *ngIf="years.length > 0">
+        <div class="col-6 col-md-4 ml-md-auto px-0 my-3 my-md-0">
+          <ng-select
+            [searchable]="false"
+            [clearable]="false"
+            [items]="years"
+            placeholder="{{ 'partner.commissions.filterByYear' | cxTranslate }}"
+            (change)="changeYear($event)">
+          </ng-select>
+        </div>
+      </ng-container>
+    </div>
+
+    <ng-container *ngIf="commissionRecordHistoryPage.pagination.totalResults > 0; else noResults">
+      <table class="table maka-table">
+        <caption class="d-none">{{ 'partner.commissions.history' | cxTranslate }}</caption>
+        <thead class="maka-table-header">
+          <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+            #{{ 'partner.commissions.commissionCode' | cxTranslate }}
+          </th>
+          <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+            {{ 'partner.commissions.cutOffDate' | cxTranslate }}
+          </th>
+          <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+            {{ 'partner.commissions.commissionLevelAppliedShort' | cxTranslate }}
+          </th>
+          <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+            {{ 'partner.commissions.totalOrders' | cxTranslate }}
+          </th>
+          <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+            {{ 'partner.commissions.commissionTotalShort' | cxTranslate }}
+          </th>
+          <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+            {{ 'partner.commissions.status' | cxTranslate }}
+          </th>
+        </thead>
+        <tbody>
+          <tr class="pointer" *ngFor="let record of commissionRecordHistoryPage.records" (click)="goToCommissionRecordDetail(record)">
+            <td class="font-weight-light text-small">
+              <div class="d-md-none table-mobile-label"> #{{ 'partner.commissions.commissionCode' | cxTranslate }}</div>
+              <span class="text-xsmall text-md-small text-underline">{{ record.code }}</span>
+            </td>
+            <td class="font-weight-light text-small">
+              <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'partner.commissions.cutOffDate' | cxTranslate }}</div>
+              <span class="text-xsmall text-md-small">{{ record.cutOffDate }}</span>
+            </td>
+            <td class="font-weight-light text-small">
+              <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'partner.commissions.commissionLevelAppliedShort' | cxTranslate }}</div>
+              <span class="text-xsmall text-md-small">{{ record.commissionLevelApplied }}</span>
+            </td>
+            <td class="font-weight-light text-small">
+              <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'partner.commissions.totalOrders' | cxTranslate }}</div>
+              <span class="text-xsmall text-md-small">{{ record.ordersTotalPriceNet?.formattedValue }}</span>
+            </td>
+            <td class="font-weight-light text-small">
+              <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'partner.commissions.commissionTotalShort' | cxTranslate }}</div>
+              <span class="text-xsmall text-md-small">{{ record.total?.formattedValue }}</span>
+            </td>
+            <td class="font-weight-light text-small">
+              <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'partner.commissions.status' | cxTranslate }}</div>
+              <span class="text-xsmall text-md-small">{{ record.status?.name }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="bottom d-flex">
+        <div class="ml-auto my-3">
+          <cx-pagination [pagination]="commissionRecordHistoryPage.pagination" (viewPageEvent)="pageChange($event)">
+          </cx-pagination>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #noResults>
+      <p class="text-dark text-medium mb-4 font-weight-light">
+        {{ 'partner.commissions.noOrders' | cxTranslate }}
+      </p>
+    </ng-template>
+  </div>
+</ng-container>
+
+
+<ng-template #loading>
+  <app-maka-spinner></app-maka-spinner>
+</ng-template>

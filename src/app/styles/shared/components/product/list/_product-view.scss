@@ -1,0 +1,17 @@
+$gridButtonsImageWidth: 92;
+$gridButtonsImageHeight: 31;
+
+.cx-product-layout {
+  background-image: url('/assets/images/grid-sprite.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 0;
+  height: rem($gridButtonsImageHeight * 0.75);
+  margin-top: $spacer * 0.5;
+  padding: 0;
+  width: rem($gridButtonsImageWidth * 0.75);
+
+  &.cx-product-grid {
+    background-position-y: rem($gridButtonsImageHeight * -0.75);
+  }
+}

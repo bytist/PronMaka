@@ -1,0 +1,65 @@
+<table class="table maka-table">
+  <caption class="d-none">{{ 'orderHistory.orderHistory' | cxTranslate }}</caption>
+  <thead class="maka-table-header">
+    <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+      {{ 'orderHistory.orderId' | cxTranslate }}
+    </th>
+    <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+      {{ 'orderHistory.petName' | cxTranslate }}
+    </th>
+    <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+      {{ 'orderHistory.date' | cxTranslate }}
+    </th>
+    <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+      {{ 'orderHistory.status' | cxTranslate }}
+    </th>
+    <th class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+      {{ 'orderHistory.total' | cxTranslate }}
+    </th>
+    <th *ngIf="hasRecurrentOrders" class="text-left text-inverse text-xsmall text-uppercase font-weight-normal" scope="col">
+    </th>
+  </thead>
+  <tbody>
+  <tr
+    *ngFor="let order of orders.orders"
+    (click)="goToOrderDetail(order)"
+    [ngClass]="{ 'bg-gray-400': isRecurringOrder(order) }"
+  >
+    <td class="cx-order-history-code text-inverse text-small">
+      <div class="d-md-none table-mobile-label">{{ 'orderHistory.orderId' | cxTranslate }}</div>
+      <a
+        [routerLink]="
+          {
+            cxRoute: 'orderDetails',
+            params: order
+          } | cxUrl"
+        class="cx-order-history-value font-weight-light text-underline"
+      >
+        {{ order?.code }}
+      </a>
+    </td>
+    <td class="cx-order-history-status font-weight-light text-small">
+      <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'orderHistory.petName' | cxTranslate }}</div>
+      <span class="text-xsmall text-md-small">{{ order | getPetName }}</span>
+    </td>
+    <td class="cx-order-history-placed font-weight-light text-small">
+      <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'orderHistory.date' | cxTranslate }}</div>
+      <span class="text-xsmall text-md-small">{{ order?.placed | cxDate: 'longDate' }}</span>
+    </td>
+    <td class="cx-order-history-status font-weight-light text-small">
+      <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'orderHistory.status' | cxTranslate }}</div>
+      <span class="text-xsmall text-md-small">{{
+      'orderDetails.statusDisplay'
+      | cxTranslate: { context: order?.statusDisplay }
+      }}</span>
+    </td>
+    <td class="cx-order-history-total font-weight-light text-small">
+      <div class="d-md-none table-mobile-label text-xsmall text-uppercase font-weight-normal">{{ 'orderHistory.total' | cxTranslate }}</div>
+      <span class="text-xsmall text-md-small">{{ order?.total.formattedValue }}</span>
+    </td>
+    <td *ngIf="hasRecurrentOrders" class="cx-order-history-total font-weight-light text-small">
+      <span class="text-xsmall text-md-small offset-6 offset-md-0">{{ (isRecurringOrder(order)) ? ('orderHistory.recurrentOrderLabel' | cxTranslate) : '' }}</span>
+    </td>
+  </tr>
+  </tbody>
+</table>

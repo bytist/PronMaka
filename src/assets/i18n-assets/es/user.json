@@ -1,0 +1,147 @@
+{
+  "anonymousConsents": {
+    "preferences": "Preferencias de Consentimientos",
+    "dialog": {
+      "title": "Administración de Consentimientos",
+      "legalDescription": "Utilizamos cookies / almacenamiento del navegador para personalizar el contenido y mejorar la experiencia del usuario. También podríamos compartir los datos sobre el uso de su sitio con nuestras redes sociales. Para obtener más información, revise nuestra política de privacidad.",
+      "selectAll": "Seleccionar todo",
+      "clearAll": "Limpiar todo"
+    },
+    "banner": {
+      "title": "SEAMOS CLAROS,",
+      "subTitle": "NO SOMOS CROQUETAS.",
+      "title2": "¡Hola humano!",
+      "subTitle2": "Para mejorar tu experiencia, este sitio utiliza cookies.",
+      "descriptionTitle": "¿Qué quiere decir?",
+      "description": "Cuando entras nosotros guardamos tu visita para personalizar tu contenido. Esto permite que almacenemos información y generemos estadísticas de audiencia analizando tu navegación. No te preocupes no corres ningún peligro, si quieres leer más revisa nuestro <a class=\"text-underline\" href=\"/maka-store/privacy-policy\" target=\"_blank\">Aviso de Privacidad.</a> ¡Gracias!",
+      "allowAll": "Estoy de acuerdo",
+      "viewDetails": "Ver detalles"
+    }
+  },
+  "forgottenPassword": {
+    "woof": "¡Woof Woof!",
+    "resetPassword": "Restablecer Contraseña",
+    "enterEmailAddressAssociatedWithYourAccount": "Ingrese la dirección de email asociada con su cuenta",
+    "emailAddress": {
+      "label": "Email",
+      "placeholder": "Ingrese su email"
+    },
+    "enterValidEmail": "Por favor introduzca una dirección de email válida.",
+    "passwordResetEmailSent": "Si tienes una cuenta con nosotros recibirás un correo electrónico con un link para cambiar tu contraseña",
+    "passwordResetSuccess": "Ahora puede iniciar sesión con su nueva contraseña.",
+    "newPassword": "Nueva contraseña",
+    "confirmNewPassword": "Confirmar contraseña",
+    "client": {
+      "forgotPasswordTitleLine1": "¿Olvidaste tu",
+      "forgotPasswordTitleLine2": "Contraseña?",
+      "forgotPasswordSubTitle": "No te preocupes, solo ingresa el email asociado a tu cuenta y enviaremos un link para restaurar tu contraseña."
+    }
+  },
+  "loginForm": {
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "signIn": "Entrar",
+    "register": "Entra aquí",
+    "pre-register": "Pre-Registro",
+    "dontHaveAccount": "¿Aún no tienes cuenta?",
+    "client": {
+      "hi": "Hola amigo,",
+      "welcome": "Bienvenido",
+      "howYouDoing": "¿Cómo has estado?",
+      "subtitle": "Para continuar con tu compra solo inicia sesión en tu cuenta y listo."
+    },
+    "partner": {
+      "welcome": "Bienvenido"
+    },
+    "emailAddress": {
+      "label": "Email",
+      "placeholder": "Ingrese su email"
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Ingrese su contraseña"
+    },
+    "wrongEmailFormat": "Este no es un formato de email válido.",
+    "guestCheckout": "Comprar como Invitado"
+  },
+  "register": {
+    "confirmPassword": {
+      "action": "Confirmación de contraseña",
+      "label": "Confirmación de contraseña",
+      "placeholder": "Confirmación de contraseña"
+    },
+    "client": {
+      "hi": "¿Eres nuevo?",
+      "welcome": "Regístrate ahora",
+      "howYouDoing": "¡No te arrepentirás!"
+    },
+    "partner": {
+      "hi": "Regístrate",
+      "join": "Únete a los socios",
+      "keffkeff": "de Keff Keff",
+      "terms": "Al ser parte del programa Socios Keff Keff te comprometes a cumplir con Nuestro Código Interno, así como los requerimientos fiscales. En caso de incumplimiento podremos dar de baja o no aprobar tu solicitud.",
+      "register": "Registrar",
+      "send": "Enviar"
+    },
+    "managmentInMyAccount": "Administración de Cuenta.",
+    "termsAndConditions": "Términos y Condiciones",
+    "haveAccount": "¿Ya tienes una cuenta?",
+    "signIn": " Entra aquí",
+    "register": "Registrarse",
+    "confirmNewPassword": "Confirmar nueva contraseña",
+    "resetPassword": "Restablecer la contraseña",
+    "createAccount": "Crear Cuenta",
+    "title": "Tratamiento",
+    "address": "Dirección",
+    "firstName": {
+      "label": "Nombres",
+      "placeholder": "Ingrese su nombre"
+    },
+    "lastName": {
+      "label": "Apellidos",
+      "placeholder": "Ingrese sus apellidos"
+    },
+    "cellphone": {
+      "label": "Celular"
+    },
+    "rfc": {
+      "label": "RFC"
+    },
+    "legalEntityName": {
+      "label": "Razón Social"
+    },
+    "emailAddress": {
+      "label": "Email",
+      "placeholder": "Ingrese su email"
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "Ingrese su contraseña"
+    },
+    "newPassword": "Nueva Contraseña",
+    "emailMarketing": "Usar mis datos personales para recibir boletines por email para campañas. Para cambiar su configuración, vaya a Administración de Consentimientos en Mi Cuenta.",
+    "confirmThatRead": "Confirmo que he leído y estoy de acuerdo con los",
+    "selectTitle": "Seleccionar título",
+    "passwordMinRequirements": "La contraseña debe tener seis caracteres como mínimo, con una letra mayúscula, un número, un símbolo",
+    "bothPasswordMustMatch": "Ambas contraseñas deben coincidir",
+    "titleRequired": "Se requiere título.",
+    "postRegisterMessage": "Inicie sesión con las credenciales proporcionadas.",
+    "postRegisterMessageWithInvitation": "Felicidades ahora tus compras van de la mano de nuestro experto Keff Keff: {{associateName}}",
+    "postRegisterMessageInvalidAssociate": "Algo ocurrió en tu registro, verifica que el Socio Keff Keff que te invitó este activo"
+
+  },
+  "checkoutLogin": {
+    "emailAddress": {
+      "label": "Email",
+      "placeholder": "Ingrese su email"
+    },
+    "confirmEmail": {
+      "label": "Confirmar Email",
+      "placeholder": "Confirmar su email"
+    },
+    "continue": "Continuar como invitado",
+    "emailIsRequired": "Formato de email inválido",
+    "emailsMustMatch": "El email no coincide",
+    "title": "Invitado",
+    "subtitle": "Puedes continuar tu compra como invitado solo ingresa tu email."
+  }
+}

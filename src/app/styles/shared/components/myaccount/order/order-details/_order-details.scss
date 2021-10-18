@@ -1,0 +1,34 @@
+%AccountPageTemplateContent {
+  .container {
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 rem(15);
+    }
+  }
+
+  .content-wrapper {
+    @include make-col(12, 12);
+
+    @include media-breakpoint-up(md) {
+      @include make-col(8, 12);
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-left: rem(5);
+    }
+  }
+}
+
+.order-details-label {
+  color: $gray-900;
+  font-size: rem(14);
+  margin-bottom: rem(10);
+}
+
+.order-details-value {
+  color: var(--cx-color-inverse, #{$inverse});
+  font-size: rem(13);
+  font-weight: $font-weight-light;
+  margin-bottom: rem(16);
+}

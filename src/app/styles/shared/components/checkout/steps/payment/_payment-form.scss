@@ -1,0 +1,104 @@
+app-maka-payment-form {
+  @extend %cx-payment-form;
+
+  .logo-openpay {
+    width: rem(105);
+  }
+}
+
+.column-border {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    border-bottom: $border-standard;
+    bottom: 0;
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+    &::before {
+      border-bottom: 0;
+    }
+
+    &::after {
+      border-right: $border-standard;
+      bottom: rem(30);
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+// Keep px instead of use rem() function to avoid change by base font
+%sprite-payment-form {
+  background-image: url('/assets/images/cc-form-icons.png');
+  background-size: 600px 51px;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: text-bottom;
+}
+
+.sprite-payment-form {
+  @extend %sprite-payment-form;
+}
+
+.form-icons {
+  > * {
+    @extend %sprite-payment-form;
+  }
+
+  &.hide {
+    left: 100px;
+    position: relative;
+    text-indent: -100px;
+  }
+}
+
+.credit-cards {
+  background-position: -374px -6px;
+  height: 31px;
+  width: 140px;
+}
+
+.shield-icon {
+  background-position: -6px -6px;
+  filter: brightness(120%);
+  height: 26px;
+  width: 26px;
+}
+
+.bbva {
+  background-position: -40px -6px;
+  height: 31px;
+  width: 45px;
+}
+
+.santander {
+  background-position: -150px -6px;
+  height: 34px;
+  width: 70px;
+}
+
+.hsbc {
+  background-position: -95px -6px;
+  height: 31px;
+  width: 50px;
+}
+
+.scotiabank {
+  background-position: -295px -6px;
+  height: 25px;
+  width: 75px;
+}
+
+.inbursa {
+  background-position: -220px -6px;
+  height: 40px;
+  width: 75px;
+}

@@ -1,0 +1,37 @@
+<div
+  class="inner"
+  *ngIf="(facetList$ | async)?.facets as facets"
+  [cxFocus]="isDialog ? dialogFocusConfig : {}"
+  (esc)="close($event)"
+  (click)="block($event)"
+>
+  <p class="padded text-uppercase text-inverse d-flex text-large facets-header align-items-start mb-0">
+    {{ 'productList.filterBy.label' | cxTranslate }}
+    <button type="button" class="close ml-auto text-inverse" aria-label="Close" (click)="close()">
+      <cx-icon aria-hidden="true" [type]="iconTypes.CLOSE"></cx-icon>
+    </button>
+  </p>
+
+  <div class="facets-container overflow-auto">
+    <app-maka-active-facets [inDialog]="true"></app-maka-active-facets>
+
+    <div class="padded">
+      <cx-facet
+        *ngFor="let facet of facets"
+        #facetRef
+        [facet]="facet"
+        [cxFocus]="{ lock: true, trap: true, autofocus: 'a' }"
+        (unlock)="expandFacetGroup(facet, facetRef)"
+        class="mt-4 pb-2"
+        [class.expanded]="isExpanded(facet) | async"
+        [class.collapsed]="isCollapsed(facet) | async"
+      ></cx-facet>
+    </div>
+  </div>
+
+  <div class="padded pb-0 pt-1">
+    <button class="btn btn-action btn-block" *ngIf="model$ | async as model" (click)="close()">
+      {{ 'productList.showResults' | cxTranslate: { count: model.pagination.totalResults } }}
+    </button>
+  </div>
+</div>

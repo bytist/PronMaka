@@ -1,0 +1,81 @@
+$product-list-item-spacing: 50;
+
+%app-maka-product-list-item {
+  & > .row {
+    margin: rem($product-list-item-spacing) 0;
+    padding-top: rem($product-list-item-spacing);
+    position: relative;
+    transition: $transition-duration;
+
+    @include media-breakpoint-up(md) {
+      padding: rem($product-list-item-spacing) 0;
+    }
+
+    &:hover,
+    &:focus {
+      @extend %shadowed;
+    }
+
+    .col-12.col-md-8 {
+      .col-12.col-md-8 {
+        // product summary
+        margin-bottom: $spacer * 2;
+
+        @include media-breakpoint-up(md) {
+          @include make-col(10, 12);
+        }
+      }
+
+      .col-12.col-md-4 {
+        // product cta
+        margin: 0 auto;
+
+        @include make-col(10, 12);
+
+        @include media-breakpoint-up(md) {
+          bottom: 0;
+          margin-bottom: rem(-1 * $product-list-item-spacing);
+          padding-right: 0;
+          position: absolute;
+          right: 0;
+
+          @include make-col(6, 12);
+        }
+      }
+    }
+  }
+
+  .cx-product-name {
+    @extend %maka-product-name;
+  }
+
+  .cx-product-price {
+    margin: ($spacer * 2) 0;
+
+    @extend %maka-product-price;
+  }
+
+  .cx-product-summary {
+    font-size: $medium-font-size;
+    font-weight: $font-weight-normal;
+  }
+
+  cx-add-to-cart {
+    .btn-primary {
+      @extend %add-to-cart-animated;
+    }
+  }
+
+  .cx-product-no-review {
+    font-weight: $font-weight-light;
+  }
+
+  cx-star-rating {
+    display: block;
+    padding: 0;
+  }
+}
+
+cx-product-list-item {
+  @extend %app-maka-product-list-item;
+}

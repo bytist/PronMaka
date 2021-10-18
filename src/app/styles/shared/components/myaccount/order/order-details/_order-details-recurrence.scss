@@ -1,0 +1,33 @@
+.AccountPageTemplate app-maka-order-detail-recurrent-order-details {
+  @extend %AccountPageTemplateContent !optional;
+
+  .content-wrapper {
+    background-color: $gray-400;
+    margin-bottom: rem(30);
+    padding: rem(30) rem(21);
+
+    @include media-breakpoint-up(xl) {
+      @include make-col(5, 12);
+    }
+  }
+
+  .recurrence-info-header {
+    border-bottom: 1px solid $gray-500;
+    color: var(--cx-color-inverse, #{$inverse});
+    font-size: $medium-font-size;
+    font-weight: $font-weight-normal;
+    margin-bottom: rem(30);
+    padding-bottom: rem(15);
+  }
+
+  .order-details-value {
+    margin-bottom: rem(40);
+  }
+
+  .cancel-order-recurrence {
+    .btn {
+      font-size: $small-font-size;
+      padding: 0;
+    }
+  }
+}

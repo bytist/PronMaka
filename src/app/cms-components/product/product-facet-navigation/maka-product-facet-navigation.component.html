@@ -1,0 +1,31 @@
+<div class="py-4 bg-gray-400">
+  <div class="container px-0">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-lg-3 d-lg-flex align-items-lg-center">
+            <button
+              #trigger
+              class="btn btn-action bg-transparent btn-block dialog-trigger"
+              (click)="launch()"
+            >
+              {{ 'productList.filterBy.label' | cxTranslate }}
+            </button>
+          </div>
+
+          <div class="col-lg-9 d-lg-flex align-items-lg-center">
+            <app-maka-active-facets></app-maka-active-facets>
+          </div>
+        </div>
+
+        <cx-facet-list
+          *ngIf="isOpen$ | async"
+          [isDialog]="hasTrigger"
+          (closeList)="close()"
+          [class.active]="isActive$ | async"
+          [class.dialog]="hasTrigger"
+        ></cx-facet-list>
+      </div>
+    </div>
+  </div>
+</div>

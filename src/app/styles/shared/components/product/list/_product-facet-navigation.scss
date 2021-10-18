@@ -1,0 +1,11 @@
+%cx-product-facet-navigation {
+  padding: 0;
+
+  @extend .container; /* stylelint-disable-line */
+
+  @include media-breakpoint-up(lg) {
+    button.dialog-trigger {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+$product-grid-item-spacing: 50;
+
+%app-maka-product-grid-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: rem($product-grid-item-spacing) 0;
+  transition: $transition-duration;
+
+  @include media-breakpoint-up(md) {
+    padding: 0 !important;
+  }
+
+  &:hover,
+  &:focus {
+    @extend %shadowed;
+  }
+
+  &.in-carousel {
+    height: auto;
+  }
+
+  .cx-product-image {
+    margin: ($spacer * 3) auto;
+    width: 60%;
+
+    @include media-breakpoint-only(md) {
+      width: 75%;
+    }
+  }
+
+  .cx-product-name {
+    display: inline-block;
+    margin-bottom: $spacer * 0.25;
+    padding: 0 $spacer;
+
+    @extend %maka-product-name;
+    @extend %maka-link;
+  }
+
+  .cx-product-rating {
+    padding: 0 $spacer;
+  }
+
+  .cx-product-price-container {
+    margin-bottom: $spacer * 2;
+    padding: 0 $spacer;
+
+    .cx-product-price {
+      @extend %maka-product-price;
+    }
+  }
+
+  cx-add-to-cart {
+    margin: auto;
+    width: 75%;
+
+    .btn-primary {
+      @extend %add-to-cart-animated;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+    }
+  }
+}
+
+cx-product-grid-item {
+  @extend %app-maka-product-grid-item;
+}

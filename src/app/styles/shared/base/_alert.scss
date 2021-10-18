@@ -1,0 +1,36 @@
+.alert {
+  align-items: center;
+  border: 0;
+  display: flex;
+  justify-content: center;
+
+  .close {
+    position: absolute;
+    right: rem(20);
+    text-shadow: none;
+  }
+
+  span {
+    font-size: $small-font-size;
+    margin-right: 0.5rem;
+  }
+
+  &.alert-danger {
+    background: $light-red;
+    color: $dark-red;
+
+    .alert-icon {
+      color: $salmon;
+      font-size: $xlarge-font-size;
+    }
+
+    .close {
+      color: $dark-red;
+    }
+  }
+
+  &.alert-success {
+    background: $success;
+    color: $dark-green;
+  }
+}

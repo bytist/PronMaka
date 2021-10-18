@@ -1,0 +1,126 @@
+<ng-container *ngIf="!(loading$ | async)?.loading && openPayReady; else spinner">
+  <form (ngSubmit)="next()"
+        [formGroup]="paymentForm"
+        id="paymentDetailsForm">
+
+    <div class="row mb-n2">
+      <div class="col-auto column-border pb-2">
+        <small class="d-block pb-2">{{ 'paymentForm.creditCards' | cxTranslate }}</small>
+        <span class="sprite-payment-form credit-cards mt-2"></span>
+      </div>
+      <div class="col-12 col-lg-auto pt-2 pt-lg-0">
+        <small class="d-block pb-2">{{ 'paymentForm.debitCards' | cxTranslate }}</small>
+        <ul class="form-icons hide">
+          <ng-container *ngFor="let card of debitCards">
+            <li [class]="card">{{card}}</li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="title-section-heading mb-4">{{ 'paymentForm.cardDetails' | cxTranslate }}</div>
+        <div class="row">
+          <div class="col-12 col-md-11">
+            <div class="form-group">
+              <label>
+                <input type="tel" class="form-control" formControlName="cardNumber" data-openpay-card="card_number" />
+                <span class="label-content required">{{ 'paymentForm.cardNumber' | cxTranslate}}</span>
+              </label>
+              <cx-form-errors [control]="paymentForm.get('cardNumber')"></cx-form-errors>
+            </div>
+
+            <div class="form-group">
+              <label>
+                <input type="text" class="form-control"  formControlName="accountHolderName" data-openpay-card="holder_name" />
+                <span class="label-content required">{{ 'paymentForm.accountHolderName.label' | cxTranslate }}</span>
+              </label>
+              <cx-form-errors [control]="paymentForm.get('accountHolderName')"></cx-form-errors>
+            </div>
+
+            <label class="label-content required text-dark font-weight-normal mb-0">{{ 'paymentForm.expirationDate' | cxTranslate }}</label>
+
+            <div class="row align-items-baseline pb-3">
+              <div class="form-group col-7 col-md-5">
+                <div class="cx-payment-form-exp-date align-items-baseline">
+                    <div class="cx-payment-form-exp-date-wrapper">
+                      <ng-select
+                        [searchable]="false"
+                        [clearable]="false"
+                        [items]="months"
+                        placeholder="{{ 'paymentForm.monthMask' | cxTranslate }}"
+                        formControlName="expiryMonth">
+                      </ng-select>
+                      <cx-form-errors [control]="paymentForm.get('expiryMonth')"></cx-form-errors>
+                      <input type="hidden" class="form-control" formControlName="expiryMonthInput" data-openpay-card="expiration_month" />
+                    </div>
+                    <div class="cx-payment-form-exp-date-wrapper">
+                      <ng-select
+                        [searchable]="false"
+                        [clearable]="false"
+                        [items]="years"
+                        placeholder="{{ 'paymentForm.yearMask' | cxTranslate }}"
+                        formControlName="expiryYear">
+                      </ng-select>
+                      <cx-form-errors [control]="paymentForm.get('expiryYear')"></cx-form-errors>
+                      <input type="hidden" class="form-control" formControlName="expiryYearInput" data-openpay-card="expiration_year" />
+                    </div>
+                  </div>
+              </div>
+
+              <div class="form-group col-7 col-md-4">
+                <label class="mb-0">
+                  <input type="tel" class="form-control mb-0" formControlName="cvn" data-openpay-card="cvv2" />
+                  <span class="label-content required">{{ 'paymentForm.securityCode' | cxTranslate }}</span>
+                </label>
+                <cx-form-errors [control]="paymentForm.get('cvn')"></cx-form-errors>
+              </div>
+
+              <div class="form-group col-5 col-md-3">
+                <img class="w-100" src="/assets/images/cvv-cards.png" alt="CVV" />
+              </div>
+            </div>
+
+            <div class="form-group" *ngIf="setAsDefaultField">
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" class="form-check-input" (change)="toggleDefaultPaymentMethod()" />
+                  <span class="form-check-label">{{
+                    'paymentForm.setAsDefault' | cxTranslate
+                    }}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4 mb-5">
+      <div class="col-auto column-border pr-4 pb-3 pt-2">
+        <small class="d-block">{{ 'paymentForm.transactionsBy' | cxTranslate }}: </small>
+        <img class="logo-openpay mb-n3" src="/assets/images/openpay.png" alt="OpenPay" />
+      </div>
+      <div class="col-12 col-md-auto d-flex flex-row pl-md-4 pt-2">
+        <span class="sprite-payment-form shield-icon mt-2" alt="CVV"></span>
+        <small class="d-block pb-2 pl-4" [innerHTML]="'paymentForm.secureTransactions' | cxTranslate"></small>
+      </div>
+    </div>
+
+    <div class="cx-checkout-btns row new-cc-btns justify-content-between">
+      <div class="col-12 col-lg-6">
+        <button *ngIf="paymentMethodsCount === 0" class="btn btn-block btn-action" (click)="back()">
+          {{ 'common.back' | cxTranslate }}
+        </button>
+        <button *ngIf="paymentMethodsCount > 0" class="btn btn-block btn-action" (click)="close()">
+          {{ 'paymentForm.changePayment' | cxTranslate }}
+        </button>
+      </div>
+    </div>
+  </form>
+</ng-container>
+
+<ng-template #spinner>
+  <cx-spinner></cx-spinner>
+</ng-template>

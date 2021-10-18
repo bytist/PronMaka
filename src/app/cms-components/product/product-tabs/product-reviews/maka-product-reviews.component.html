@@ -1,0 +1,138 @@
+<div class="container" *ngIf="product$ | async as product">
+  <h2>
+    {{ 'productDetails.reviews' | cxTranslate }} ({{ product.numberOfReviews }})
+  </h2>
+  <ng-container *ngIf="!isWritingReview; else writeReview">
+    <div class="header mb-0 w-100 mx-0 px-0">
+      <div>
+        <h3>{{ 'productReview.overallRating' | cxTranslate }}</h3>
+        <cx-star-rating
+          *ngIf="product.averageRating"
+          class="rating"
+          [rating]="product.averageRating"
+          [disabled]="true"
+        ></cx-star-rating>
+        <div class="rating font-weight-light" *ngIf="!product.averageRating">
+          {{ 'productDetails.noReviews' | cxTranslate }}
+        </div>
+      </div>
+      <button
+        #writeReviewButton
+        class="btn btn-primary"
+        (click)="initiateWriteReview()"
+      >
+        {{ 'productReview.writeReview' | cxTranslate }}
+      </button>
+    </div>
+
+    <ng-container *ngIf="!isWritingReview; else writeReview">
+      <ng-container *ngIf="reviews$ | async as reviews">
+        <div
+          class="review py-3"
+          tabindex="0"
+          *ngFor="let review of reviews | slice: 0:maxListItems"
+        >
+          <div class="title text-inverse font-weight-normal text-medium">{{ review.headline }}</div>
+          <cx-star-rating
+            [rating]="review.rating"
+            [disabled]="true"
+          ></cx-star-rating>
+          <div class="name font-weight-light">
+            {{ review.alias ? review.alias : review.principal?.name }}
+          </div>
+          <div class="date font-weight-light">{{ review.date | cxDate }}</div>
+          <div class="text font-weight-light mt-3">{{ review.comment }}</div>
+        </div>
+        <div *ngIf="reviews.length > initialMaxListItems">
+          <button
+            class="btn btn-primary"
+            (click)="maxListItems = reviews.length"
+            *ngIf="maxListItems === initialMaxListItems"
+          >
+            {{ 'productReview.more' | cxTranslate }}
+          </button>
+          <button
+            class="btn btn-primary"
+            (click)="maxListItems = initialMaxListItems"
+            *ngIf="maxListItems !== initialMaxListItems"
+          >
+            {{ 'productReview.less' | cxTranslate }}
+          </button>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #writeReview>
+    <form (ngSubmit)="submitReview(product)" [formGroup]="reviewForm">
+      <div class="form-group">
+        <label>
+          <input
+            #titleInput
+            type="text"
+            class="form-control"
+            formControlName="title"
+            [class.is-empty]="!reviewForm.get('title').value"
+          />
+          <span class="label-content">{{
+            'productReview.reviewTitle' | cxTranslate
+          }}</span>
+        </label>
+        <cx-form-errors [control]="reviewForm.get('title')"></cx-form-errors>
+      </div>
+      <div class="form-group">
+        <label>
+          <textarea
+            class="form-control"
+            rows="3"
+            formControlName="comment"
+            [class.is-empty]="!reviewForm.get('comment').value"
+          ></textarea>
+          <span class="label-content textarea-label">{{
+            'productReview.writeYourComments' | cxTranslate
+          }}</span>
+        </label>
+        <cx-form-errors
+          [control]="reviewForm.get('comment')"
+        ></cx-form-errors>
+      </div>
+      <div class="form-group">
+        <label>
+          <span>{{
+            'productReview.rating' | cxTranslate
+          }}</span>
+        </label>
+        <input type="number" formControlName="rating" class="rating-input" />
+        <cx-star-rating (change)="setRating($event)"></cx-star-rating>
+        <cx-form-errors [control]="reviewForm.get('rating')"></cx-form-errors>
+      </div>
+      <div class="form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="reviewerName"
+            [class.is-empty]="!reviewForm.get('reviewerName').value"
+          />
+          <span class="label-content">{{ 'productReview.reviewerName' | cxTranslate }}</span>
+        </label>
+      </div>
+      <div class="form-group row mt-5">
+        <div class="col-12 col-md-4">
+          <button
+            type="button"
+            class="btn btn-block btn-secondary"
+            (click)="cancelWriteReview()"
+          >
+            {{ 'common.cancel' | cxTranslate }}
+          </button>
+        </div>
+        <div class="col-12 col-md-4">
+          <button type="submit" class="btn btn-block btn-primary">
+            {{ 'common.submit' | cxTranslate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>

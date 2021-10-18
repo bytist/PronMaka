@@ -1,0 +1,7 @@
+.container {
+  width: 90%;
+
+  @include media-breakpoint-up(sm) {
+    width: 85%;
+  }
+}

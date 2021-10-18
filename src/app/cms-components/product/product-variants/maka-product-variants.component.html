@@ -1,0 +1,23 @@
+<ng-container *ngIf="product$ | async as product">
+  <div class="variant-section" *ngIf="product.baseOptions?.length">
+    <cx-variant-style-selector
+      *ngIf="variants[makaVariantType.STYLE]"
+      [variants]="variants[makaVariantType.STYLE]"
+    ></cx-variant-style-selector>
+    <cx-variant-size-selector
+      *ngIf="variants[makaVariantType.SIZE]"
+      [product]="product"
+      [variants]="variants[makaVariantType.SIZE]"
+    ></cx-variant-size-selector>
+    <cx-variant-color-selector
+      *ngIf="variants[makaVariantType.COLOR]"
+      [product]="product"
+      [variants]="variants[makaVariantType.COLOR]"
+    ></cx-variant-color-selector>
+    <app-maka-variant-weight-selector
+      *ngIf="variants[makaVariantType.WEIGHT]"
+      [product]="product"
+      [variants]="variants[makaVariantType.WEIGHT]"
+    ></app-maka-variant-weight-selector>
+  </div>
+</ng-container>

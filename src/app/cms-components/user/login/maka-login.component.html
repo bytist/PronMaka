@@ -1,0 +1,52 @@
+<ng-container *ngIf="user$ | async as user; else login">
+  <p class="cx-login-greet text-xlarge text-inverse font-weight-light d-lg-none">
+    {{ 'miniLogin.userGreeting' | cxTranslate: { name: user.name } }}
+  </p>
+  <div
+    class="cx-login-greet text-lg-small font-weight-light pointer"
+    [class.opened]="openedMenu$ | async"
+    [class.animation-done]="!inAnimationTransition"
+    (click)="toggleNavigation()">
+    <span class="text-uppercase d-inline d-lg-none text-inverse pb-3">{{ 'miniLogin.myAccount' | cxTranslate }}</span>
+    <span class="d-none d-lg-inline">{{ 'miniLogin.userGreeting' | cxTranslate: { name: user.name } }}</span>
+    <span class="arrow ml-3"
+        [ngClass]="{'down mb-1': false === (openedMenu$ | async), 'up': true === (openedMenu$ | async) }">
+    </span>
+  </div>
+  <cx-page-slot position="HeaderLinks"></cx-page-slot>
+  <hr class="d-lg-none">
+
+  <div class="nav-greeting">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-11 offset-lg-1">
+          <h4 class="text-uppercase hyphened">{{ 'miniLogin.myAccount' | cxTranslate }}</h4>
+          <p class="text-xxlarge font-weight-light mt-5 col-6 px-0">{{ 'miniLogin.userGreeting' | cxTranslate: { name: user.name } }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #login>
+  <ng-container [ngSwitch]="baseSite$ | async">
+
+    <a *ngSwitchCase="'maka-store'"
+       role="link"
+       class="login-link text-inverse text-decoration-none d-lg-flex align-items-center hyphened"
+       [routerLink]="{ cxRoute: 'login' } | cxUrl">
+      <span class="text-uppercase">{{ 'miniLogin.access' | cxTranslate }}</span>
+      <span class="text-large ml-lg-3 mt-3 mt-lg-0 d-block d-lg-inline">
+        {{ 'miniLogin.signInRegister' | cxTranslate }}
+      </span>
+    </a>
+
+    <a *ngSwitchCase="'maka-partners'"
+       class="login-link text-inverse text-decoration-none d-flex align-items-center hyphened"
+       role="link" [routerLink]="{ cxRoute: 'login' } | cxUrl">
+      <span class="text-uppercase">{{ 'miniLogin.access' | cxTranslate }}</span>
+      <span class="text-large ml-3">{{ 'miniLogin.signInPreRegister' | cxTranslate }}</span>
+    </a>
+
+  </ng-container>
+</ng-template>

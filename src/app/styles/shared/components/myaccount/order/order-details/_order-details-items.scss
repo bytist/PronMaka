@@ -1,0 +1,16 @@
+app-maka-order-detail-items {
+  @extend %CheckoutOrderItems !optional;
+
+  .container {
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
+  }
+
+  .cx-list-item {
+    @include media-breakpoint-up(lg) {
+      padding-left: rem(23);
+      padding-right: 0;
+    }
+  }
+}

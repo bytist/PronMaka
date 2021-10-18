@@ -1,0 +1,55 @@
+{
+  "cartDetails": {
+    "id": "ID",
+    "proceedToCheckout": "Ir al Checkout",
+    "cartName": "Carrito # {{code}}",
+    "recurringOrderSelection": "Establecer como orden recurrente",
+    "recurringOrderThresholdLevelMessage": "Tu orden recurrente debe ser menor a {{openPay3DSMin}} MXN",
+    "recurrenceOptions": {
+      "label": "Entrega cada",
+      "placeholder": "Seleciona frecuencia"
+    }
+  },
+  "cartItems": {
+    "id": "ID",
+    "description": "Descripción",
+    "item": "Articulo",
+    "itemPrice": "Precio del articulo",
+    "quantity": "Cantidad",
+    "quantityTitle": "La cantidad representa el número total de este artículo en su carrito.",
+    "total": "Total",
+    "cartTotal": "Total del carrito ({{count}} artículo)",
+    "cartTotal_plural": "Total del carrito ({{count}} artículos)"
+  },
+  "orderCost": {
+    "orderSummary": "Resumen de pedido",
+    "subtotal": "Subtotal después de descuentos:",
+    "shipping": "Costo de Envío:",
+    "estimatedShipping": "Envío estimado:",
+    "discount": "Ahorraste:",
+    "salesTax": "Impuesto de venta:",
+    "grossTax": "El total del pedido no incluye impuestos de",
+    "total": "Total:"
+  },
+  "voucher": {
+    "coupon": "¿Tiene un cupón?",
+    "coupon_plural": "Códigos de cupón",
+    "apply": "Aplicar",
+    "placeholder": "Código promocional",
+    "applyVoucherSuccess": "Se ha aplicado {{voucherCode}}.",
+    "removeVoucherSuccess": "Se eliminó {{voucherCode}}.",
+    "anchorLabel": "Ingrese o elimine su código de cupón",
+    "vouchersApplied": "Cupones aplicados",
+    "voucherAlreadyUsed": "El cupón ya ha sido canjeado anteriormente",
+    "voucherInvalid": "El cupón ingresado es inválido"
+  },
+  "saveForLaterItems": {
+    "itemTotal": "Guardado para más tarde ({{count}} elemento)",
+    "itemTotal_plural": "Guardado para más tarde ({{count}} artículos)",
+    "cartTitle": "Carro",
+    "saveForLater": "Guardar para después",
+    "moveToCart": "Mover al Carrito",
+    "stock": "Inventario",
+    "forceInStock": "En stock"
+  }
+}

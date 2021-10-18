@@ -1,0 +1,174 @@
+<p class="text-uppercase text-inverse font-weight-normal my-5">
+  {{ 'addressForm.address' | cxTranslate }} <span *ngIf="parentForm && !parentForm.disabled">*</span>
+</p>
+
+<div [formGroup]="parentForm" *ngIf="parentForm">
+  <div formGroupName="addressForm">
+    <div class="row">
+      <div class="col-12 col-md-6 form-group">
+        <ng-container *ngIf="!parentForm.disabled && titles$ | async as titles">
+          <label aria-required="true">
+            <ng-select
+              class="form-control pb-3 pt-1 mb-2"
+              [class.is-empty]="!parentForm.get('addressForm.titleCode').value"
+              formControlName="titleCode"
+              [searchable]="false"
+              [clearable]="false"
+              [items]="titles"
+              [compareWith]="compareTitle"
+              bindLabel="name"
+              bindValue="code"
+            >
+            </ng-select>
+            <span class="label-content" [class.required]="!parentForm.disabled">{{ 'register.title' | cxTranslate }}</span>
+          </label>
+          <cx-form-errors [control]="parentForm.get('addressForm.titleCode')"></cx-form-errors>
+        </ng-container>
+
+        <label *ngIf="parentForm.disabled">
+          <input
+            type="text"
+            class="form-control"
+            [class.is-empty]="!parentForm.get('addressForm.title').value"
+            formControlName="title"
+          />
+          <span class="label-content">{{ 'register.title' | cxTranslate }}</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-empty]="!parentForm.get('addressForm.businessName').value"
+            formControlName="businessName"
+          />
+          <span class="label-content">{{ 'addressForm.businessName.label' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors [control]="parentForm.get(['addressForm', 'businessName'])"></cx-form-errors>
+      </div>
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-empty]="!parentForm.get('addressForm.streetName').value"
+            formControlName="streetName"
+          />
+          <span class="label-content" [class.required]="!parentForm.disabled">{{ 'addressForm.streetName.label' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors [control]="parentForm.get(['addressForm', 'streetName'])"></cx-form-errors>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-empty]="!parentForm.get('addressForm.streetNumber').value"
+            formControlName="streetNumber"
+          />
+          <span class="label-content" [class.required]="!parentForm.disabled">{{ 'addressForm.streetNumber.label' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors [control]="parentForm.get(['addressForm', 'streetNumber'])"></cx-form-errors>
+      </div>
+
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-empty]="!parentForm.get('addressForm.appartement').value"
+            formControlName="appartement"
+          />
+          <span class="label-content">{{ 'addressForm.appartement.label' | cxTranslate }}</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-empty]="!parentForm.get('addressForm.district').value"
+            formControlName="district"
+          />
+          <span class="label-content" [class.required]="!parentForm.disabled">{{ 'addressForm.district.label' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors [control]="parentForm.get(['addressForm', 'district'])"></cx-form-errors>
+      </div>
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-empty]="!parentForm.get('addressForm.town').value"
+            formControlName="town"
+          />
+          <span class="label-content" [class.required]="!parentForm.disabled">{{ 'addressForm.city.label' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors [control]="parentForm.get(['addressForm', 'town'])"></cx-form-errors>
+      </div>
+    </div>
+
+    <div class="row">
+      <ng-container
+        *ngIf="regions$ | async as regions"
+        formGroupName="region">
+        <ng-container *ngIf="regions.length !== 0">
+          <div class="col-12 col-md-6 form-group">
+            <label aria-required="true">
+              <ng-select
+                class="region-select form-control pb-3 pt-1 mb-2"
+                [class.is-empty]="!parentForm.get('addressForm.region.isocode').value"
+                formControlName="isocode"
+                [searchable]="true"
+                [clearable]="false"
+                [items]="regions"
+                bindLabel="{{ regions[0].name ? 'name' : 'isocode' }}"
+                bindValue="{{ regions[0].name ? 'isocode' : 'region' }}"
+              >
+              </ng-select>
+              <span class="label-content" [class.required]="!parentForm.disabled">{{ 'addressForm.state' | cxTranslate }}</span>
+            </label>
+            <cx-form-errors [control]="parentForm.get('addressForm.region.isocode')"></cx-form-errors>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-empty]="!parentForm.get('addressForm.postalCode').value"
+            formControlName="postalCode"
+          />
+          <span class="label-content" [class.required]="!parentForm.disabled">{{ 'addressForm.zipCode.label' | cxTranslate }}</span>
+        </label>
+        <cx-form-errors [control]="parentForm.get(['addressForm', 'postalCode'])"></cx-form-errors>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 form-group">
+        <label>
+          <input
+            type="text"
+            class="form-control ng-dirty"
+            disabled
+            value="{{ 'addressForm.country.default' | cxTranslate }}"
+          />
+          <span class="label-content" [class.required]="!parentForm.disabled">{{ 'addressForm.country.label' | cxTranslate }}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+%app-maka-pagination {
+  a {
+    font-size: $large-font-size;
+
+    @include media-breakpoint-up(lg) {
+      font-size: $medium-font-size;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &.disabled {
+      color: var(--cx-color-text, #{$text});
+    }
+
+    &.current {
+      color: var(--cx-color-inverse, #{$inverse});
+      font-weight: $font-weight-bold;
+    }
+
+    &.page {
+      padding: rem(6);
+    }
+
+    &.previous,
+    &.next {
+      &.disabled {
+        display: none;
+      }
+    }
+  }
+}
+
+cx-pagination {
+  @extend %app-maka-pagination;
+}

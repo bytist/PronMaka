@@ -1,0 +1,141 @@
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.arrow {
+  border: solid var(--cx-color-inverse);
+  border-width: 0 rem(1) rem(1) 0;
+  display: inline-block;
+  padding: rem(4);
+  position: absolute;
+  transition-duration: $link-transition-duration;
+
+  @include media-breakpoint-up(lg) {
+    position: initial;
+  }
+
+  &.up {
+    right: 0;
+    transform: rotate(-135deg);
+  }
+
+  &.down {
+    right: 0;
+    transform: rotate(45deg);
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.section-subheading {
+  border-bottom: $input-border-width solid $input-border-color;
+  padding-bottom: rem(15);
+}
+
+.form-group-heading {
+  border-bottom: $input-border-width solid var(--cx-color-inverse, #{$inverse});
+  padding-bottom: rem(30);
+}
+
+.title-section-heading {
+  @extend .form-group-heading; /* stylelint-disable-line */
+
+  color: $inverse;
+  margin: $spacer 0;
+}
+
+.side-text {
+  align-items: center;
+  display: flex;
+  font-weight: $font-weight-normal;
+  position: absolute;
+  right: 90%;
+  transform: rotate(-90deg);
+  transform-origin: right;
+  white-space: nowrap;
+
+  @extend %spaced;
+
+  &::after {
+    background-color: var(--cx-color-dark);
+    content: '';
+    display: inline-block;
+    height: rem(10);
+    margin: 0 0 rem(2) rem(40);
+    width: rem(35);
+  }
+}
+
+.with-separator {
+  border-bottom: $border-width solid var(--cx-color-light, #{$light});
+
+  @include media-breakpoint-up(lg) {
+    border-bottom: 0;
+    border-right: $border-width solid var(--cx-color-light, #{$light});
+  }
+}
+
+cx-media {
+  display: block !important;
+}
+
+.debug * {
+  outline: 1px solid red;
+}
+
+%shadowed {
+  box-shadow: 0 0 rem(5) var(--cx-color-light, #{$light});
+}
+
+ol {
+  counter-reset: li;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    align-items: flex-start;
+    display: flex;
+    font-size: $medium-font-size;
+    font-weight: $font-weight-light;
+    margin-bottom: $spacer;
+    text-align: left;
+
+    &::before {
+      color: var(--cx-color-dark, #{$dark});
+      content: counter(li, decimal-leading-zero);
+      counter-increment: li;
+      font-family: $font-family-sans-serif-secondary;
+      font-size: $xlarge-font-size;
+      font-weight: $font-weight-normal;
+      margin-right: $spacer;
+      margin-top: rem(-2);
+    }
+  }
+}
+
+.bottom-bordered {
+  border-bottom: $border-width solid var(--cx-color-light, #{$light});
+}
+
+.bottom-bordered-black {
+  border-bottom: $border-width solid var(--cx-color-dark, #{$black});
+}
+
+.right-bordered {
+  border-bottom: $border-width solid var(--cx-color-light, #{$light});
+
+  @include media-breakpoint-up(lg) {
+    border-bottom: 0;
+    border-right: $border-width solid var(--cx-color-light, #{$light});
+  }
+}
+
+.h-100vh {
+  height: 100vh;
+}

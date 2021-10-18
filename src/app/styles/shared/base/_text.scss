@@ -1,0 +1,223 @@
+@mixin text-stroke($color, $textColor, $strokedWidth: 1px) {
+  color: $color; // fallback color (non-supported browsers)
+  -webkit-text-fill-color: $textColor;
+  -webkit-text-stroke: $strokedWidth $color;
+}
+
+%spaced {
+  letter-spacing: rem(3.6px);
+}
+
+.stroked-primary {
+  @include text-stroke($primary, $transparent);
+}
+
+.stroked-primary-thick {
+  @include text-stroke($primary, $transparent, 2px);
+}
+
+.stroked-maka-red {
+  @include text-stroke($maka-red, $transparent, 2px);
+}
+
+.stroked-dark {
+  @include text-stroke($dark, $transparent);
+}
+
+.text-xbig {
+  font-size: $xbig-font-size;
+}
+
+.text-lg-xbig {
+  @include media-breakpoint-up(lg) {
+    font-size: $xbig-font-size !important;
+  }
+}
+
+.text-md-xbig {
+  @include media-breakpoint-up(md) {
+    font-size: $xbig-font-size !important;
+  }
+}
+
+.text-big {
+  font-size: $big-font-size;
+}
+
+.text-lg-big {
+  @include media-breakpoint-up(lg) {
+    font-size: $big-font-size !important;
+  }
+}
+
+.text-md-big {
+  @include media-breakpoint-up(md) {
+    font-size: $big-font-size !important;
+  }
+
+  @media (max-height: $mobile-landscape-height) {
+    font-size: $h3-font-size !important;
+  }
+}
+
+.text-xxlarge {
+  font-size: $xxlarge-font-size;
+}
+
+.text-md-xxlarge {
+  @include media-breakpoint-up(md) {
+    font-size: $xxlarge-font-size !important;
+  }
+}
+
+.text-xlarge {
+  font-size: $xlarge-font-size;
+}
+
+.text-large {
+  font-size: $large-font-size;
+}
+
+.text-lg-large {
+  @include media-breakpoint-up(lg) {
+    font-size: $large-font-size !important;
+  }
+}
+
+.text-medium {
+  font-size: $medium-font-size;
+}
+
+.text-small {
+  font-size: $small-font-size;
+}
+
+.text-md-small {
+  @include media-breakpoint-up(md) {
+    font-size: $small-font-size !important;
+  }
+}
+
+.text-lg-small {
+  @include media-breakpoint-up(lg) {
+    font-size: $small-font-size !important;
+  }
+}
+
+.text-xsmall {
+  font-size: $xsmall-font-size;
+}
+
+.text-xxsmall {
+  font-size: $xxsmall-font-size;
+}
+
+.sans-serif-primary {
+  font-family: $font-family-sans-serif;
+}
+
+.sans-serif-secondary {
+  font-family: $font-family-sans-serif-secondary;
+}
+
+.light-weight {
+  font-weight: $font-weight-light;
+}
+
+h1 {
+  font-family: $font-family-sans-serif-secondary;
+  font-weight: $font-weight-normal;
+
+  @include media-breakpoint-down(md) {
+    font-size: $h1-font-size-mobile;
+  }
+}
+
+h2 {
+  @include media-breakpoint-down(md) {
+    font-size: $h4-font-size;
+  }
+}
+
+h3 { // $h3-font-size: 45px
+  @include media-breakpoint-down(md) {
+    font-size: rem(40);
+  }
+}
+
+h4,
+.h4 {
+  font-weight: $font-weight-light;
+}
+
+h5 {
+  font-weight: $font-weight-light;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-family: $font-family-sans-serif-secondary;
+  font-weight: $font-weight-normal;
+}
+
+small {
+  font-weight: $font-weight-light;
+}
+
+.hyphened {
+  @include media-breakpoint-up(lg) {
+    position: relative;
+
+    &:not(a)::before,
+    &:hover::before {
+      background: var(--cx-color-inverse);
+      content: '';
+      display: block;
+      height: rem(2);
+      left: -2rem;
+      position: absolute;
+      top: 30%;
+      width: 1.2rem;
+    }
+
+    &:not(a)::before {
+      top: 50%;
+    }
+  }
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.banner-text-subtitle {
+  font-size: $h3-font-size;
+
+  @include media-breakpoint-up(md) {
+    font-size: $h2-font-size;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: $h1-font-size;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: $big-font-size;
+  }
+}
+
+.banner-text-title {
+  font-size: $h2-font-size;
+
+  @include media-breakpoint-up(md) {
+    font-size: $h1-font-size;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: $big-font-size;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: $xbig-font-size;
+  }
+}

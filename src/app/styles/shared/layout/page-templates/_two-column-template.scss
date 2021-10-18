@@ -1,0 +1,29 @@
+.TwoColumnPageTemplate {
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    min-height: rem(500);
+  }
+
+  cx-page-slot.LeftContentSlot {
+    @extend .container !optional; /* stylelint-disable-line */
+
+    justify-content: start;
+
+    > * {
+      @include media-breakpoint-up(md) {
+        @include make-col-offset(1);
+        @include make-col(11, 12);
+      }
+
+      @include media-breakpoint-up(lg) {
+        @include make-col-offset(1);
+        @include make-col(5, 12);
+      }
+    }
+  }
+
+  cx-page-slot.RightContentSlot {
+    @extend %TwoColumnRightContentSlot !optional;
+  }
+}

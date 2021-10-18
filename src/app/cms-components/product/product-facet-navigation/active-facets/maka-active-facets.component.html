@@ -1,0 +1,32 @@
+<ng-container *ngIf="facetList$ | async as facetList">
+  <div [ngClass]="{'active-facets-section bg-gray-400': inDialog }" *ngIf="facetList?.activeFacets?.length > 0">
+    <div class="row">
+      <div  *ngIf="!inDialog" class="d-flex col-5 pr-0 col-sm-3 align-items-center pl-sm-0 mt-3 mt-lg-0">
+        <h4>
+          {{ 'productList.appliedFilter' | cxTranslate }}
+        </h4>
+      </div>
+
+      <div [ngClass]="{'col-7 col-sm-9 col-lg-7 px-0 mt-3 mt-lg-0': !inDialog, 'col-12': inDialog}" class="d-flex flex-wrap">
+          <a
+            *ngFor="let facet of facetList?.activeFacets"
+            routerLink="./"
+            [queryParams]="getLinkParams(facet)"
+            [cxFocus]="getFocusKey(facetList, facet)"
+            class="btn-chip btn"
+            [ngClass]="{'ml-0': inDialog}"
+          >
+            <span>{{ facet.facetValueName }}</span>
+            <cx-icon aria-hidden="true" [type]="closeIcon"></cx-icon>
+          </a>
+      </div>
+
+      <div [ngClass]="{'col-2 px-0 d-none d-lg-flex': !inDialog, 'd-flex col-12 mt-3': inDialog}" class="align-items-center">
+        <a routerLink="./"
+           class="pointer text-small font-weight-light text-underline" [ngClass]="{'ml-auto': !inDialog}">
+          {{ 'productList.clearFacets' | cxTranslate }}
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-container>

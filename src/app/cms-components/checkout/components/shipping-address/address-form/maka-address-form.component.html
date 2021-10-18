@@ -1,0 +1,229 @@
+<form (ngSubmit)="verifyAddress()" [formGroup]="addressForm" class="address-form">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="text-dark sans-serif-secondary">{{ 'addressForm.titleSection.title' | cxTranslate }}</h3>
+      <p class="title-description text-dark text-medium">{{ 'addressForm.titleSection.description' | cxTranslate }}</p>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('petName').value"
+          formControlName="petName"
+        />
+        <span class="label-content">{{ 'addressForm.petName.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('petName')"></cx-form-errors>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 form-group">
+      <p class="text-inverse text-medium form-group-heading">
+        {{ 'addressForm.shippingAddress' | cxTranslate }}
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          class="form-control"
+          type="text"
+          [class.is-empty]="!addressForm.get('firstName').value"
+          formControlName="firstName"
+        />
+        <span class="label-content required">{{ 'addressForm.firstName.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('firstName')"></cx-form-errors>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('lastName').value"
+          formControlName="lastName"
+        />
+        <span class="label-content required">{{ 'addressForm.lastName.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('lastName')"></cx-form-errors>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="streetName"
+        />
+        <span class="label-content required">{{ 'addressForm.streetName.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('streetName')"></cx-form-errors>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('streetNumber').value"
+          formControlName="streetNumber"
+        />
+        <span class="label-content required">{{ 'addressForm.streetNumber.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('streetNumber')"></cx-form-errors>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('appartement').value"
+          formControlName="appartement"
+        />
+        <span class="label-content">{{ 'addressForm.appartement.label' | cxTranslate }}</span>
+      </label>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('reference').value"
+          formControlName="reference"
+        />
+        <span class="label-content">{{ 'addressForm.reference.label' | cxTranslate }}</span>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('district').value"
+          formControlName="district"
+        />
+        <span class="label-content required">{{ 'addressForm.district.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('district')"></cx-form-errors>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('town').value"
+          formControlName="town"
+        />
+        <span class="label-content required">{{ 'addressForm.city.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('town')"></cx-form-errors>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container
+      *ngIf="regions$ | async as regions"
+      formGroupName="region">
+      <ng-container *ngIf="regions.length !== 0">
+        <div class="col-12 col-md-6 form-group">
+          <label aria-required="true">
+            <ng-select
+              class="region-select form-control pb-3 pt-1 mb-2"
+              formControlName="isocode"
+              [searchable]="true"
+              [clearable]="false"
+              [items]="regions"
+              bindLabel="{{ regions[0].name ? 'name' : 'isocode' }}"
+              bindValue="{{ regions[0].name ? 'isocode' : 'region' }}"
+            >
+            </ng-select>
+            <span class="label-content required">{{ 'addressForm.state' | cxTranslate }}</span>
+          </label>
+          <cx-form-errors [control]="addressForm.get('region.isocode')"></cx-form-errors>
+        </div>
+      </ng-container>
+    </ng-container>
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('postalCode').value"
+          formControlName="postalCode"
+        />
+        <span class="label-content required">{{ 'addressForm.zipCode.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('postalCode')"></cx-form-errors>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="text"
+          class="form-control ng-dirty"
+          disabled
+          value="{{ 'addressForm.country.default' | cxTranslate }}"
+        />
+        <span class="label-content required">{{ 'addressForm.country.label' | cxTranslate }}</span>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 form-group">
+      <label>
+        <input
+          type="tel"
+          class="form-control"
+          [class.is-empty]="!addressForm.get('cellphone').value"
+          formControlName="cellphone"
+        />
+        <span class="label-content required">{{ 'addressForm.cellphone.label' | cxTranslate }}</span>
+      </label>
+      <cx-form-errors [control]="addressForm.get('cellphone')"></cx-form-errors>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="setAsDefaultField">
+    <div class="form-group col-12 set-default-address">
+      <div class="form-check">
+        <label>
+          <input
+            type="checkbox"
+            class="form-check-input"
+            formControlName="defaultAddress"
+            (change)="toggleDefaultAddress()"
+          />
+          <span class="form-check-label text-xsmall">{{ 'addressForm.setAsDefault' | cxTranslate }}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="displayDeliveryModes === true">
+    <app-maka-delivery-modes></app-maka-delivery-modes>
+  </div>
+
+  <div class="d-sm-block d-lg-none" *ngIf="displayCheckoutSummary === true">
+    <app-maka-checkout-order-summary></app-maka-checkout-order-summary>
+  </div>
+
+  <div class="cx-checkout-btns row">
+    <div class="col-12 col-lg-6" *ngIf="showCancelBtn">
+      <button class="btn btn-block btn-secondary" (click)="back()">
+        {{ cancelBtnLabel || ('addressForm.chooseAddress' | cxTranslate) }}
+      </button>
+    </div>
+    <div class="w-100 d-block d-lg-none"></div>
+    <div class="col-12 col-lg-6">
+      <button class="btn btn-block btn-primary" type="submit">
+        {{ actionBtnLabel || ('common.continue' | cxTranslate) }}
+      </button>
+    </div>
+  </div>
+</form>
